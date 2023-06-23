@@ -2,6 +2,7 @@
 body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* Apply a background color to the whole document */
@@ -16,68 +17,66 @@ header {
     background: #126094;
     color: #ffffff;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
 }
 
 .header-content .logo img {
     height: 80px;
-    vertical-align: middle;
 }
 
 .header-content h1 {
     margin: 0;
     font-size: 2.5rem;
-    font-weight: bold;
 }
 
 /* Intro section */
 .intro {
     padding: 2rem;
     text-align: center;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .intro h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
     color: #126094;
-    font-weight: bold;
 }
 
-/* About section */
-.about {
-    padding: 2rem;
-    text-align: center;
-}
-
-.about h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    color: #126094;
-    font-weight: bold;
+.intro img {
+    max-width: 100%;
 }
 
 /* Services section */
 .services {
-    background-color: #ffffff;
+    background-image: url('background.webp');
+    background-size: cover;
+    background-position: center;
     padding: 2rem;
+    color: #fff;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-align: center;
 }
 
 .services .service-item {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .services h3 {
     font-size: 1.8rem;
-    color: #126094;
-    font-weight: bold;
-    margin-top: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
 }
 
 .services p {
-    font-size: 1.4rem;
-    color: #333333;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
 }
 
 /* Contact Form */
@@ -86,29 +85,21 @@ form {
     padding: 2rem;
 }
 
-form input, form textarea {
-    margin-bottom: 1.5rem;
+form input,
+form textarea {
+    margin-bottom: 1rem;
     padding: 10px;
-    width: 100%;
+    width: 80%;
     max-width: 400px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    font-size: 1.4rem;
 }
 
 form input[type="submit"] {
     background-color: #126094;
     color: white;
     border: none;
-    font-size: 1.6rem;
+    font-size: 16px;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-form input[type="submit"]:hover {
-    background-color: #0b466c;
 }
 
 /* Footer */
@@ -116,6 +107,18 @@ footer {
     background: #126094;
     color: #ffffff;
     text-align: center;
-    padding: 1.5rem 0;
-    font-size: 1.4rem;
+    padding: 1rem 0;
 }
+
+footer p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
