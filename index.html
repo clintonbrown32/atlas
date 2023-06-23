@@ -8,44 +8,100 @@
     <link rel="stylesheet" href="styles.css">
     <title>Atlas - Real Estate Investment Company</title>
     <style>
+        /* Add your CSS styles here */
+
+        /* Reset some default styles in browsers */
+        body, h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Apply a background color to the whole document */
         body {
-            background-image: url("background.webp");
-            background-size: cover;
-            background-repeat: no-repeat;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header styles */
+        header {
+            background: #126094;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .header-content .logo img {
+            height: 80px;
+        }
+
+        .header-content h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        /* Intro section */
+        .intro {
+            padding: 2rem;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .intro h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Services section */
+        .services {
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        .services .service-item {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .services h3 {
+            font-size: 1.5rem;
+            color: #126094;
+        }
+
+        .services p {
+            font-size: 1.2rem;
             color: #333;
         }
 
-        /* Add your CSS styles here */
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo {
-            margin-right: 10px;
-        }
-
-        .intro {
+        /* Contact Form */
+        form {
             text-align: center;
-            margin: 50px 0;
+            padding: 2rem;
         }
 
-        .services {
-            text-align: center;
-            margin-bottom: 50px;
+        form input,
+        form textarea {
+            margin-bottom: 1rem;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
         }
 
-        .service-item {
-            margin: 30px;
+        form input[type="submit"] {
+            background-color: #126094;
+            color: white;
+            border: none;
+            font-size: 16px;
+            padding: 10px 20px;
+            cursor: pointer;
         }
 
+        /* Footer */
         footer {
-            background-color: #f5f5f5;
-            padding: 20px;
+            background: #126094;
+            color: #ffffff;
             text-align: center;
+            padding: 1rem 0;
         }
     </style>
 </head>
@@ -80,13 +136,8 @@
         <div class="service-item">
             <h3>Industrial & Solar</h3>
             <img src="INDUSTRIAL.jpg" alt="Industrial">
-            <img src="solar.webp" alt="Solar">
+            <img src="panels.webp" alt="Solar Panels">
             <p>At the forefront of sustainable investment with a focus on solar and other renewable energies.</p>
-        </div>
-        <div class="service-item">
-            <h3>Real Estate Law</h3>
-            <img src="law.jpg" alt="Law">
-            <p>Expertise in real estate law, ensuring safe and compliant investment strategies.</p>
         </div>
         <div class="service-item">
             <h3>Investment</h3>
@@ -108,3 +159,4 @@
 </body>
 
 </html>
+
