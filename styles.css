@@ -16,28 +16,32 @@ header {
     background: #126094;
     color: #ffffff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
 }
 
 .header-content .logo img {
     height: 80px;
+    vertical-align: middle;
 }
 
 .header-content h1 {
     margin: 0;
     font-size: 2.5rem;
+    font-weight: bold;
 }
 
 /* Intro section */
 .intro {
     padding: 2rem;
     text-align: center;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 .intro h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #126094;
+    font-weight: bold;
 }
 
 /* About section */
@@ -47,25 +51,33 @@ header {
 }
 
 .about h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
     color: #126094;
+    font-weight: bold;
 }
 
 /* Services section */
 .services {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 2rem;
 }
 
 .services .service-item {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .services h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #126094;
+    font-weight: bold;
+    margin-top: 1.5rem;
+}
+
+.services p {
+    font-size: 1.4rem;
+    color: #333333;
 }
 
 /* Contact Form */
@@ -75,19 +87,28 @@ form {
 }
 
 form input, form textarea {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     padding: 10px;
-    width: 80%;
+    width: 100%;
     max-width: 400px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1.4rem;
 }
 
 form input[type="submit"] {
     background-color: #126094;
     color: white;
     border: none;
-    font-size: 16px;
+    font-size: 1.6rem;
     padding: 10px 20px;
     cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0b466c;
 }
 
 /* Footer */
@@ -95,5 +116,6 @@ footer {
     background: #126094;
     color: #ffffff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
+    font-size: 1.4rem;
 }
