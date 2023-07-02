@@ -1,3 +1,7 @@
+
+
+
+
 /* Reset some default styles in browsers */
 body, h1, h2, h3, p {
     margin: 0;
@@ -44,7 +48,8 @@ header {
 }
 
 .intro img {
-    max-width: 100%;
+    width: 100%;
+    width: auto;
 }
 
 /* Services section */
