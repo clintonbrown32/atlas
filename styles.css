@@ -55,8 +55,7 @@ header {
 /* Services section */
 .services {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-image: url('background.webp');
     background-size: cover;
@@ -66,18 +65,15 @@ header {
 }
 
 .services .service-item {
-    flex-basis: 33%;
     text-align: center;
     margin-bottom: 2rem;
+    flex: 0 0 calc(25% - 1rem);
 }
 
 .services .service-item img {
     width: 100%;
-    max-width: 200px;
     height: auto;
 }
-
-
 
 .services p {
     font-size: 1.2rem;
