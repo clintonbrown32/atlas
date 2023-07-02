@@ -54,6 +54,10 @@ header {
 
 /* Services section */
 .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     background-image: url('background.webp');
     background-size: cover;
     background-position: center;
@@ -61,29 +65,28 @@ header {
     color: #fff;
 }
 
-.services h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #fff;
-    text-align: center;
-}
-
 .services .service-item {
+    flex-basis: 33%;
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.services h3 {
-    font-size: 1.8rem;
-    color: #fff;
-    margin-bottom: 1rem;
+.services .service-item img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
 }
+
+
 
 .services p {
     font-size: 1.2rem;
     color: #fff;
     margin-bottom: 1.5rem;
 }
+
+
+
 
 /* Contact Form */
 form {
