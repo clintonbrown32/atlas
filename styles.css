@@ -51,10 +51,11 @@ header {
 .intro h2 {
   font-size: 1rem;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem; /* Adjust the margin-bottom value as desired */
   color: #ffffff;
   text-align: center;
 }
+
 
 
 
