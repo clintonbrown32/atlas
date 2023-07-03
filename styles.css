@@ -37,7 +37,22 @@ header {
 /* Intro section */
 .intro {
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.intro .logo {
+  margin-bottom: 1rem;
+}
+
+.intro h2 {
+  font-size: 1rem;
+  margin-bottom: 0;
+  color: #126094;
+  text-align: center;
+}
+
 
 .intro img {
   width: 100vw;
@@ -47,13 +62,6 @@ header {
   display: block;
 }
 
-
-.intro h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #126094;
-    text-align: center;
-}
 
 /* Services section */
 .services {
