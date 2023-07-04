@@ -117,6 +117,7 @@ header {
 form {
     text-align: center;
     padding: 2rem;
+    background-image: url('background2.webp');
 }
 
 form input,
