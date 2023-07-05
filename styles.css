@@ -35,46 +35,39 @@ header {
 }
 
 /* Intro section */
-.intro img {
-    width: 100%;
-    height: auto;
-    max-height: 200px; /* Adjust the value as needed */
-    display: block;
+.intro {
+  position: relative;
 }
 
-.intro .search-bar {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 400px;
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.particles-container {
+  position: relative;
+  display: inline-block;
 }
 
-.intro .search-bar input[type="text"] {
-    width: calc(100% - 30px); /* Adjust the value to leave space for the icon */
-    padding: 10px;
-    border: none;
-    outline: none;
-    font-size: 16px;
+.search-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 8px;
 }
 
-.intro .search-bar .search-icon {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #888888;
+#searchInput {
+  border: none;
+  outline: none;
+  padding-left: 28px;
 }
 
-.intro .search-bar input[type="text"]:focus {
-    border-color: #126094;
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  color: #888888;
 }
+
 
 
 /* Services section */
