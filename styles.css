@@ -1,7 +1,6 @@
 
 
 
-
 /* Reset some default styles in browsers */
 body, h1, h2, h3, p {
     margin: 0;
@@ -35,15 +34,49 @@ header {
 }
 
 /* Intro section */
-<section class="intro">
-  <div class="particles-container">
-    <div class="particles-overlay"></div>
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search">
-      <span class="search-icon"></span>
-    </div>
-  </div>
-</section>
+.intro {
+    position: relative;
+    padding: 0;
+}
+
+.intro img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.intro .search-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intro .search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.intro .search-bar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #126094;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
 
 
 /* Services section */
@@ -134,5 +167,3 @@ footer a {
     color: #ffffff;
     text-decoration: underline;
 }
-
-
