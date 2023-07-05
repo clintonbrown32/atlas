@@ -36,34 +36,47 @@ header {
 
 /* Intro section */
 .intro {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #126094;
-  color: #ffffff;
+    position: relative;
+    padding: 0;
 }
-
-.intro .logo {
-  margin-bottom: 0;
-}
-
-.intro h2 {
-  font-size: 0.5rem;
-  margin-top: 0;
-  margin-bottom: 0.5rem; /* Adjust the margin-bottom value as desired */
-  color: #ffffff;
-  text-align: center;
-}
-
-
 
 .intro img {
-  width: 100vw;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  display: block;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.intro .search-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intro .search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.intro .search-bar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #126094;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 
