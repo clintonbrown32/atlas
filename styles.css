@@ -48,16 +48,16 @@ header {
 
 .intro .search-bar {
   position: absolute;
-  top: 100%;
-  left: 100%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  max-width: 400px;
+  max-width: 600px; /* Increase the max-width as needed */
+  margin-top: 1rem; /* Add margin to create spacing */
   padding: 10px;
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
 }
 
 .intro .search-bar input[type="text"] {
@@ -66,7 +66,6 @@ header {
   border: none;
   outline: none;
   font-size: 16px;
-     margin-top: 30px;
 }
 
 .intro .search-bar .search-icon {
@@ -75,6 +74,14 @@ header {
   top: 50%;
   transform: translateY(-50%);
   color: #000000;
+}
+
+.intro .search-bar input[type="text"] {
+  padding-left: 30px;
+}
+
+.intro .search-bar button {
+  display: none;
 }
 
 /* Services section */
