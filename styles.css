@@ -79,6 +79,8 @@ header {
 
 .intro .search-bar input[type="text"] {
   padding-left: 30px;
+    width: 90%;
+    
 }
 
 .intro .search-bar button {
