@@ -34,10 +34,14 @@ header {
 }
 
 /* Intro section */
+/* Intro section */
 .intro {
     position: relative;
     padding: 0;
     overflow: hidden;
+    background-image: url('background.webp'); /* Add the background image */
+    background-size: cover;
+    background-position: center;
 }
 
 .intro img {
@@ -47,43 +51,40 @@ header {
 }
 
 .intro .search-bar {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 600px; /* Increase the max-width as needed */
-  padding: 10px;
-  background-color: #ffffff;
-  border-radius: 3px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
 }
 
 .intro .search-bar input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  outline: none;
-  font-size: 16px;
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
 }
 
 .intro .search-bar .search-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #000000;
+    margin-right: 10px;
+    color: #000000;
+    font-size: 18px;
 }
 
 .intro .search-bar input[type="text"] {
-  padding-left: 30px;
-    width: 90%;
-    
+    padding-left: 30px;
 }
 
 .intro .search-bar button {
-  display: none;
+    display: none;
 }
 
 /* Services section */
