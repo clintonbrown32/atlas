@@ -59,6 +59,44 @@
     </div>
 </section>
 
+   <script>
+        function initialize() {
+            const feedContainer = document.getElementById('rss-feed');
+            const feedUrl = 'https://www.forbes.com/real-estate/feed/';
+
+            const feed = new google.feeds.Feed(feedUrl);
+            feed.setNumEntries(5); // Set the number of entries to display
+
+            feed.load(function (result) {
+                if (!result.error) {
+                    const entries = result.feed.entries;
+                    let html = '';
+
+                    for (let i = 0; i < entries.length; i++) {
+                        const entry = entries[i];
+                        html += '<h2>' + entry.title + '</h2>';
+                        html += '<p>' + entry.contentSnippet + '</p>';
+                        html += '<a href="' + entry.link + '">Read More</a>';
+                    }
+
+                    feedContainer.innerHTML = html;
+                }
+            });
+        }
+
+        // Load the Google Feed API asynchronously
+        function loadScript() {
+            const script = document.createElement('script');
+            script.src = 'https://www.google.com/jsapi';
+            script.type = 'text/javascript';
+            script.onload = initialize;
+            document.getElementsByTagName('head')[0].appendChild(script);
+        }
+
+        loadScript();
+    </script>
+
+    
 
 
 
