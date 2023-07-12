@@ -84,42 +84,10 @@
     </form>
 
 
-      <script>
-        function initialize() {
-            const feedContainer = document.getElementById('rss-feed');
-            const feedUrl = 'https://www.forbes.com/real-estate/feed/';
+      <div id="rss-feed">
+  <!-- The RSS feed content will be injected here -->
+</div>
 
-            const feed = new google.feeds.Feed(feedUrl);
-            feed.setNumEntries(5); // Set the number of entries to display
-
-            feed.load(function (result) {
-                if (!result.error) {
-                    const entries = result.feed.entries;
-                    let html = '';
-
-                    for (let i = 0; i < entries.length; i++) {
-                        const entry = entries[i];
-                        html += '<h2>' + entry.title + '</h2>';
-                        html += '<p>' + entry.contentSnippet + '</p>';
-                        html += '<a href="' + entry.link + '">Read More</a>';
-                    }
-
-                    feedContainer.innerHTML = html;
-                }
-            });
-        }
-
-        // Load the Google Feed API asynchronously
-        function loadScript() {
-            const script = document.createElement('script');
-            script.src = 'https://www.google.com/jsapi';
-            script.type = 'text/javascript';
-            script.onload = initialize;
-            document.getElementsByTagName('head')[0].appendChild(script);
-        }
-
-        loadScript();
-    </script>
 
 
 
@@ -129,6 +97,26 @@
     <footer>
         <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
     </footer>
+<script>
+  // Fetch the RSS feed data
+  fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+    .then(response => response.json())
+    .then(data => {
+      const feedContainer = document.getElementById('rss-feed');
+      let feedContent = '';
+      
+      // Loop through the feed items and generate HTML for each item
+      data.items.forEach(item => {
+        feedContent += `<h3>${item.title}</h3>`;
+        feedContent += `<p>${item.description}</p>`;
+        feedContent += `<a href="${item.link}">Read more</a>`;
+      });
+      
+      // Inject the feed content into the HTML
+      feedContainer.innerHTML = feedContent;
+    })
+    .catch(error => console.error(error));
+</script>
 
     
 </body>
