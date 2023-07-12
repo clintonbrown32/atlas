@@ -98,24 +98,23 @@
         <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
     </footer>
 <script>
+  <script>
   // Fetch the RSS feed data
   fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
     .then(response => response.json())
     .then(data => {
       const feedContainer = document.getElementById('rss-feed');
       let feedContent = '';
+      const maxItems = 5; // Set the maximum number of news items to display
+      const items = data.items.slice(0, maxItems); // Limit the number of items
       
       // Loop through the feed items and generate HTML for each item
-      data.items.forEach(item => {
+      items.forEach(item => {
+        feedContent += '<div class="feed-item">';
+        feedContent += `<img src="${item.thumbnail}" alt="${item.title}" class="thumbnail">`;
         feedContent += `<h3>${item.title}</h3>`;
-        feedContent += `<p>${item.description}</p>`;
-        feedContent += `<a href="${item.link}">Read more</a>`;
-      });
-      
-      // Inject the feed content into the HTML
-      feedContainer.innerHTML = feedContent;
-    })
-    .catch(error => console.error(error));
+        feedContent += `<p>${
+
 </script>
 
     
