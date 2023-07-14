@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Atlas - Real Estate Investment Company</title>
-    
 </head>
 
 <body>
@@ -78,22 +77,19 @@
         </div>
     </form>
 
-    <div id="rss-feed">
-        <!-- The RSS feed content will be injected here -->
-    </div>
-
     <footer>
         <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
     </footer>
+
     <script>
         // Fetch the RSS feed data
         fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
             .then(response => response.json())
             .then(data => {
-                const feedContainer = document.getElementById('rss-feed');
+                const feedContainer = document.querySelector('.rss-feed-container');
 
                 // Limit the number of news items to display at once
-                const maxItems = 4; // Four items per row
+                const maxItems = 12; // Three rows with four items each
                 const feedItems = data.items.slice(0, maxItems);
 
                 // Generate HTML for each feed item
