@@ -7,7 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Atlas - Real Estate Investment Company</title>
-    
+    <style>
+        .rss-feed-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .feed-item {
+            width: 240px;
+            margin: 10px;
+        }
+
+        .feed-item img {
+            width: 100%;
+            height: 135px;
+            object-fit: cover;
+        }
+
+        .feed-item-content {
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,60 +38,55 @@
         <div class="header-content">
             <div class="logo">
                 <img src="logo150.png" alt="Atlas Logo">
-                <center> <h2>Every Dream Begins With Real Estate&trade;</h2></center>
-                   
+                <center>
+                    <h2>Every Dream Begins With Real Estate&trade;</h2>
+                </center>
             </div>
         </div>
     </header>
 
+    <section class="intro">
+        <img src="background.webp" alt="Particles">
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+    </section>
 
-
-    
-   <section class="intro">
-    <img src="background.webp" alt="Particles">
-    <div class="search-bar">
-        <input type="text" placeholder="Search">
-        <button>Search</button>
-    </div>
-</section>
-
-    
     <section class="services">
-    <h2 class="services-heading">Our Real Estate Services</h2>
-    <div class="service-items-container">
-        <div class="service-item">
-            <a href="residential.html">
-                <img src="RESIDENTIAL.jpg" alt="Residential">
-            </a>
+        <h2 class="services-heading">Our Real Estate Services</h2>
+        <div class="service-items-container">
+            <div class="service-item">
+                <a href="residential.html">
+                    <img src="RESIDENTIAL.jpg" alt="Residential">
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="commercial.html">
+                    <img src="COMMERCIAL.jpg" alt="Commercial">
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="solar.html">
+                    <img src="SOLAR.jpg" alt="Solar">
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="investment.html">
+                    <img src="INVESTMENT.jpg" alt="Investment">
+                </a>
+            </div>
         </div>
-        <div class="service-item">
-            <a href="commercial.html">
-                <img src="COMMERCIAL.jpg" alt="Commercial">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="solar.html">
-                <img src="SOLAR.jpg" alt="Solar">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="investment.html">
-                <img src="INVESTMENT.jpg" alt="Investment">
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 
-     <div id="rss-feed">
+    <div class="rss-feed-container">
         <!-- The RSS feed content will be injected here -->
     </div>
 
- 
-
     <form action="https://script.google.com/macros/s/AKfycbw5JTHAeLHL1dY-xrfPJRIvAHNKT5ioc3NmiGZKue_TBLco9t8sDfnouZeox6ClYXYw8Q/exec" method="post">
         <center>
-         <h2 class="contact">Contact Us</h2>
-</center>
+            <h2 class="contact">Contact Us</h2>
+        </center>
         <div class="form-group">
             <input type="text" name="name" placeholder="Name" class="center-input">
         </div>
@@ -83,52 +101,41 @@
         </div>
     </form>
 
+    <div id="rss-feed">
+        <!-- The RSS feed content will be injected here -->
+    </div>
 
-      <div id="rss-feed">
-  <!-- The RSS feed content will be injected here -->
-</div>
-
-
-
-
-
-
-    
     <footer>
         <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
     </footer>
-<script>
-  // Fetch the RSS feed data
-  fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
-    .then(response => response.json())
-    .then(data => {
-      const feedContainer = document.getElementById('rss-feed');
-      
-      // Limit the number of news items to display at once
-      const maxItems = 5;
-      const feedItems = data.items.slice(0, maxItems);
-      
-      // Generate HTML for each feed item
-      const feedContent = feedItems.map(item => `
-        <div class="feed-item">
-          <img src="${item.thumbnail}" alt="Thumbnail">
-          <div class="feed-item-content">
-            <h3>${item.title}</h3>
-            <p>${item.description}</p>
-            <a href="${item.link}">Read more</a>
-          </div>
-        </div>
-      `).join('');
-      
-      // Inject the feed content into the HTML
-      feedContainer.innerHTML = feedContent;
-    })
-    .catch(error => console.error(error));
-</script>
+    <script>
+        // Fetch the RSS feed data
+        fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+            .then(response => response.json())
+            .then(data => {
+                const feedContainer = document.getElementById('rss-feed');
 
+                // Limit the number of news items to display at once
+                const maxItems = 8; // Two rows with four items each
+                const feedItems = data.items.slice(0, maxItems);
 
-    
+                // Generate HTML for each feed item
+                const feedContent = feedItems.map(item => `
+                    <div class="feed-item">
+                        <img src="${item.thumbnail}" alt="Thumbnail">
+                        <div class="feed-item-content">
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                            <a href="${item.link}">Read more</a>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Inject the feed content into the HTML
+                feedContainer.innerHTML = feedContent;
+            })
+            .catch(error => console.error(error));
+    </script>
 </body>
 
 </html>
-
