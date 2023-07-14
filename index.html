@@ -84,31 +84,31 @@
 
     <script>
         // Fetch the RSS feed data
-        fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
-            .then(response => response.json())
-            .then(data => {
-                const feedContainer = document.querySelector('.rss-feed-container');
+fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+  .then(response => response.json())
+  .then(data => {
+    const feedContainer = document.querySelector('.rss-feed-container');
 
-                // Limit the number of news items to display at once
-                const maxItems = 12; // Three rows with four items each
-                const feedItems = data.items.slice(0, maxItems);
+    // Limit the number of news items to display at once
+    const maxItems = 4; // Maximum of four items per row
+    const feedItems = data.items.slice(0, maxItems);
 
-                // Generate HTML for each feed item
-                const feedContent = feedItems.map(item => `
-                    <div class="feed-item">
-                        <img src="${item.thumbnail}" alt="Thumbnail">
-                        <div class="feed-item-content">
-                            <h3>${item.title}</h3>
-                            <p>${item.description}</p>
-                            <a href="${item.link}">Read more</a>
-                        </div>
-                    </div>
-                `).join('');
+    // Generate HTML for each feed item
+    const feedContent = feedItems.map(item => `
+      <div class="feed-item">
+        <img src="${item.thumbnail}" alt="Thumbnail">
+        <div class="feed-item-content">
+          <h3>${item.title}</h3>
+          <a href="${item.link}" target="_blank">Read more</a>
+        </div>
+      </div>
+    `).join('');
 
-                // Inject the feed content into the HTML
-                feedContainer.innerHTML = feedContent;
-            })
-            .catch(error => console.error(error));
+    // Inject the feed content into the HTML
+    feedContainer.innerHTML = feedContent;
+  })
+  .catch(error => console.error(error));
+
     </script>
 </body>
 
