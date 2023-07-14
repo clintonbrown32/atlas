@@ -1,6 +1,3 @@
-
-
-
 /* Reset some default styles in browsers */
 body, h1, h2, h3, p {
     margin: 0;
@@ -33,7 +30,6 @@ header {
     font-size: 0.8rem;
 }
 
-/* Intro section */
 /* Intro section */
 .intro {
     position: relative;
@@ -96,7 +92,7 @@ header {
 .services-heading {
     margin-bottom: 1rem;
     color: #ffffff;
-     padding-top: 25px;
+    padding-top: 25px;
 }
 
 .service-items-container {
@@ -124,31 +120,26 @@ header {
     color: #ffffff;
 }
 
-
-
 /* Contact Form */
 
 .contact {
- font-size: 1.5em;
+    font-size: 1.5em;
     padding-top: 15px;
-    
-    
 }
+
 form {
     text-align: center;
-
     background-image: url('background2.webp');
 }
 
 form input,
 form textarea {
-  margin-bottom: 1rem;
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
-  font-family: Arial, sans-serif; /* Add font-family property */
-  font-size: 16px; /* Adjust font size as needed */
-
+    margin-bottom: 1rem;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    font-family: Arial, sans-serif; /* Add font-family property */
+    font-size: 16px; /* Adjust font size as needed */
 }
 
 form input[type="submit"] {
@@ -158,6 +149,30 @@ form input[type="submit"] {
     font-size: 16px;
     padding: 10px 20px;
     cursor: pointer;
+}
+
+/* RSS Feed */
+.rss-feed-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.feed-item {
+    width: 240px;
+    margin: 10px;
+}
+
+.feed-item img {
+    width: 100%;
+    height: 135px;
+    object-fit: cover;
+}
+
+.feed-item-content {
+    padding: 10px;
 }
 
 /* Footer */
