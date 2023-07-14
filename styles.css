@@ -161,7 +161,7 @@ form input[type="submit"] {
 .rss-feed-container {
     max-width: 1300px;
     margin: 0 auto;
-    overflow-y: scroll;
+    overflow-x: scroll;
     white-space: nowrap;
 }
 
