@@ -83,7 +83,7 @@
     </footer>
 
     <script>
-        // Fetch the RSS feed data
+      // Fetch the RSS feed data
 fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
   .then(response => response.json())
   .then(data => {
@@ -96,11 +96,10 @@ fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com
     // Generate HTML for each feed item
     const feedContent = feedItems.map(item => `
       <div class="feed-item">
-        <img src="${item.thumbnail}" alt="Thumbnail">
-        <div class="feed-item-content">
+        <a href="${item.link}" target="_blank">
+          <img src="${item.thumbnail}" alt="Thumbnail">
           <h3>${item.title}</h3>
-          <a href="${item.link}" target="_blank">Read more</a>
-        </div>
+        </a>
       </div>
     `).join('');
 
@@ -108,6 +107,7 @@ fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com
     feedContainer.innerHTML = feedContent;
   })
   .catch(error => console.error(error));
+
 
     </script>
 </body>
