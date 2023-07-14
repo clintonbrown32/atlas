@@ -152,22 +152,29 @@ form input[type="submit"] {
 }
 
 /* RSS Feed */
+/* ... Your existing CSS styles ... */
+
+/* RSS Feed */
 .rss-feed-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 960px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
 .feed-item {
-    width: 240px;
+    width: 320px;
     margin: 10px;
+    height: 429px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .feed-item img {
     width: 100%;
-    height: 135px;
+    height: 240px;
     object-fit: cover;
 }
 
@@ -175,23 +182,14 @@ form input[type="submit"] {
     padding: 10px;
 }
 
-.feed-item-content p {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limit to three lines */
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
+.feed-item-content h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
-/* Arrange feed items in rows with four items each */
-@media (min-width: 768px) {
-    .rss-feed-container {
-        justify-content: flex-start;
-    }
-
-    .rss-feed-container .feed-item {
-        flex: 0 0 calc(25% - 1rem);
-    }
+.feed-item-content a {
+    color: #126094;
+    text-decoration: underline;
 }
 
 /* Footer */
