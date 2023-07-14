@@ -151,16 +151,11 @@ form input[type="submit"] {
     cursor: pointer;
 }
 
-/* RSS Feed */
-/* ... Your existing CSS styles ... */
-
-/* RSS Feed */
-/* ... Your existing CSS styles ... */
 
 /* RSS Feed */
 .rss-feed-container {
     max-width: 1300px;
-    min-height: 350px;
+    min-height: 300px;
     margin: 0 auto;
     overflow-x: scroll;
     white-space: nowrap;
