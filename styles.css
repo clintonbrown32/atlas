@@ -153,6 +153,7 @@ form input[type="submit"] {
 
 /* RSS Feed */
 /* RSS Feed */
+/* RSS Feed */
 .rss-feed-container {
   display: flex;
   flex-wrap: nowrap;
@@ -183,23 +184,24 @@ form input[type="submit"] {
 
 .feed-item-content {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .feed-item-content h3 {
   font-size: 14px; /* Adjust the font size as needed */
   margin-bottom: 5px; /* Adjust the margin as needed */
-  overflow: visible;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: break-word; /* Wrap the text within the headline */
+  word-wrap: break-word;
 }
 
 .feed-item-content a {
   font-size: 12px; /* Adjust the font size as needed */
   color: #126094;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block;
-  white-space: nowrap;
+  overflow-wrap: break-word; /* Wrap the text within the link */
+  word-wrap: break-word;
 }
 
 /* Arrange feed items in rows with four items each */
@@ -215,7 +217,6 @@ form input[type="submit"] {
     flex: 0 0 calc(25% - 20px); /* Adjust the width and margin as needed */
   }
 }
-
 
 /* Footer */
 footer {
