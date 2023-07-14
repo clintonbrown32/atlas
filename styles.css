@@ -175,6 +175,25 @@ form input[type="submit"] {
     padding: 10px;
 }
 
+.feed-item-content p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to three lines */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+/* Arrange feed items in rows with four items each */
+@media (min-width: 768px) {
+    .rss-feed-container {
+        justify-content: flex-start;
+    }
+
+    .rss-feed-container .feed-item {
+        flex: 0 0 calc(25% - 1rem);
+    }
+}
+
 /* Footer */
 footer {
     background: #126094;
