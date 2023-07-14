@@ -160,6 +160,7 @@ form input[type="submit"] {
 /* RSS Feed */
 .rss-feed-container {
     max-width: 1300px;
+    min-height: 350px;
     margin: 0 auto;
     overflow-x: scroll;
     white-space: nowrap;
