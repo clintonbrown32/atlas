@@ -157,7 +157,7 @@ form input[type="submit"] {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: scroll;
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   height: 170px; /* Adjust the height as needed to show one row */
 }
@@ -188,7 +188,7 @@ form input[type="submit"] {
 .feed-item-content h3 {
   font-size: 14px; /* Adjust the font size as needed */
   margin-bottom: 5px; /* Adjust the margin as needed */
-  overflow: hidden;
+  overflow: visible;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
