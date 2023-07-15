@@ -88,7 +88,7 @@
     </footer>
 
     <script>
-// JavaScript for fetching and populating the feed items
+ // JavaScript for fetching and populating the feed items
 const feedContainer = document.querySelector('.rss-feed-container');
 
 fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
@@ -109,36 +109,24 @@ fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com
 
     // Inject the feed content into the HTML
     feedContainer.innerHTML = feedContent;
-
-    // JavaScript for horizontal scrolling with arrow buttons
-    const scrollContainer = document.querySelector('.rss-feed-container');
-    const scrollLeftButton = document.querySelector('.scroll-left');
-    const scrollRightButton = document.querySelector('.scroll-right');
-
-    // Get the total width of all feed items
-    const totalWidth = feedItems.length * (scrollContainer.firstElementChild.offsetWidth + 20); // 20px is the margin value
-
-    // Set the width of the feed container to fit all feed items
-    scrollContainer.style.width = `${totalWidth}px`;
-
-    scrollLeftButton.addEventListener('click', () => {
-      scrollContainer.scrollBy({ left: -scrollContainer.clientWidth, behavior: 'smooth' });
-    });
-
-    scrollRightButton.addEventListener('click', () => {
-      scrollContainer.scrollBy({ left: scrollContainer.clientWidth, behavior: 'smooth' });
-    });
-
-    // Hide the arrows when there's no more content to scroll
-    scrollContainer.addEventListener('scroll', () => {
-      scrollLeftButton.style.display = scrollContainer.scrollLeft > 0 ? 'block' : 'none';
-      scrollRightButton.style.display = scrollContainer.scrollLeft < totalWidth - scrollContainer.clientWidth ? 'block' : 'none';
-    });
   })
   .catch(error => console.error(error));
 
+// JavaScript for horizontal scrolling with arrow buttons
+const scrollContainer = document.querySelector('.rss-feed-container');
+const scrollLeftButton = document.querySelector('.scroll-left');
+const scrollRightButton = document.querySelector('.scroll-right');
+
+scrollLeftButton.addEventListener('click', () => {
+  scrollContainer.scrollBy({ left: -scrollContainer.clientWidth, behavior: 'smooth' });
+});
+
+scrollRightButton.addEventListener('click', () => {
+  scrollContainer.scrollBy({ left: scrollContainer.clientWidth, behavior: 'smooth' });
+});
 
     </script>
 </body>
 
 </html>
+
