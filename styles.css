@@ -151,10 +151,13 @@ form input[type="submit"] {
     cursor: pointer;
 }
 /* RSS Feed */
+/* RSS Feed */
 .rss-feed {
   text-align: center;
   position: relative; /* Add position relative for positioning arrows */
   overflow: hidden; /* Hide the overflow to show only four items */
+  max-width: 1200px; /* Limit the width of the feed container */
+  margin: 0 auto;
 }
 
 .rss-feed-heading {
@@ -228,13 +231,12 @@ form input[type="submit"] {
 }
 
 .scroll-left {
-  left: 0;
+  left: 10px; /* Adjust the position of the left arrow */
 }
 
 .scroll-right {
-  right: 0;
+  right: 10px; /* Adjust the position of the right arrow */
 }
-
 
 /* Footer */
 footer {
