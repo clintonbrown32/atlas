@@ -88,20 +88,23 @@
     </footer>
 
     <script>
-        // JavaScript for fetching and populating the feed items
-const feedContainer = document.querySelector('.rss-feed-container');
-
-fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
   .then(response => response.json())
   .then(data => {
+    const feedContainer = document.querySelector('.rss-feed-container');
+
+    // Limit the number of news items to display at once
+    const maxItems = 4; // Display four feed items
+    const feedItems = data.items.slice(0, maxItems);
+
     // Generate HTML for each feed item
-    const feedContent = data.items.map(item => `
+    const feedContent = feedItems.map(item => `
       <div class="feed-item">
         <img src="${item.thumbnail}" alt="Thumbnail">
         <div class="feed-item-content">
           <h3>${item.title}</h3>
-          <p>${item.description}</p>
-          <a href="${item.link}" target="_blank">Read more</a>
+          
+          <a href="${item.link}" target="_blank">Read more</a> <!-- Updated link URL -->
         </div>
       </div>
     `).join('');
@@ -110,7 +113,6 @@ fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com
     feedContainer.innerHTML = feedContent;
   })
   .catch(error => console.error(error));
-
 
         // JavaScript for horizontal scrolling with arrow buttons
 const scrollContainer = document.querySelector('.rss-feed-container');
