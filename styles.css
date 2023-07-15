@@ -151,7 +151,6 @@ form input[type="submit"] {
     cursor: pointer;
 }
 /* RSS Feed */
-/* RSS Feed */
 .rss-feed {
   text-align: center;
   position: relative; /* Add position relative for positioning arrows */
@@ -170,13 +169,12 @@ form input[type="submit"] {
   display: flex;
   flex-wrap: nowrap;
   /* Adjust the width to fit four items and allow scrolling */
-  width: calc(25% * 4 + 40px); /* (25% * 4) for four items, 40px for arrows */
+  width: calc(25% * 4);
   margin: 0 auto;
-  overflow-x: scroll;
 }
 
 .feed-item {
-  width: calc(25% - 20px); /* Adjust the width of each feed item */
+  flex: 0 0 calc(25% - 20px); /* Adjust the width of each feed item */
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -231,12 +229,13 @@ form input[type="submit"] {
 }
 
 .scroll-left {
-  left: 10px; /* Adjust the position of the left arrow */
+  left: 0;
 }
 
 .scroll-right {
-  right: 10px; /* Adjust the position of the right arrow */
+  right: 0;
 }
+
 
 /* Footer */
 footer {
