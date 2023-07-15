@@ -125,6 +125,14 @@ scrollRightButton.addEventListener('click', () => {
   scrollContainer.scrollBy({ left: scrollContainer.clientWidth, behavior: 'smooth' });
 });
 
+// Hide the arrows when there's no more content to scroll
+scrollContainer.addEventListener('scroll', () => {
+  const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+  scrollLeftButton.style.display = scrollContainer.scrollLeft > 0 ? 'block' : 'none';
+  scrollRightButton.style.display = scrollContainer.scrollLeft < maxScroll ? 'block' : 'none';
+});
+
+
     </script>
 </body>
 
