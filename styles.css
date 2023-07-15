@@ -151,6 +151,7 @@ form input[type="submit"] {
     cursor: pointer;
 }
 /* RSS Feed */
+/* RSS Feed */
 .rss-feed {
   text-align: center;
 }
@@ -175,6 +176,7 @@ form input[type="submit"] {
   display: flex;
   flex-direction: column;
   height: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add drop shadow */
 }
 
 .feed-item img {
@@ -204,19 +206,37 @@ form input[type="submit"] {
   margin-top: auto; /* Move the "Read more" link to the bottom */
 }
 
-/* Arrange feed items in rows with four items each */
-@media (min-width: 768px) {
-  .rss-feed-container {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    overflow-x: hidden;
-    height: auto; /* Remove fixed height to allow scrolling */
-  }
-
-  .rss-feed-container .feed-item {
-    flex: 0 0 calc(25% - 20px); /* Adjust the width and margin as needed */
-  }
+/* Add arrow buttons for horizontal scrolling */
+.rss-feed-container {
+  position: relative;
 }
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #126094;
+  z-index: 1;
+}
+
+.scroll-left {
+  left: 0;
+}
+
+.scroll-right {
+  right: 0;
+}
+
 
 /* Footer */
 footer {
