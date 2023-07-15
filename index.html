@@ -88,8 +88,8 @@
     </footer>
 
     <script>
- // JavaScript for fetching and populating the feed items
-const feedContainer = document.querySelector('.rss-feed-container');
+// JavaScript for fetching and populating the feed items
+const feedContainer = document.querySelector('.rss-feed-container'); // Use the correct class name
 
 fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
   .then(response => response.json())
@@ -113,7 +113,7 @@ fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com
   .catch(error => console.error(error));
 
 // JavaScript for horizontal scrolling with arrow buttons
-const scrollContainer = document.querySelector('.rss-feed-container');
+const scrollContainer = document.querySelector('.rss-feed-container'); // Use the correct class name
 const scrollLeftButton = document.querySelector('.scroll-left');
 const scrollRightButton = document.querySelector('.scroll-right');
 
@@ -131,7 +131,6 @@ scrollContainer.addEventListener('scroll', () => {
   scrollLeftButton.style.display = scrollContainer.scrollLeft > 0 ? 'block' : 'none';
   scrollRightButton.style.display = scrollContainer.scrollLeft < maxScroll ? 'block' : 'none';
 });
-
 
 
     </script>
