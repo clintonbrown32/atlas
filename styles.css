@@ -151,7 +151,6 @@ form input[type="submit"] {
     cursor: pointer;
 }
 /* RSS Feed */
-/* RSS Feed */
 .rss-feed {
   text-align: center;
 }
@@ -168,12 +167,14 @@ form input[type="submit"] {
   overflow-x: scroll;
   max-width: 960px;
   margin: 0 auto;
-  height: 170px; /* Adjust the height as needed to show one row */
 }
 
 .feed-item {
   width: calc(25% - 20px); /* Adjust the width of each feed item */
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .feed-item img {
@@ -183,9 +184,9 @@ form input[type="submit"] {
 }
 
 .feed-item-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .feed-item-content h3 {
@@ -216,6 +217,7 @@ form input[type="submit"] {
     flex: 0 0 calc(25% - 20px); /* Adjust the width and margin as needed */
   }
 }
+
 
 /* Footer */
 footer {
