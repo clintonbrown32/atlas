@@ -154,6 +154,7 @@ form input[type="submit"] {
 .rss-feed {
   text-align: center;
   position: relative; /* Add position relative for positioning arrows */
+  overflow: hidden; /* Hide the overflow to show only four items */
 }
 
 .rss-feed-heading {
@@ -165,9 +166,10 @@ form input[type="submit"] {
 .rss-feed-container {
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: scroll;
-  max-width: 960px;
+  /* Adjust the width to fit four items and allow scrolling */
+  width: calc(25% * 4 + 40px); /* (25% * 4) for four items, 40px for arrows */
   margin: 0 auto;
+  overflow-x: scroll;
 }
 
 .feed-item {
@@ -226,12 +228,13 @@ form input[type="submit"] {
 }
 
 .scroll-left {
-  left: 10px; /* Adjust the position of the left arrow */
+  left: 0;
 }
 
 .scroll-right {
-  right: 10px; /* Adjust the position of the right arrow */
+  right: 0;
 }
+
 
 /* Footer */
 footer {
