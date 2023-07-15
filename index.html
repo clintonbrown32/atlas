@@ -115,22 +115,29 @@ fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com
     const scrollLeftButton = document.querySelector('.scroll-left');
     const scrollRightButton = document.querySelector('.scroll-right');
 
+    // Get the total width of all feed items
+    const totalWidth = feedItems.length * (scrollContainer.firstElementChild.offsetWidth + 20); // 20px is the margin value
+
+    // Set the width of the feed container to fit all feed items
+    scrollContainer.style.width = `${totalWidth}px`;
+
     scrollLeftButton.addEventListener('click', () => {
-      scrollContainer.scrollBy({ left: -scrollContainer.clientWidth, behavior: 'smooth' });
+      scrollContainer.scrollBy({ left: -scrollContainer.offsetWidth, behavior: 'smooth' });
     });
 
     scrollRightButton.addEventListener('click', () => {
-      scrollContainer.scrollBy({ left: scrollContainer.clientWidth, behavior: 'smooth' });
+      scrollContainer.scrollBy({ left: scrollContainer.offsetWidth, behavior: 'smooth' });
     });
 
     // Hide the arrows when there's no more content to scroll
     scrollContainer.addEventListener('scroll', () => {
-      const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      const maxScroll = totalWidth - scrollContainer.offsetWidth;
       scrollLeftButton.style.display = scrollContainer.scrollLeft > 0 ? 'block' : 'none';
       scrollRightButton.style.display = scrollContainer.scrollLeft < maxScroll ? 'block' : 'none';
     });
   })
   .catch(error => console.error(error));
+
 
     </script>
 </body>
