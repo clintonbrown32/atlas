@@ -153,10 +153,12 @@ form input[type="submit"] {
     cursor: pointer;
 }
 /* RSS Feed */
-/* RSS Feed */
 .rss-feed {
   text-align: center;
   position: relative;
+  overflow: hidden; /* Hide the overflow to show only four items */
+  width: 1200px; /* Limit the width of the feed container to 1200px */
+  margin: 0 auto;
 }
 
 .rss-feed-heading {
@@ -168,10 +170,10 @@ form input[type="submit"] {
 .rss-feed-container {
   display: flex;
   flex-wrap: nowrap;
-  width: calc(25% * 4 + 40px); /* (25% * 4) for four items, 40px for arrows */
+  /* Adjust the width to fit four items and allow scrolling */
+  width: calc(25% * 4);
   margin: 0 auto;
-  white-space: nowrap; /* Prevent items from wrapping */
-  overflow-x: hidden; /* Hide the horizontal scrollbar */
+  overflow-x: scroll;
 }
 
 .feed-item {
@@ -182,6 +184,8 @@ form input[type="submit"] {
   height: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add drop shadow */
 }
+
+/* ... Rest of the CSS ... */
 
 
 
