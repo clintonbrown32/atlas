@@ -153,6 +153,7 @@ form input[type="submit"] {
     cursor: pointer;
 }
 /* RSS Feed */
+/* RSS Feed */
 .rss-feed {
   text-align: center;
   position: relative;
@@ -177,15 +178,14 @@ form input[type="submit"] {
 }
 
 .feed-item {
-  width: calc(25% - 20px); /* Adjust the width of each feed item */
+  flex: 0 0 calc(25% - 20px); /* Adjust the width of each feed item */
   margin: 10px;
   display: flex;
   flex-direction: column;
   height: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add drop shadow */
+  flex-shrink: 0; /* Prevent feed items from squeezing into available space */
 }
-
-/* ... Rest of the CSS ... */
 
 
 
