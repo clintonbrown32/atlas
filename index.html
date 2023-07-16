@@ -110,16 +110,6 @@
 
       // Inject the feed content into the HTML
       feedContainer.innerHTML = feedContent;
-
-      // Ensure only four items are visible at a time
-      const scrollContainer = document.querySelector('.rss-feed-container');
-      const feedItemsVisible = 4;
-
-      const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
-      const feedItemMargin = 20; // Adjust this value according to your CSS margin
-
-      const containerWidth = feedItemWidth * feedItemsVisible + feedItemMargin * (feedItemsVisible - 1);
-      scrollContainer.style.width = `${containerWidth}px`;
     })
     .catch(error => console.error(error));
 
@@ -127,6 +117,9 @@
   const scrollContainer = document.querySelector('.rss-feed-container');
   const scrollLeftButton = document.querySelector('.scroll-left');
   const scrollRightButton = document.querySelector('.scroll-right');
+
+  const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
+  const feedItemMargin = 20; // Adjust this value according to your CSS margin
 
   scrollLeftButton.addEventListener('click', () => {
     scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
