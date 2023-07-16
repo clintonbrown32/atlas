@@ -174,7 +174,7 @@ form input[type="submit"] {
   /* Adjust the width to fit four items and allow scrolling */
   width: calc(25% * 4); /* (25% * 4) for four items */
   margin: 0 auto;
-  
+  overflow-x: scroll;
 }
 
 .feed-item {
