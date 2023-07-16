@@ -88,44 +88,49 @@
     </footer>
 
     <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // JavaScript for fetching and populating the feed items
-    const feedContainer = document.querySelector('.rss-feed-container');
+document.addEventListener('DOMContentLoaded', () => {
+  // JavaScript for fetching and populating the feed items
+  const feedContainer = document.querySelector('.rss-feed-container');
 
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
-      .then(response => response.json())
-      .then(data => {
-        const feedItems = data.items;
+  fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+    .then(response => response.json())
+    .then(data => {
+      const feedItems = data.items;
 
-        // Generate HTML for each feed item
-        const feedContent = feedItems.map(item => `
-          <div class="feed-item">
-            <img src="${item.thumbnail}" alt="Thumbnail">
-            <div class="feed-item-content">
-              <h3>${item.title}</h3>
-              <a href="${item.link}" target="_blank">Read more</a>
-            </div>
+      // Generate HTML for each feed item
+      const feedContent = feedItems.map(item => `
+        <div class="feed-item">
+          <img src="${item.thumbnail}" alt="Thumbnail">
+          <div class="feed-item-content">
+            <h3>${item.title}</h3>
+            <a href="${item.link}" target="_blank">Read more</a>
           </div>
-        `).join('');
+        </div>
+      `).join('');
 
-        // Inject the feed content into the HTML
-        feedContainer.innerHTML = feedContent;
-      })
-      .catch(error => console.error(error));
+      // Inject the feed content into the HTML
+      feedContainer.innerHTML = feedContent;
+    })
+    .catch(error => console.error(error));
 
-    // JavaScript for horizontal scrolling with arrow buttons
-    const scrollContainer = document.querySelector('.rss-feed-container');
-    const scrollLeftButton = document.querySelector('.scroll-left');
-    const scrollRightButton = document.querySelector('.scroll-right');
+  // JavaScript for horizontal scrolling with arrow buttons
+  const scrollContainer = document.querySelector('.rss-feed-container');
+  const scrollLeftButton = document.querySelector('.scroll-left');
+  const scrollRightButton = document.querySelector('.scroll-right');
 
-    scrollLeftButton.addEventListener('click', () => {
-      scrollContainer.scrollBy({ left: -scrollContainer.clientWidth, behavior: 'smooth' });
-    });
+  const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
+  const feedItemMargin = 20; // Adjust this value according to your CSS margin
+  const feedItemsVisible = 4;
 
-    scrollRightButton.addEventListener('click', () => {
-      scrollContainer.scrollBy({ left: scrollContainer.clientWidth, behavior: 'smooth' });
-    });
+  scrollLeftButton.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
   });
+
+  scrollRightButton.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
+  });
+});
+
 </script>
 
 </body>
