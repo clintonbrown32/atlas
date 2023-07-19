@@ -6,7 +6,7 @@ body, h1, h2, h3, p {
     padding: 0;
     box-sizing: border-box;
      font-family: 'Brandon Grotesque', sans-serif;
-}
+
 }
 
 /* Apply a background color to the whole document */
@@ -99,7 +99,7 @@ header {
     color: #ffffff;
     padding-top: 25px;
      font-family: 'Brandon Grotesque', sans-serif;
-}
+
 }
 
 .service-items-container {
