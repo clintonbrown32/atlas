@@ -5,6 +5,8 @@ body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+     font-family: 'Brandon Grotesque', sans-serif;
+}
 }
 
 /* Apply a background color to the whole document */
@@ -20,6 +22,7 @@ header {
     color: #ffffff;
     text-align: center;
     padding: 0rem 0;
+     font-family: 'Brandon Grotesque', sans-serif;
 }
 
 .header-content .logo img {
@@ -95,6 +98,8 @@ header {
     margin-bottom: 1rem;
     color: #ffffff;
     padding-top: 25px;
+     font-family: 'Brandon Grotesque', sans-serif;
+}
 }
 
 .service-items-container {
