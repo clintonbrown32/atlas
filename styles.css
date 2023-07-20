@@ -33,6 +33,7 @@ header {
 .header-content h2 {
     margin: 0;
     font-size: 0.8rem;
+    padding-bottom: 5px;
 }
 
 /* Intro section */
