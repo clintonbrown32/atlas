@@ -5,45 +5,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .centered-content {
+            text-align: center;
+        }
+
+        /* Add styling for image placeholders */
+        .image-placeholder {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .image-placeholder img {
+            max-width: 100%;
+        }
+    </style>
     <title>Atlas - Real Estate Investment Company</title>
 </head>
 
-<style>
-    body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.centered-content {
-    text-align: center;
-}
-
-/* Add styling for image placeholders */
-.image-placeholder {
-    margin: 20px 0;
-    text-align: center;
-}
-
-.image-placeholder img {
-    max-width: 100%;
-}
-
-</style>
-
-    
 <body>
     <div class="container">
         <header>
-            <!-- Header content goes here -->
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/logo150.png" alt="Atlas Logo">
+                    <center>
+                        <h2>Every Dream Begins With Real Estate&trade;</h2>
+                    </center>
+                </div>
+            </div>
         </header>
 
-        <!-- Other sections go here -->
+        <section class="intro">
+            <img src="assets/background.webp" alt="Particles">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2 class="services-heading">Our Real Estate Services</h2>
+            <div class="service-items-container">
+                <div class="service-item">
+                    <a href="residential.html">
+                        <img src="assets/residential.jpg" alt="Residential">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="commercial.html">
+                        <img src="assets/commercial.jpg" alt="Commercial">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="solar.html">
+                        <img src="assets/solar.jpg" alt="Solar">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="investment.html">
+                        <img src="assets/investment.jpg" alt="Investment">
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <section class="residential">
             <div class="centered-content">
