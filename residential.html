@@ -13,26 +13,7 @@
             font-family: 'Brandon Grotesque', Arial, sans-serif;
         }
 
-        .residential {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .centered-content {
-            text-align: center;
-        }
-
-        /* Add styling for image placeholders */
-        .image-placeholder {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .image-placeholder img {
-            max-width: 100%;
-        }
-
-        ./* Additional styling for .residential section */
+      /* Additional styling for .residential section */
 .residential {
     background-color: #f7f7f7;
     padding: 40px 20px;
@@ -69,25 +50,38 @@
     max-width: 600px;
     margin: 20px auto;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Optional: Add a subtle border radius to the image placeholder */
-.image-placeholder img {
     border-radius: 5px;
 }
 
+/* Arrange text and image in columns */
+.residential .centered-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.residential .centered-content > * {
+    flex-basis: calc(50% - 20px);
+}
+
+.residential .centered-content h3 {
+    color: #333;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
 /* Optional: Add a little spacing between the image and its description */
-.image-placeholder + h3,
-.residential .section-heading + p {
+.image-placeholder + h3 {
     margin-top: 20px;
 }
 
 /* Optional: Add a divider line between sections */
-.residential h3 + p,
-.residential ul + .image-placeholder {
+.residential h3 + p {
     border-top: 1px solid #ddd;
     padding-top: 20px;
 }
+
 
     </style>
     <title>Atlas - Real Estate Investment Company</title>
