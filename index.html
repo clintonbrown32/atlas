@@ -77,12 +77,13 @@
         </div>
     </form>
 
+
     <footer>
         <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
     </footer>
 
     <script>
- document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
             // JavaScript for fetching and populating the feed items
             const feedContainer = document.querySelector('.rss-feed-container');
 
@@ -125,31 +126,31 @@
 
             // Add an event listener to the form submission
             document.getElementById('contactForm').addEventListener('submit', function (event) {
-  event.preventDefault(); // Prevent the default form submission
+                event.preventDefault(); // Prevent the default form submission
 
-  fetch(this.action, {
-    method: 'POST',
-    body: new FormData(this),
-  })
-  .then(function (response) {
-    return response.json(); // Parse the response as JSON
-  })
-  .then(function (data) {
-    if (data.success) {
-      // Show a success message
-      showPopupMessage(data.message);
-      document.getElementById('contactForm').reset(); // Reset the form after successful submission
-    } else {
-      // Show an error message
-      showPopupMessage(data.message);
-    }
-  })
-  .catch(function (error) {
-    // Handle network or fetch API errors
-    showPopupMessage('An error occurred. Please try again later.');
-  });
-});
-
+                // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
+                fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this),
+                })
+                .then(function (response) {
+                    return response.json(); // Parse the response as JSON
+                })
+                .then(function (data) {
+                    if (data.success) {
+                        // Show the pop-up message for successful submission
+                        showPopupMessage(data.message);
+                        document.getElementById('contactForm').reset(); // Reset the form after successful submission
+                    } else {
+                        // Show the pop-up message for submission error
+                        showPopupMessage(data.message);
+                    }
+                })
+                .catch(function (error) {
+                    // Handle network or fetch API errors
+                    showPopupMessage('An error occurred. Please try again later.');
+                });
+            });
 
             // Function to show the pop-up message
             function showPopupMessage(message) {
