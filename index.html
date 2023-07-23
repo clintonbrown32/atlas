@@ -125,29 +125,31 @@
 
             // Add an event listener to the form submission
             document.getElementById('contactForm').addEventListener('submit', function (event) {
-                event.preventDefault(); // Prevent the default form submission
+  event.preventDefault(); // Prevent the default form submission
 
-                // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
-                fetch(this.action, {
-                    method: 'POST',
-                    body: new FormData(this),
-                })
-                .then(function (response) {
-                    if (response.ok) {
-                        // Show the pop-up message
-                        showPopupMessage('Form submitted successfully!');
-                        // Reset the form after successful submission
-                        document.getElementById('contactForm').reset();
-                    } else {
-                        // Handle submission error
-                        showPopupMessage('An error occurred. Please try again later.');
-                    }
-                })
-                .catch(function (error) {
-                    // Handle network or fetch API errors
-                    showPopupMessage('An error occurred. Please try again later.');
-                });
-            });
+  fetch(this.action, {
+    method: 'POST',
+    body: new FormData(this),
+  })
+  .then(function (response) {
+    return response.json(); // Parse the response as JSON
+  })
+  .then(function (data) {
+    if (data.success) {
+      // Show a success message
+      showPopupMessage(data.message);
+      document.getElementById('contactForm').reset(); // Reset the form after successful submission
+    } else {
+      // Show an error message
+      showPopupMessage(data.message);
+    }
+  })
+  .catch(function (error) {
+    // Handle network or fetch API errors
+    showPopupMessage('An error occurred. Please try again later.');
+  });
+});
+
 
             // Function to show the pop-up message
             function showPopupMessage(message) {
