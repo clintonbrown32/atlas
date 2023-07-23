@@ -3,29 +3,61 @@
 <head>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
+
 </head>
 <body>
     <header>
-        <!-- Your header content -->
+        <div class="header-content">
+            <div class="logo">
+                <img src="assets/logo150.png" alt="Atlas Logo">
+            </div>
+            <h2>Every Dream Begins With Real Estate&trade;</h2>
+        </div>
     </header>
 
     <section class="intro">
-        <!-- Your introduction section content -->
+        <img src="assets/background.webp" alt="Particles">
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
     </section>
 
     <section class="services">
-        <!-- Your services section content -->
-    </section>
-
-    <section class="rss-feed">
-        <h2 class="rss-feed-heading">Industry News</h2>
-        <div class="rss-feed-container">
-            <!-- The RSS feed content will be injected here -->
+        <h2 class="services-heading">Our Real Estate Services</h2>
+        <div class="service-items-container">
+            <div class="service-item">
+                <a href="residential.html">
+                    <img src="assets/residential.jpg" alt="Residential">
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="commercial.html">
+                    <img src="assets/commercial.jpg" alt="Commercial">
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="solar.html">
+                    <img src="assets/solar.jpg" alt="Solar">
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="investment.html">
+                    <img src="assets/investment.jpg" alt="Investment">
+                </a>
+            </div>
         </div>
-        <!-- Arrow buttons for horizontal scrolling -->
-        <div class="scroll-arrow scroll-left">&#8249;</div>
-        <div class="scroll-arrow scroll-right">&#8250;</div>
     </section>
+    
+<section class="rss-feed">
+  <h2 class="rss-feed-heading">Industry News</h2>
+  <div class="rss-feed-container">
+    <!-- The RSS feed content will be injected here -->
+  </div>
+  <!-- Arrow buttons for horizontal scrolling -->
+  <div class="scroll-arrow scroll-left">&#8249;</div>
+  <div class="scroll-arrow scroll-right">&#8250;</div>
+</section>
 
     <form id="contactForm" action="https://script.google.com/macros/s/AKfycbxbv_BM0BYCYNLhl9P6-dp8SeCXQzRSVv7XpX5aLXa0YIAOeZggVVY8ytbOIiEP6oBbFQ/exec" method="post">
         <center>
@@ -46,13 +78,50 @@
     </form>
 
     <footer>
-        <!-- Your footer content -->
+        <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
             // JavaScript for fetching and populating the feed items
-            // ... (Your existing RSS feed JavaScript code)
+            const feedContainer = document.querySelector('.rss-feed-container');
+
+            fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+                .then(response => response.json())
+                .then(data => {
+                    const feedItems = data.items;
+
+                    // Generate HTML for each feed item
+                    const feedContent = feedItems.map(item => `
+                        <div class="feed-item">
+                            <img src="${item.thumbnail}" alt="Thumbnail">
+                            <div class="feed-item-content">
+                                <h3>${item.title}</h3>
+                                <a href="${item.link}" target="_blank">Read more</a>
+                            </div>
+                        </div>
+                    `).join('');
+
+                    // Inject the feed content into the HTML
+                    feedContainer.innerHTML = feedContent;
+
+                    // JavaScript for horizontal scrolling with arrow buttons
+                    const scrollContainer = document.querySelector('.rss-feed-container');
+                    const scrollLeftButton = document.querySelector('.scroll-left');
+                    const scrollRightButton = document.querySelector('.scroll-right');
+
+                    const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
+                    const feedItemMargin = 20; // Adjust this value according to your CSS margin
+
+                    scrollLeftButton.addEventListener('click', () => {
+                        scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
+                    });
+
+                    scrollRightButton.addEventListener('click', () => {
+                        scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
+                    });
+                })
+                .catch(error => console.error(error));
 
             // Add an event listener to the form submission
             document.getElementById('contactForm').addEventListener('submit', function (event) {
