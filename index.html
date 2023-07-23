@@ -124,11 +124,6 @@
                 .catch(error => console.error(error));
 
             // Add an event listener to the form submission
-            document.addEventListener('DOMContentLoaded', () => {
-            // JavaScript for fetching and populating the Industry News feed items
-            // ... (Your existing code for the Industry News feed)
-
-            // Add an event listener to the form submission
             document.getElementById('contactForm').addEventListener('submit', function (event) {
                 event.preventDefault(); // Prevent the default form submission
 
@@ -138,12 +133,9 @@
                     body: new FormData(this),
                 })
                 .then(function (response) {
-                    return response.json(); // Parse the response as JSON
-                })
-                .then(function (data) {
-                    if (data.success) {
+                    if (response.ok) {
                         // Show the pop-up message for successful submission
-                        showPopupMessage('Thank you for contacting us, we will get back to you as soon as possible!');
+                        showPopupMessage('Form submitted successfully!');
                         document.getElementById('contactForm').reset(); // Reset the form after successful submission
                     } else {
                         // Show the pop-up message for submission error
