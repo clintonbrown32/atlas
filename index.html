@@ -3,61 +3,29 @@
 <head>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
-
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <div class="logo">
-                <img src="assets/logo150.png" alt="Atlas Logo">
-            </div>
-            <h2>Every Dream Begins With Real Estate&trade;</h2>
-        </div>
+        <!-- Your header content -->
     </header>
 
     <section class="intro">
-        <img src="assets/background.webp" alt="Particles">
-        <div class="search-bar">
-            <input type="text" placeholder="Search">
-            <button>Search</button>
-        </div>
+        <!-- Your introduction section content -->
     </section>
 
     <section class="services">
-        <h2 class="services-heading">Our Real Estate Services</h2>
-        <div class="service-items-container">
-            <div class="service-item">
-                <a href="residential.html">
-                    <img src="assets/residential.jpg" alt="Residential">
-                </a>
-            </div>
-            <div class="service-item">
-                <a href="commercial.html">
-                    <img src="assets/commercial.jpg" alt="Commercial">
-                </a>
-            </div>
-            <div class="service-item">
-                <a href="solar.html">
-                    <img src="assets/solar.jpg" alt="Solar">
-                </a>
-            </div>
-            <div class="service-item">
-                <a href="investment.html">
-                    <img src="assets/investment.jpg" alt="Investment">
-                </a>
-            </div>
-        </div>
+        <!-- Your services section content -->
     </section>
-    
-<section class="rss-feed">
-  <h2 class="rss-feed-heading">Industry News</h2>
-  <div class="rss-feed-container">
-    <!-- The RSS feed content will be injected here -->
-  </div>
-  <!-- Arrow buttons for horizontal scrolling -->
-  <div class="scroll-arrow scroll-left">&#8249;</div>
-  <div class="scroll-arrow scroll-right">&#8250;</div>
-</section>
+
+    <section class="rss-feed">
+        <h2 class="rss-feed-heading">Industry News</h2>
+        <div class="rss-feed-container">
+            <!-- The RSS feed content will be injected here -->
+        </div>
+        <!-- Arrow buttons for horizontal scrolling -->
+        <div class="scroll-arrow scroll-left">&#8249;</div>
+        <div class="scroll-arrow scroll-right">&#8250;</div>
+    </section>
 
     <form action="https://script.google.com/macros/s/AKfycbyKWrQI3Xiq2ti48XYXxCvoAwd2Ir8YCDu1fP-ZtP-Q/dev" method="post">
         <center>
@@ -78,11 +46,11 @@
     </form>
 
     <footer>
-        <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
+        <!-- Your footer content -->
     </footer>
 
     <script>
- document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             // JavaScript for fetching and populating the feed items
             const feedContainer = document.querySelector('.rss-feed-container');
 
@@ -122,10 +90,53 @@
                     });
                 })
                 .catch(error => console.error(error));
+
+            // Add an event listener to the form submission
+            document.getElementById('contactForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
+                fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this),
+                })
+                .then(function (response) {
+                    if (response.ok) {
+                        // Show the pop-up message
+                        showPopupMessage('Form submitted successfully!');
+                    } else {
+                        // Handle submission error
+                        showPopupMessage('An error occurred. Please try again later.');
+                    }
+                })
+                .catch(function (error) {
+                    // Handle network or fetch API errors
+                    showPopupMessage('An error occurred. Please try again later.');
+                });
+            });
+
+            // Function to show the pop-up message
+            function showPopupMessage(message) {
+                var popup = document.createElement('div');
+                popup.innerHTML = '<p>' + message + '</p>';
+                popup.style.position = 'fixed';
+                popup.style.top = '50%';
+                popup.style.left = '50%';
+                popup.style.transform = 'translate(-50%, -50%)';
+                popup.style.padding = '10px';
+                popup.style.background = '#fff';
+                popup.style.border = '1px solid #ccc';
+                popup.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
+                popup.style.zIndex = '9999';
+
+                document.body.appendChild(popup);
+
+                // Automatically remove the popup after a few seconds
+                setTimeout(function () {
+                    document.body.removeChild(popup);
+                }, 3000); // 3000 milliseconds = 3 seconds (you can adjust the time if needed)
+            }
         });
-
-</script>
-
+    </script>
 </body>
-
 </html>
