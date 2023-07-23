@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
     <style>
-       /* Add custom CSS for the residential section */
-        .residential {
+       .residential {
             max-width: 1350px;
             margin: 0 auto;
             padding: 20px;
@@ -45,13 +44,27 @@
         .residential .image-placeholder {
             margin-top: 20px;
             text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .residential img {
-            max-width: 100%;
+        .residential .image-placeholder img {
+            max-width: 45%;
             height: auto;
             border: 1px solid #ccc;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        /* Alternate the image position */
+        .residential .image-placeholder:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .residential .image-placeholder:nth-child(even) {
+            flex-direction: row-reverse;
         }
     </style>
     <title>Atlas - Real Estate Investment Company</title>
@@ -134,7 +147,7 @@
                 </ul>
 
                 <div class="image-placeholder">
-                    <img src="assets/selling_placeholder.jpg" alt="Selling Image">
+                    <img src="assets/home.jpg" alt="Selling Image">
                 </div>
 
                 <h3>Why Choose Us?</h3>
@@ -146,7 +159,7 @@
                 </ul>
 
                 <div class="image-placeholder">
-                    <img src="assets/why_choose_us_placeholder.jpg" alt="Why Choose Us Image">
+                    <img src="assets/home.jpg" alt="Why Choose Us Image">
                 </div>
             </div>
         </section>
