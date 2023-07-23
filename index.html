@@ -82,31 +82,65 @@
     </footer>
 
     <script>
-  document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
             // JavaScript for fetching and populating the feed items
             const feedContainer = document.querySelector('.rss-feed-container');
 
-            // Your existing JavaScript code for fetching the RSS feed...
+            fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+                .then(response => response.json())
+                .then(data => {
+                    const feedItems = data.items;
 
-            // Modify the event listener to handle the response properly
+                    // Generate HTML for each feed item
+                    const feedContent = feedItems.map(item => `
+                        <div class="feed-item">
+                            <img src="${item.thumbnail}" alt="Thumbnail">
+                            <div class="feed-item-content">
+                                <h3>${item.title}</h3>
+                                <a href="${item.link}" target="_blank">Read more</a>
+                            </div>
+                        </div>
+                    `).join('');
+
+                    // Inject the feed content into the HTML
+                    feedContainer.innerHTML = feedContent;
+
+                    // JavaScript for horizontal scrolling with arrow buttons
+                    const scrollContainer = document.querySelector('.rss-feed-container');
+                    const scrollLeftButton = document.querySelector('.scroll-left');
+                    const scrollRightButton = document.querySelector('.scroll-right');
+
+                    const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
+                    const feedItemMargin = 20; // Adjust this value according to your CSS margin
+
+                    scrollLeftButton.addEventListener('click', () => {
+                        scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
+                    });
+
+                    scrollRightButton.addEventListener('click', () => {
+                        scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
+                    });
+                })
+                .catch(error => console.error(error));
+
+            // Add an event listener to the form submission
             document.getElementById('contactForm').addEventListener('submit', function (event) {
                 event.preventDefault(); // Prevent the default form submission
 
+                // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
                 fetch(this.action, {
                     method: 'POST',
                     body: new FormData(this),
                 })
                 .then(function (response) {
-                    return response.json(); // Parse the response as JSON
-                })
-                .then(function (data) {
-                    if (data.success) {
-                        // Show the pop-up message for successful submission
-                        showPopupMessage(data.message);
-                        document.getElementById('contactForm').reset(); // Reset the form after successful submission
+                    if (response.ok) {
+                        // Show the pop-up message
+                        showPopupMessage('Form submitted successfully!');
+                        // Reset the form after successful submission
+                        document.getElementById('contactForm').reset();
                     } else {
-                        // Show the pop-up message for submission error
-                        showPopupMessage(data.message);
+                        // Handle submission error
+                        showPopupMessage('An error occurred. Please try again later.');
                     }
                 })
                 .catch(function (error) {
@@ -138,6 +172,5 @@
             }
         });
     </script>
-    
 </body>
 </html>
