@@ -6,132 +6,218 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
+    <style>
+        /* Add custom CSS for the commercial section */
+        .commercial {
+            position: relative;
+            background-image: url("assets/marble2.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 20px 0; /* Add vertical padding to separate content from background */
+        }
+
+        .centered-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative; /* Ensure content stays centered within the max width */
+            z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
+        }
+
+        .section-heading {
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .commercial p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .commercial h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        .commercial ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .commercial li {
+            margin-bottom: 10px;
+        }
+
+        /* Image style */
+        .commercial img {
+            max-width: 400px;
+            max-height: 286px;
+            display: block;
+            margin: 10px auto;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            filter: drop-shadow(0px 1px 10px #000);
+        }
+
+        /* Alternate the image position */
+        .commercial .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .commercial .section-content > div {
+            flex: 0 0 48%;
+            margin-bottom: 20px;
+        }
+
+        .commercial .section-content img {
+            margin: 10px auto;
+        }
+
+        /* Alternate the image position */
+        .commercial .section-content:nth-child(odd) .commercial-image {
+            order: 1;
+            text-align: right;
+        }
+
+        .commercial .section-content:nth-child(even) .commercial-image {
+            order: 0;
+            text-align: left;
+        }
+    </style>
     <title>Atlas - Real Estate Investment Company</title>
 </head>
 
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <img src="assets/logo150.png" alt="Atlas Logo">
-                <center>
-                    <h2>Every Dream Begins With Real Estate&trade;</h2>
-                </center>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/logo150.png" alt="Atlas Logo">
+                </div>
+                <h2>Every Dream Begins With Real Estate&trade;</h2>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section class="intro">
-        <img src="assets/background.webp" alt="Particles">
-        <div class="search-bar">
-            <input type="text" placeholder="Search">
-            <button>Search</button>
-        </div>
-    </section>
-
-    <section class="services">
-        <h2 class="services-heading">Our Real Estate Services</h2>
-        <div class="service-items-container">
-            <div class="service-item">
-                <a href="residential.html">
-                    <img src="assets/residential.jpg" alt="Residential">
-                </a>
+        <section class="intro">
+            <img src="assets/background.webp" alt="Particles">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
             </div>
-            <div class="service-item">
-                <a href="commercial.html">
-                    <img src="assets/commercial.jpg" alt="Commercial">
-                </a>
+        </section>
+
+        <section class="services">
+            <h2 class="services-heading">Our Real Estate Services</h2>
+            <div class="service-items-container">
+                <div class="service-item">
+                    <a href="residential.html">
+                        <img src="assets/residential.jpg" alt="Residential">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="commercial.html">
+                        <img src="assets/commercial.jpg" alt="Commercial">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="solar.html">
+                        <img src="assets/solar.jpg" alt="Solar">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="investment.html">
+                        <img src="assets/investment.jpg" alt="Investment">
+                    </a>
+                </div>
             </div>
-            <div class="service-item">
-                <a href="solar.html">
-                    <img src="assets/solar.jpg" alt="Solar">
-                </a>
+        </section>
+
+        <section class="commercial">
+            <div class="centered-content">
+                <h2 class="section-heading">Commercial Buying and Selling</h2>
+                <p>Welcome to our Commercial Real Estate page, where we specialize in providing comprehensive and expert services for all your commercial property buying and selling needs. Whether you are an investor seeking lucrative opportunities or a business owner looking to expand or relocate, our experienced team of commercial real estate professionals is here to assist you every step of the way.</p>
+
+                <div class="section-content">
+                    <div class="commercial-image">
+                        <img src="assets/home.jpg" alt="Commercial Image">
+                    </div>
+                    <div>
+                        <h3>Buying a Commercial Property</h3>
+                        <p>Purchasing a commercial property is a significant decision that requires careful consideration. Our team of experts is dedicated to helping you find the perfect commercial property that aligns with your investment goals and business needs.</p>
+
+                        <ul>
+                            <li><strong>Property Analysis:</strong> We conduct a detailed analysis of potential commercial properties, taking into account factors such as location, market demand, and growth projections.</li>
+                            <li><strong>Investment Strategies:</strong> Whether you're looking for income-generating properties, development opportunities, or value-added assets, we tailor investment strategies to suit your objectives.</li>
+                            <li><strong>Negotiation Expertise:</strong> Our skilled negotiators work diligently to secure favorable terms and conditions for your commercial property purchase.</li>
+                            <li><strong>Due Diligence Support:</strong> We guide you through the due diligence process, coordinating inspections and verifying property records.</li>
+                            <li><strong>Financing Assistance:</strong> If required, we can connect you with trusted lenders to secure suitable financing for your commercial property investment.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="commercial-image">
+                        <img src="assets/interior.jpg" alt="Selling Image">
+                    </div>
+                    <div>
+                        <h3>Selling Your Commercial Property</h3>
+                        <p>When it's time to sell your commercial property, our team is dedicated to maximizing your returns and ensuring a smooth selling process. We employ strategic marketing and a vast network to attract qualified buyers and achieve optimal results.</p>
+
+                        <ul>
+                            <li><strong>Market Analysis:</strong> We conduct a comprehensive market analysis to determine the optimal listing price for your commercial property.</li>
+                            <li><strong>Str</strong>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="commercial-image">
+                        <img src="assets/keys.jpg" alt="Why Choose Us Image">
+                    </div>
+                    <div>
+                        <h3>Why Choose Us?</h3>
+                        <ul>
+                            <li><strong>Local Expertise:</strong> Our team's deep understanding of the local real estate market empowers us to offer insightful guidance.</li>
+                            <li><strong>Personalized Approach:</strong> We treat each client with individual attention, tailoring our services to meet their unique requirements.</li>
+                            <li><strong>Transparency and Integrity:</strong> We value honesty and integrity, ensuring that you have all the information needed to make informed decisions.</li>
+                            <li><strong>Customer Satisfaction:</strong> Our commitment to excellence has earned us a reputation for exceptional customer service.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="service-item">
-                <a href="investment.html">
-                    <img src="assets/investment.jpg" alt="Investment">
-                </a>
+        </section>
+
+        <form action="https://script.google.com/macros/s/AKfycbw5JTHAeLHL1dY-xrfPJRIvAHNKT5ioc3NmiGZKue_TBLco9t8sDfnouZeox6ClYXYw8Q/exec" method="post">
+            <center>
+                <h2 class="contact">Contact Us</h2>
+            </center>
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Name" class="center-input">
             </div>
-        </div>
-    </section>
-    
-<section class="rss-feed">
-  <h2 class="rss-feed-heading">Industry News</h2>
-  <div class="rss-feed-container">
-    <!-- The RSS feed content will be injected here -->
-  </div>
-  <!-- Arrow buttons for horizontal scrolling -->
-  <div class="scroll-arrow scroll-left">&#8249;</div>
-  <div class="scroll-arrow scroll-right">&#8250;</div>
-</section>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" class="center-input">
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Message" class="full-width"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="full-width">
+            </div>
+        </form>
 
-    <form action="https://script.google.com/macros/s/AKfycbw5JTHAeLHL1dY-xrfPJRIvAHNKT5ioc3NmiGZKue_TBLco9t8sDfnouZeox6ClYXYw8Q/exec" method="post">
-        <center>
-            <h2 class="contact">Contact Us</h2>
-        </center>
-        <div class="form-group">
-            <input type="text" name="name" placeholder="Name" class="center-input">
-        </div>
-        <div class="form-group">
-            <input type="email" name="email" placeholder="Email" class="center-input">
-        </div>
-        <div class="form-group">
-            <textarea name="message" placeholder="Message" class="full-width"></textarea>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Submit" class="full-width">
-        </div>
-    </form>
-
-    <footer>
-        <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
-    </footer>
-
-    <script>
- document.addEventListener('DOMContentLoaded', () => {
-            // JavaScript for fetching and populating the feed items
-            const feedContainer = document.querySelector('.rss-feed-container');
-
-            fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
-                .then(response => response.json())
-                .then(data => {
-                    const feedItems = data.items;
-
-                    // Generate HTML for each feed item
-                    const feedContent = feedItems.map(item => `
-                        <div class="feed-item">
-                            <img src="${item.thumbnail}" alt="Thumbnail">
-                            <div class="feed-item-content">
-                                <h3>${item.title}</h3>
-                                <a href="${item.link}" target="_blank">Read more</a>
-                            </div>
-                        </div>
-                    `).join('');
-
-                    // Inject the feed content into the HTML
-                    feedContainer.innerHTML = feedContent;
-
-                    // JavaScript for horizontal scrolling with arrow buttons
-                    const scrollContainer = document.querySelector('.rss-feed-container');
-                    const scrollLeftButton = document.querySelector('.scroll-left');
-                    const scrollRightButton = document.querySelector('.scroll-right');
-
-                    const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
-                    const feedItemMargin = 20; // Adjust this value according to your CSS margin
-
-                    scrollLeftButton.addEventListener('click', () => {
-                        scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
-                    });
-
-                    scrollRightButton.addEventListener('click', () => {
-                        scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
-                    });
-                })
-                .catch(error => console.error(error));
-        });
-
-</script>
-
+        <footer>
+            <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
+        </footer>
+    </div>
 </body>
 
 </html>
