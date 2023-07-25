@@ -159,13 +159,14 @@ form input[type="submit"] {
     cursor: pointer;
 }
 /* RSS Feed */
-/* RSS Feed */
+
 .rss-feed {
   text-align: center;
   position: relative;
   overflow: hidden; /* Hide the overflow to show only four items */
   width: 1200px; /* Limit the width of the feed container to 1200px */
   margin: 0 auto;
+  background-image: url("assets/marble.jpg");
 }
 
 .rss-feed-heading {
