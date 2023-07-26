@@ -20,20 +20,17 @@
     width: 100%;
     height: auto;
     max-height: 520px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     object-fit: cover;
 }
 
 .solar-text {
     position: absolute;
-    top: 20%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #ffffff; /* Changed text color to white for better visibility */
+    z-index: 1; /* Ensures the text is displayed on top of the image */
 }
 
 .solar-text h3 {
@@ -50,7 +47,6 @@
 }
 
 
-/* ... (remaining styles) ... */
 
 </style>
     
@@ -81,7 +77,7 @@
         </section>
 
         <section class="services">
-            <h2 class="services-heading">Our Real Estate Services</h2>
+            <h2 class="services-heading">Our Real Estate Services-</h2>
             <div class="service-items-container">
                 <div class="service-item">
                     <a href="residential.html">
