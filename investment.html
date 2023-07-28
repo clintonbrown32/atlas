@@ -35,7 +35,7 @@
 
         .investment p {
             line-height: 1.6;
-            color:#000000;
+            color: #000000;
         }
 
         .investment h3 {
@@ -92,6 +92,60 @@
         .investment .section-content:nth-child(even) .investment-image {
             order: 0;
             text-align: left;
+        }
+
+        /* Custom styling for the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Additional styles for the contact form */
+        .contact-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f2f2f2;
+        }
+
+        .contact-form h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .center-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .full-width {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .full-width:hover {
+            background-color: #0056b3;
         }
     </style>
     <title>Atlas - Real Estate Investment Company</title>
@@ -208,23 +262,23 @@
         </div>
     </section>
 
-    <form action="https://script.google.com/macros/s/AKfycbw5JTHAeLHL1dY-xrfPJRIvAHNKT5ioc3NmiGZKue_TBLco9t8sDfnouZeox6ClYXYw8Q/exec" method="post">
-        <center>
-            <h2 class="contact">Contact Us</h2>
-        </center>
-        <div class="form-group">
-            <input type="text" name="name" placeholder="Name" class="center-input">
-        </div>
-        <div class="form-group">
-            <input type="email" name="email" placeholder="Email" class="center-input">
-        </div>
-        <div class="form-group">
-            <textarea name="message" placeholder="Message" class="full-width"></textarea>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Submit" class="full-width">
-        </div>
-    </form>
+    <section class="contact-form">
+        <h2 class="contact">Contact Us</h2>
+        <form action="https://script.google.com/macros/s/AKfycbw5JTHAeLHL1dY-xrfPJRIvAHNKT5ioc3NmiGZKue_TBLco9t8sDfnouZeox6ClYXYw8Q/exec" method="post">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Name" class="center-input">
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" class="center-input">
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Message" class="full-width"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="full-width">
+            </div>
+        </form>
+    </section>
 
     <footer>
         <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
