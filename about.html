@@ -85,25 +85,25 @@
     .about .section-content {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: center; /* Center the content in the row */
+        align-items: center; /* Center the items vertically in the row */
     }
 
     .about .section-content > div {
-        flex: 0 0 calc(50% - 20px); /* Adjust width to fit the content with a small gap between items */
+        flex: 0 0 calc(33.33% - 20px); /* Adjust width to fit the content with a small gap between items */
         margin-bottom: 20px;
+        text-align: center; /* Center the content inside each div */
     }
 
     /* Alternate the image position */
-    .about .section-content:nth-child(odd) .about-image {
+    .about .section-content:nth-child(odd) .agent-info {
         order: 1;
-        text-align: right;
     }
 
-    .about .section-content:nth-child(even) .about-image {
+    .about .section-content:nth-child(even) .agent-info {
         order: 0;
-        text-align: left;
     }
+</style>
         
     </style>
     <title>Atlas - Real Estate Investment Company</title>
