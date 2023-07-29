@@ -9,14 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
     <style>
         /* Add custom CSS for the residential section */
-       .residential {
-        position: relative;
-        background-image: url("assets/marble.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        padding: 20px 0; /* Add vertical padding to separate content from background */
-    }
+      
 
     .centered-content {
         max-width: 1100px;
@@ -33,30 +26,53 @@
             text-align: center;
             padding-top: 30px;
         }
+.agent-info {
+            text-align: center;
+        }
 
-        .residential p {
+        .agent-image {
+            max-width: 356px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        /* Centering content in container div */
+        .container {
+            text-align: center;}
+
+        .about {
+            /* Your existing styles */
+            position: relative;
+            background-image: url("assets/marble.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 20px 0; /* Add vertical padding to separate content from background */
+        }
+
+        .about p {
             line-height: 1.6;
             color: #555;
         }
 
-        .residential h3 {
+        .about h3 {
             font-size: 20px;
             font-weight: bold;
             color: #333;
             margin-top: 30px;
         }
 
-        .residential ul {
+        .about ul {
             list-style-type: disc;
             margin-left: 20px;
         }
 
-        .residential li {
+        .about li {
             margin-bottom: 10px;
         }
 
         /* Image style */
-        .residential img {
+        .about img {
             max-width: 400px;
             max-height: 286px;
             display: block;
@@ -68,32 +84,34 @@
         }
 
         /* Alternate the image position */
-        .residential .section-content {
+        .about .section-content {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
         }
 
-        .residential .section-content > div {
+        .about .section-content > div {
             flex: 0 0 48%;
             margin-bottom: 20px;
         }
 
-        .residential .section-content img {
+        .about .section-content img {
             margin: 10px auto;
         }
 
         /* Alternate the image position */
-        .residential .section-content:nth-child(odd) .residential-image {
+        .about .section-content:nth-child(odd) .about-image {
             order: 1;
             text-align: right;
         }
 
-        .residential .section-content:nth-child(even) .residential-image {
+        .about .section-content:nth-child(even) .about-image {
             order: 0;
             text-align: left;
         }
+  
+        
     </style>
     <title>Atlas - Real Estate Investment Company</title>
 </head>
@@ -149,65 +167,61 @@
             </div>
             </div>
         </section>
-        
-           <section class="residential">
+
+   <section class="about"> <!-- Renamed "residential" to "about" -->
         <div class="centered-content">
-            <h2 class="section-heading">Residential Buying and Selling</h2>
-            <p>Atlas is dedicated to providing you with comprehensive and personalized services for all your buying and selling needs. Whether you are looking for your dream home or planning to sell your property, our experienced team of real estate professionals is here to guide you every step of the way.</p>
+            <h2 class="section-heading">Welcome to Atlas Real Estate Brokerage</h2>
+            <p>
+                At Atlas Real Estate Brokerage, we believe that every dream begins with real estate. We are a passionate
+                team of experienced professionals dedicated to providing exceptional real estate services to our valued
+                clients. With a strong commitment to integrity, innovation, and customer satisfaction, we strive to make
+                the buying, selling, and investing in real estate a seamless and rewarding experience.
+            </p>
 
+            <h3>Our Mission</h3>
+            <p>
+                Our mission is to empower individuals and families to achieve their real estate goals by providing them
+                with personalized and professional services. We aim to build lasting relationships with our clients based
+                on trust, transparency, and superior performance. At Atlas, we understand that each real estate journey
+                is unique, and our team is here to guide you every step of the way.
+            </p>
+
+            <h3>Meet Our Expert Agents</h3>
             <div class="section-content">
-                <div class="residential-image">
-                    <img src="assets/home.jpg" alt="Residential Image">
+                <!-- Agent 1 -->
+                <div class="agent-info">
+                    <img class="agent-image" src="teresa_brown.jpg" alt="Teresa Brown">
+                    <h4>Teresa Brown</h4>
+                    <p>
+                        Teresa is a full-time Realtor with years of experience in the industry. She specializes in helping
+                        buyers and sellers navigate the complexities of real estate transactions.
+                    </p>
                 </div>
-                <div>
-                    <h3>Buying a Residential Property</h3>
-                    <p>Purchasing a residential property is an exciting milestone, and we understand the significance of finding the perfect home that aligns with your lifestyle and preferences. Our expert real estate agents are committed to helping you navigate the home-buying process seamlessly.</p>
 
-                    <ul>
-                        <li><strong>Personalized Property Search:</strong> We conduct an in-depth analysis of your requirements and preferences to match you with properties that best suit your needs.</li>
-                        <li><strong>Market Expertise:</strong> Our team stays up-to-date with the latest market trends and property values, ensuring you make an informed decision.</li>
-                        <li><strong>Guidance and Negotiation:</strong> We negotiate on your behalf to secure the best possible price and terms for your dream home.</li>
-                        <li><strong>Home Inspections:</strong> Our associates coordinate thorough home inspections to ensure the property meets your expectations.</li>
-                        <li><strong>Smooth Closing:</strong> We assist you with all the necessary paperwork and processes, ensuring a seamless and stress-free closing experience.</li>
-                    </ul>
+                <!-- Agent 2 -->
+                <div class="agent-info">
+                    <img class="agent-image" src="erick_ordaz.jpg" alt="Erick Ordaz">
+                    <h4>Erick Ordaz</h4>
+                    <p>
+                        Erick comes from a hospitality background and enjoys servicing client needs. He attended Santa
+                        Monica College focusing on computer science, marketing, and graphic design.
+                    </p>
                 </div>
-            </div>
 
-            <div class="section-content">
-                <div class="residential-image">
-                    <img src="assets/interior.jpg" alt="Selling Image">
-                </div>
-                <div>
-                    <h3>Selling Your Residential Property</h3>
-                    <p>Selling your home can be a significant decision, and we're here to make the process as smooth and profitable as possible. Our tailored marketing strategies and extensive network enable us to reach the right buyers for your property.</p>
-
-                    <ul>
-                        <li><strong>Home Valuation:</strong> We conduct a detailed market analysis to determine the optimal listing price for your property.</li>
-                        <li><strong>Property Marketing:</strong> Our team employs a multi-faceted marketing approach to showcase your home's best features to potential buyers.</li>
-                        <li><strong>Targeted Exposure:</strong> Through our extensive network and online platforms, we target qualified buyers actively seeking properties like yours.</li>
-                        <li><strong>Open Houses and Showings:</strong> We organize open houses and private showings to attract interested buyers.</li>
-                        <li><strong>Expert Negotiation:</strong> Our agents skillfully negotiate on your behalf to achieve the best possible sale price and terms.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="section-content">
-                <div class="residential-image">
-                    <img src="assets/keys.jpg" alt="Why Choose Us Image">
-                </div>
-                <div>
-                    <h3>Why Choose Us?</h3>
-                    <ul>
-                        <li><strong>Local Expertise:</strong> Our team's deep understanding of the local real estate market empowers us to offer insightful guidance.</li>
-                        <li><strong>Personalized Approach:</strong> We treat each client with individual attention, tailoring our services to meet their unique requirements.</li>
-                        <li><strong>Transparency and Integrity:</strong> We value honesty and integrity, ensuring that you have all the information needed to make informed decisions.</li>
-                        <li><strong>Customer Satisfaction:</strong> Our commitment to excellence has earned us a reputation for exceptional customer service.</li>
-                    </ul>
+                <!-- Agent 3 -->
+                <div class="agent-info">
+                    <img class="agent-image" src="clinton_brown.jpg" alt="Clinton Brown">
+                    <h4>Clinton Brown</h4>
+                    <p>
+                        Clinton grew up in a small town south of St. Louis, Missouri. After high school, he earned both a
+                        bachelor’s degree in Political Science from Manhattanville College and a master’s at Norwich
+                        University.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-
+           
       <form action="https://script.google.com/macros/s/AKfycbw5JTHAeLHL1dY-xrfPJRIvAHNKT5ioc3NmiGZKue_TBLco9t8sDfnouZeox6ClYXYw8Q/exec" method="post">
         <center>
             <h2 class="contact">Contact Us</h2>
