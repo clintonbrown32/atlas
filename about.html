@@ -27,90 +27,83 @@
             padding-top: 30px;
         }
 .agent-info {
-            text-align: center;
-        }
+        text-align: center;
+        width: 45%; /* Adjust width to fit the content */
+        margin: 0 auto; /* Center the .agent-info div within the .section-content div */
+    }
 
-        .agent-image {
-            max-width: 356px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
-        }
+    .agent-image {
+        max-width: 356px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+    }
 
-        /* Centering content in container div */
-        .container {
-            text-align: center;}
+    /* Centering content in container div */
+    .container {
+        text-align: center;
+    }
 
-        .about {
-            /* Your existing styles */
-            position: relative;
-            background-image: url("assets/marble.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            padding: 20px 0; /* Add vertical padding to separate content from background */
-        }
+    .about {
+        /* Your existing styles */
+        /* ... */
+    }
 
-        .about p {
-            line-height: 1.6;
-            color: #555;
-        }
+    .about p {
+        line-height: 1.6;
+        color: #555;
+    }
 
-        .about h3 {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-            margin-top: 30px;
-        }
+    .about h3 {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        margin-top: 30px;
+    }
 
-        .about ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
+    .about ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
 
-        .about li {
-            margin-bottom: 10px;
-        }
+    .about li {
+        margin-bottom: 10px;
+    }
 
-        /* Image style */
-        .about img {
-            max-width: 400px;
-            max-height: 286px;
-            display: block;
-            margin: 10px auto;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            filter: drop-shadow(0px 1px 10px #000);
-        }
+    /* Image style */
+    .about img {
+        max-width: 400px;
+        max-height: 286px;
+        display: block;
+        margin: 10px auto;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        filter: drop-shadow(0px 1px 10px #000);
+    }
 
-        /* Alternate the image position */
-        .about .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
+    /* Alternate the image position */
+    .about .section-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        .about .section-content > div {
-            flex: 0 0 48%;
-            margin-bottom: 20px;
-        }
+    .about .section-content > div {
+        flex: 0 0 calc(50% - 20px); /* Adjust width to fit the content with a small gap between items */
+        margin-bottom: 20px;
+    }
 
-        .about .section-content img {
-            margin: 10px auto;
-        }
+    /* Alternate the image position */
+    .about .section-content:nth-child(odd) .about-image {
+        order: 1;
+        text-align: right;
+    }
 
-        /* Alternate the image position */
-        .about .section-content:nth-child(odd) .about-image {
-            order: 1;
-            text-align: right;
-        }
-
-        .about .section-content:nth-child(even) .about-image {
-            order: 0;
-            text-align: left;
-        }
-  
+    .about .section-content:nth-child(even) .about-image {
+        order: 0;
+        text-align: left;
+    }
         
     </style>
     <title>Atlas - Real Estate Investment Company</title>
