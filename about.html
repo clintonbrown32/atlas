@@ -48,7 +48,7 @@
         /* ... */
     }
 
-    .about p {
+   .about p {
         line-height: 1.6;
         color: #555;
     }
@@ -75,7 +75,6 @@
         max-height: 286px;
         display: block;
         margin: 10px auto;
-        border: 1px solid #ccc;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         border-radius: 8px;
         filter: drop-shadow(0px 1px 10px #000);
@@ -90,7 +89,7 @@
     }
 
     .about .section-content > div {
-        flex: 0 0 calc(33.33% - 20px); /* Adjust width to fit the content with a small gap between items */
+        flex: 1 0 calc(33.33% - 20px); /* Adjust width to fit the content with a small gap between items */
         margin-bottom: 20px;
         text-align: center; /* Center the content inside each div */
     }
@@ -102,10 +101,6 @@
 
     .about .section-content:nth-child(even) .agent-info {
         order: 0;
-    }
-        body {
-            background-image: url(assets/aboutback.jpg);
-        }
 </style>
         
     </style>
@@ -187,7 +182,8 @@
                 <!-- Agent 1 -->
                 <div class="agent-info">
                     <img class="agent-image" src="assets/teresa.jpg" alt="Teresa Brown">
-                    <h4>Teresa Brown</h4>
+                    <h3>Teresa Brown</h3>
+                    <h4>Realtor</h4>
                     <p>
                         Teresa is a full-time Realtor with years of experience in the industry. She specializes in helping
                         buyers and sellers navigate the complexities of real estate transactions.
@@ -197,7 +193,8 @@
                 <!-- Agent 2 -->
                 <div class="agent-info">
                     <img class="agent-image" src="assets/erick.jpg" alt="Erick Ordaz">
-                    <h4>Erick Ordaz</h4>
+                    <h3>Erick Ordaz</h3>
+                    <h3>Real Estate Agent</h3>
                     <p>
                         Erick comes from a hospitality background and enjoys servicing client needs. He attended Santa
                         Monica College focusing on computer science, marketing, and graphic design.
@@ -208,6 +205,7 @@
                 <div class="agent-info">
                     <img class="agent-image" src="assets/clinton.jpg" alt="Clinton Brown">
                     <h4>Clinton Brown</h4>
+                    <h3>CEO/Broker</h3>
                     <p>
                         Clinton grew up in a small town south of St. Louis, Missouri. After high school, he earned both a
                         bachelor’s degree in Political Science from Manhattanville College and a master’s at Norwich
