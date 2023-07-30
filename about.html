@@ -80,19 +80,22 @@
         filter: drop-shadow(0px 1px 10px #000);
     }
 
-    /* Alternate the image position */
-    .about .section-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; /* Center the content in the row */
-        align-items: center; /* Center the items vertically in the row */
-    }
+   .about .section-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; /* Change "center" to "flex-start" */
+}
 
-    .about .section-content > div {
-        flex: 1 0 calc(33.33% - 20px); /* Adjust width to fit the content with a small gap between items */
-        margin-bottom: 20px;
-        text-align: center; /* Center the content inside each div */
-    }
+.about .section-content > div {
+    flex: 1 0 calc(33.33% - 20px);
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex; /* Add display flex to align items vertically */
+    flex-direction: column; /* Align content in a column */
+    align-items: center; /* Center items horizontally */
+}
+
 
     /* Alternate the image position */
     .about .section-content:nth-child(odd) .agent-info {
