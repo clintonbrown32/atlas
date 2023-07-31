@@ -8,18 +8,27 @@
 <body>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/64c730d994cf5d49dc676ce6/1h6l1dl20';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+(function () {
+    var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/64c730d994cf5d49dc676ce6/1h6l1dl20';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+
+    // Set the show_delay attribute to 0 to make the chat message appear immediately
+    Tawk_API.onLoad = function () {
+        Tawk_API.setAttributes({
+            'show_delay': 0
+        });
+        // Set the welcome message
+        Tawk_API.sendChatMessage('Thank you for reaching out! So that I can connect you to the correct live agent, please let me know what we can help you with today.');
+    };
 })();
 </script>
 <!--End of Tawk.to Script-->
-
   
     <header>
         <div class="header-content">
