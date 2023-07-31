@@ -84,7 +84,7 @@
         }
 
         /* Alternate the image position */
-     .investment .section-content:nth-child(odd) .investment-image {
+    .investment .section-content:nth-child(odd) .investment-image {
             order: 0; /* Change order to 0 for odd sections to move the image to the left */
             text-align: left; /* Align the text to the left in odd sections */
         }
@@ -93,6 +93,14 @@
             order: 1; /* Change order to 1 for even sections to move the image to the right */
             text-align: right; /* Align the text to the right in even sections */
         }
+
+        /* Add some space between the image and text in the final two sections */
+        .investment .section-content:last-child .investment-image {
+            margin-bottom: 20px; /* Add margin at the bottom of the last image */
+        }
+
+        .investment .section-content:last-child .investment-text {
+            margin-top: 20px; /* Add marg
         /* Custom styling for the footer */
         footer {
             background-color: #f2f2f2;
