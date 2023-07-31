@@ -61,7 +61,6 @@
             height: auto;
             display: block;
             margin: 10px auto;
-            border: 1px solid #ccc;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
             border-radius: 8px;
             filter: drop-shadow(0px 1px 10px #000);
@@ -85,16 +84,15 @@
         }
 
         /* Alternate the image position */
-        .investment .section-content:nth-child(odd) .investment-image {
-            order: 1;
-            text-align: right;
+     .investment .section-content:nth-child(odd) .investment-image {
+            order: 0; /* Change order to 0 for odd sections to move the image to the left */
+            text-align: left; /* Align the text to the left in odd sections */
         }
 
         .investment .section-content:nth-child(even) .investment-image {
-            order: 0;
-            text-align: left;
+            order: 1; /* Change order to 1 for even sections to move the image to the right */
+            text-align: right; /* Align the text to the right in even sections */
         }
-
         /* Custom styling for the footer */
         footer {
             background-color: #f2f2f2;
@@ -174,6 +172,7 @@
                 <div class="investment-image">
                     <img src="assets/Invest.jpg" alt="Placeholder Image">
                 </div>
+                
                 <div class="investment-text">
                     <h3>Why Invest in Real Estate?</h3>
                     <ul>
