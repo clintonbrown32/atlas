@@ -3,9 +3,25 @@
 <head>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
+    <style>
+        /* Additional CSS for the popup message */
+        .popup-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #333;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            font-weight: bold;
+            z-index: 9999;
+        }
+    </style>
 </head>
 <body>
-<!-- Start of Tawk.to Script -->
+<!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -17,7 +33,7 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!-- End of Tawk.to Script -->
+<!--End of Tawk.to Script-->
 
 <header>
     <div class="header-content">
@@ -37,36 +53,35 @@ s0.parentNode.insertBefore(s1,s0);
 </section>
 
 <section class="services">
-        <h2 class="services-heading">Our Real Estate Services</h2>
-        <div class="service-items-container">
-            <div class="service-item">
-                <a href="residential.html">
-                    <img src="assets/residential.jpg" alt="Residential">
-                </a>
-            </div>
-            <div class="service-item">
-                <a href="commercial.html">
-                    <img src="assets/commercialserv.jpg" alt="Commercial">
-                </a>
-            </div>
-            <div class="service-item">
-                <a href="solar.html">
-                    <img src="assets/solar.jpg" alt="Solar">
-                </a>
-            </div>
-            
-            <div class="service-item">
-                <a href="investment.html">
-                    <img src="assets/investment.jpg" alt="Investment">
-                </a>
-            </div>
-      <div class="service-item">
-                <a href="about.html">
-                    <img src="assets/about.jpg" alt="about us">
-                </a>
-            </div>
+    <h2 class="services-heading">Our Real Estate Services</h2>
+    <div class="service-items-container">
+        <div class="service-item">
+            <a href="residential.html">
+                <img src="assets/residential.jpg" alt="Residential">
+            </a>
         </div>
-    </section>
+        <div class="service-item">
+            <a href="commercial.html">
+                <img src="assets/commercialserv.jpg" alt="Commercial">
+            </a>
+        </div>
+        <div class="service-item">
+            <a href="solar.html">
+                <img src="assets/solar.jpg" alt="Solar">
+            </a>
+        </div>
+        <div class="service-item">
+            <a href="investment.html">
+                <img src="assets/investment.jpg" alt="Investment">
+            </a>
+        </div>
+        <div class="service-item">
+            <a href="about.html">
+                <img src="assets/about.jpg" alt="about us">
+            </a>
+        </div>
+    </div>
+</section>
 
 <section class="rss-feed">
     <h2 class="rss-feed-heading">Industry News.</h2>
@@ -101,96 +116,86 @@ s0.parentNode.insertBefore(s1,s0);
 </footer>
 
 <script>
- document.addEventListener('DOMContentLoaded', () => {
-            // JavaScript for fetching and populating the feed items
-            const feedContainer = document.querySelector('.rss-feed-container');
+    document.addEventListener('DOMContentLoaded', () => {
+        // JavaScript for fetching and populating the feed items
+        const feedContainer = document.querySelector('.rss-feed-container');
 
-            fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
-                .then(response => response.json())
-                .then(data => {
-                    const feedItems = data.items;
+        fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+            .then(response => response.json())
+            .then(data => {
+                const feedItems = data.items;
 
-                    // Generate HTML for each feed item
-                    const feedContent = feedItems.map(item => `
-                        <div class="feed-item">
-                            <img src="${item.thumbnail}" alt="Thumbnail">
-                            <div class="feed-item-content">
-                                <h3>${item.title}</h3>
-                                <a href="${item.link}" target="_blank">Read more</a>
-                            </div>
+                // Generate HTML for each feed item
+                const feedContent = feedItems.map(item => `
+                    <div class="feed-item">
+                        <img src="${item.thumbnail}" alt="Thumbnail">
+                        <div class="feed-item-content">
+                            <h3>${item.title}</h3>
+                            <a href="${item.link}" target="_blank">Read more</a>
                         </div>
-                    `).join('');
+                    </div>
+                `).join('');
 
-                    // Inject the feed content into the HTML
-                    feedContainer.innerHTML = feedContent;
+                // Inject the feed content into the HTML
+                feedContainer.innerHTML = feedContent;
 
-                    // JavaScript for horizontal scrolling with arrow buttons
-                    const scrollContainer = document.querySelector('.rss-feed-container');
-                    const scrollLeftButton = document.querySelector('.scroll-left');
-                    const scrollRightButton = document.querySelector('.scroll-right');
+                // JavaScript for horizontal scrolling with arrow buttons
+                const scrollContainer = document.querySelector('.rss-feed-container');
+                const scrollLeftButton = document.querySelector('.scroll-left');
+                const scrollRightButton = document.querySelector('.scroll-right');
 
-                    const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
-                    const feedItemMargin = 20; // Adjust this value according to your CSS margin
+                const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
+                const feedItemMargin = 20; // Adjust this value according to your CSS margin
 
-                    scrollLeftButton.addEventListener('click', () => {
-                        scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
-                    });
+                scrollLeftButton.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
+                });
 
-                    scrollRightButton.addEventListener('click', () => {
-                        scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
-                    });
-                })
-                .catch(error => console.error(error));
+                scrollRightButton.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
+                });
+            })
+            .catch(error => console.error(error));
 
-    // Add an event listener to the form submission
-    document.getElementById('contactForm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the default form submission
+        // Add an event listener to the form submission
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
 
-        // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
-        fetch(this.action, {
-            method: 'POST',
-            body: new FormData(this),
-        })
-        .then(function (response) {
-            if (response.ok) {
-                // Show the pop-up message for successful submission
+            // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+            })
+            .then(function (response) {
+                if (response.ok) {
+                    // Show the pop-up message for successful submission
+                    showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+                    document.getElementById('contactForm').reset(); // Reset the form after successful submission
+                } else {
+                    // Show the pop-up message for submission error
+                    showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+                    document.getElementById('contactForm').reset();
+                }
+            })
+            .catch(function (error) {
+                // Handle network or fetch API errors
                 showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-                document.getElementById('contactForm').reset(); // Reset the form after successful submission
-            } else {
-                // Show the pop-up message for submission error
-                showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-                document.getElementById('contactForm').reset();
-            }
-        })
-        .catch(function (error) {
-            // Handle network or fetch API errors
-            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+            });
         });
+
+        // Function to show the pop-up message
+        function showPopupMessage(message) {
+            var popup = document.createElement('div');
+            popup.innerHTML = '<p>' + message + '</p>';
+            popup.className = 'popup-message'; // Add the CSS class for styling
+            document.body.appendChild(popup);
+
+            // Automatically remove the popup after a few seconds
+            setTimeout(function () {
+                document.body.removeChild(popup);
+            }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
+        }
     });
-
-    // Function to show the pop-up message
-    function showPopupMessage(message) {
-        var popup = document.createElement('div');
-        popup.innerHTML = '<p>' + message + '</p>';
-        popup.style.position = 'fixed';
-        popup.style.top = '50%';
-        popup.style.left = '50%';
-        popup.style.transform = 'translate(-50%, -50%)';
-        popup.style.padding = '10px';
-        popup.style.background = '#fff';
-        popup.style.border = '1px solid #ccc';
-        popup.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
-        popup.style.zIndex = '9999';
-
-        document.body.appendChild(popup);
-
-        // Automatically remove the popup after a few seconds
-        setTimeout(function () {
-            document.body.removeChild(popup);
-        }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
-    }
-});
 </script>
-
 </body>
 </html>
