@@ -179,11 +179,13 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         } else {
             // Show the pop-up message for submission error
             showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+             document.getElementById('contactForm').reset();
         }
     })
     .catch(function (error) {
         // Handle network or fetch API errors
         showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+         document.getElementById('contactForm').reset();
     });
 });
 
