@@ -232,23 +232,23 @@ s0.parentNode.insertBefore(s1,s0);
 
         </section>
 
-        <form action="https://script.google.com/macros/s/AKfycbzZYbAYOUz1vOMhNJNyTXQ2BAHAqdnMgJZeMQBFMcnJkg9aWQXLH3iVXbDkAIQfXwomaQ/exec" method="POST">
-            <center>
-                <h2 class="contact">Contact Us</h2>
-            </center>
-            <div class="form-group">
-                <input type="text" name="name" placeholder="Name" class="center-input">
-            </div>
-            <div class="form-group">
-                <input type="email" name="email" placeholder="Email" class="center-input">
-            </div>
-            <div class="form-group">
-                <textarea name="message" placeholder="Message" class="full-width"></textarea>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Submit" class="full-width">
-            </div>
-        </form>
+       <form id="contactForm" action="https://script.google.com/macros/s/AKfycbzZYbAYOUz1vOMhNJNyTXQ2BAHAqdnMgJZeMQBFMcnJkg9aWQXLH3iVXbDkAIQfXwomaQ/exec" method="POST">
+    <center>
+        <h2 class="contact">Contact Us</h2>
+    </center>
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Name" class="center-input" required>
+    </div>
+    <div class="form-group">
+        <input type="email" name="email" placeholder="Email" class="center-input" required>
+    </div>
+    <div class="form-group">
+        <textarea name="message" placeholder="Message" class="full-width" required></textarea>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Submit" class="full-width">
+    </div>
+</form>
 
         <footer>
             <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
@@ -256,8 +256,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 
     <script>
-         
-       document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
         // JavaScript for fetching and populating the feed items
         const feedContainer = document.querySelector('.rss-feed-container');
 
@@ -344,7 +343,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
             }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
         }
     });
-    </script>
+</script>
     
 </body>
 
