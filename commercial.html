@@ -1,28 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
     <style>
-        /* Additional CSS for the popup message */
-        .popup-message {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid #333;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-            text-align: center;
+        /* Add custom CSS for the commercial section */
+        .commercial {
+            position: relative;
+            background-image: url("assets/drywall.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 20px 0; /* Add vertical padding to separate content from background */
+        }
+
+        .centered-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative; /* Ensure content stays centered within the max width */
+            z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
+        }
+
+        .section-heading {
+            font-size: 30px;
             font-weight: bold;
-            z-index: 9999;
+            color: #333;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
+        }
+
+        .commercial p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .commercial h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 30px;
+            text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
+        }
+
+        .commercial ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .commercial li {
+            margin-bottom: 10px;
+        }
+
+        /* Image style */
+        .commercial img {
+            max-width: 100%;
+            display: block;
+            margin: 10px auto;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            filter: drop-shadow(0px 1px 10px #000);
+        }
+
+        /* Alternate the image position */
+        .commercial .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .commercial .section-content > div {
+            flex: 0 0 48%;
+            margin-bottom: 20px;
+        }
+
+        /* Alternate the image position */
+        .commercial .section-content:nth-child(odd) .commercial-image {
+            order: 0;
+            text-align: left;
+        }
+
+        .commercial .section-content:nth-child(even) .commercial-image {
+            order: 1;
+            text-align: right;
         }
     </style>
-       <title>Atlas - Real Estate Investment Company</title>
+    <title>Atlas - Real Estate Investment Company</title>
 </head>
+
 <body>
-<!--Start of Tawk.to Script-->
+
+    <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -34,55 +108,58 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
+    <div class="container">
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html"> <!-- Replace "index.html" with the URL of your homepage -->
+                    <img src="assets/logo150.png" alt="Atlas Logo">
+                </a>
+            </div>
+            <h2>Every Dream Begins With Real Estate&trade;</h2>
+        </div>
+    </header>
+</div>
 
-<header>
-    <div class="header-content">
-        <div class="logo">
-            <img src="assets/logo150.png" alt="Atlas Logo">
-        </div>
-        <h2>Every Dream Begins With Real Estate&trade;</h2>
-    </div>
-</header>
 
-<section class="intro">
-    <img src="assets/background.webp" alt="Particles">
-    <div class="search-bar">
-        <input type="text" placeholder="Search">
-        <button>Search</button>
-    </div>
-</section>
+        <section class="intro">
+            <img src="assets/background.webp" alt="Particles">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </section>
 
-<section class="services">
-    <h2 class="services-heading">Our Real Estate Services</h2>
-    <div class="service-items-container">
-        <div class="service-item">
-            <a href="residential.html">
-                <img src="assets/residential.jpg" alt="Residential">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="commercial.html">
-                <img src="assets/commercialserv.jpg" alt="Commercial">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="solar.html">
-                <img src="assets/solar.jpg" alt="Solar">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="investment.html">
-                <img src="assets/investment.jpg" alt="Investment">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="about.html">
-                <img src="assets/about.jpg" alt="about us">
-            </a>
-        </div>
-    </div>
-</section>
+        <section class="services">
+            <h2 class="services-heading">Our Real Estate Services</h2>
+            <div class="service-items-container">
+                <div class="service-item">
+                    <a href="residential.html">
+                        <img src="assets/residential.jpg" alt="Residential">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="commercial.html">
+                        <img src="assets/commercialserv.jpg" alt="Commercial">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="solar.html">
+                        <img src="assets/solar.jpg" alt="Solar">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="investment.html">
+                        <img src="assets/investment.jpg" alt="Investment">
+                    </a>
+                </div>
+                <div class="service-item">
+                <a href="about.html">
+                    <img src="assets/about.jpg" alt="about us">
+                </a>
+            </div>
+            </div>
+        </section>
 
         <section class="commercial">
             <div class="centered-content">
@@ -138,5 +215,32 @@ s0.parentNode.insertBefore(s1,s0);
                             <li><strong>Comprehensive Property Analysis:</strong> Our team conducts thorough property analyses, considering factors such as location, market demand, potential risks, and growth projections. This meticulous approach ensures that you invest in properties with excellent potential for long-term success.</li>
                         </ul>
                     </div>
-Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
-Editing atlas/commercial.html at main · clintonbrown32/atlas
+                </div>
+
+        </section>
+
+        <form action="https://script.google.com/macros/s/AKfycbw5JTHAeLHL1dY-xrfPJRIvAHNKT5ioc3NmiGZKue_TBLco9t8sDfnouZeox6ClYXYw8Q/exec" method="post">
+            <center>
+                <h2 class="contact">Contact Us</h2>
+            </center>
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Name" class="center-input">
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" class="center-input">
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Message" class="full-width"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="full-width">
+            </div>
+        </form>
+
+        <footer>
+            <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
