@@ -219,7 +219,7 @@ s0.parentNode.insertBefore(s1,s0);
                         <img src="assets/commercial1.jpg" alt="Commercial Image">
                     </div>
                     <div>
-                        <h3>Why Choose Us?</h3>
+                        <h3>Why Choose Us???</h3>
                         <ul>
                             <li><strong>Extensive Market Knowledge:</strong> Our team possesses in-depth knowledge of the local and regional commercial real estate market. We keep a close eye on market trends, property values, and emerging opportunities to ensure that you make informed decisions.</li>
                             <li><strong>Dedicated Commercial Experts:</strong> Our brokerage is staffed with specialized agents who are experts in commercial real estate. From office spaces and retail properties to industrial complexes and land development, we have the expertise to handle diverse commercial property transactions.</li>
@@ -256,47 +256,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // JavaScript for fetching and populating the feed items
-        const feedContainer = document.querySelector('.rss-feed-container');
-
-        fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
-            .then(response => response.json())
-            .then(data => {
-                const feedItems = data.items;
-
-                // Generate HTML for each feed item
-                const feedContent = feedItems.map(item => `
-                    <div class="feed-item">
-                        <img src="${item.thumbnail}" alt="Thumbnail">
-                        <div class="feed-item-content">
-                            <h3>${item.title}</h3>
-                            <a href="${item.link}" target="_blank">Read more</a>
-                        </div>
-                    </div>
-                `).join('');
-
-                // Inject the feed content into the HTML
-                feedContainer.innerHTML = feedContent;
-
-                // JavaScript for horizontal scrolling with arrow buttons
-                const scrollContainer = document.querySelector('.rss-feed-container');
-                const scrollLeftButton = document.querySelector('.scroll-left');
-                const scrollRightButton = document.querySelector('.scroll-right');
-
-                const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
-                const feedItemMargin = 20; // Adjust this value according to your CSS margin
-
-                scrollLeftButton.addEventListener('click', () => {
-                    scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
-                });
-
-                scrollRightButton.addEventListener('click', () => {
-                    scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
-                });
-            })
-            .catch(error => console.error(error));
-
+   
        // Add an event listener to the form submission
 document.getElementById('contactForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission
