@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/logo150.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
+    <style>
+        /* Add custom CSS for the residential section */
+      
+
+    .centered-content {
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative; /* Ensure content stays centered within the max width */
+        z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
+    }
+ .popup-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #333;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            font-weight: bold;
+            z-index: 9999;
+        }
+
+        .centered-content p {
+            padding-bottom:30px;
+        }
+        .section-heading {
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
+        }
+.agent-info {
+        text-align: center;
+        width: 45%; /* Adjust width to fit the content */
+        margin: 0 auto; /* Center the .agent-info div within the .section-content div */
+    }
+        .agent-info h3 {
+    margin-bottom: 3px; /* Reduce the margin between h3 and h4 */
+}
+
+.agent-info h4 {
+    margin-top: 3px; /* Reduce the margin between h3 and h4 */
+}
+
+
+    .agent-image {
+        max-width: 356px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+    }
+
+    /* Centering content in container div */
+    .container {
+        text-align: center;
+    }
+
+    .about {
+    background-image: url(assets/aboutback.jpg);
+    }
+
+   .about p {
+        line-height: 1.6;
+        color: #555;
+    }
+
+    .about h3 {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        margin-top: 30px;
+        
+    }
+
+        .about h2 { text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;}
+
+    .about ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+
+    .about li {
+        margin-bottom: 10px;
+    }
+
+    /* Image style */
+    .about img {
+        max-width: 400px;
+        max-height: 286px;
+        display: block;
+        margin: 10px auto;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        filter: drop-shadow(0px 1px 10px #000);
+    }
+
+   .about .section-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; 
+       padding-top: 40px;
+}
+
+.about .section-content > div {
+    flex: 1 0 calc(33.33% - 20px);
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex; /* Add display flex to align items vertically */
+    flex-direction: column; /* Align content in a column */
+    align-items: center; /* Center items horizontally */
+}
+
+
+    /* Alternate the image position */
+    .about .section-content:nth-child(odd) .agent-info {
+        order: 1;
+    }
+
+    .about .section-content:nth-child(even) .agent-info {
+        order: 0;
+</style>
+        
+    </style>
+    <title>Atlas - Real Estate Investment Company</title>
+</head>
+
+<body>
+
+      <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64c730d994cf5d49dc676ce6/1h6l1dl20';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+    </script>
+    <div class="container">
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html"> <!-- Replace "index.html" with the URL of your homepage -->
+                    <img src="assets/logo150.png" alt="Atlas Logo">
+                </a>
+            </div>
+            <h2>Every Dream Begins With Real Estate&trade;</h2>
+        </div>
+    </header>
+</div>
+        <section class="intro">
+            <img src="assets/background.webp" alt="Particles">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2 class="services-heading">Our Real Estate Services</h2>
+            <div class="service-items-container">
+                <div class="service-item">
+                    <a href="residential.html">
+                        <img src="assets/residential.jpg" alt="Residential">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="commercial.html">
+                        <img src="assets/commercialserv.jpg" alt="Commercial">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="solar.html">
+                        <img src="assets/solar.jpg" alt="Solar">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="investment.html">
+                        <img src="assets/investment.jpg" alt="Investment">
+                    </a>
+                </div>
+                <div class="service-item">
+                <a href="about.html">
+                    <img src="assets/about.jpg" alt="about us">
+                </a>
+            </div>
+            </div>
+        </section>
+
+   <section class="about"> <!-- Renamed "residential" to "about" -->
+        <div class="centered-content">
+            <h2 class="section-heading">Welcome to Atlas Real Estate Brokerage</h2>
+            <p>
+                At Atlas Real Estate Brokerage, we believe that every dream begins with real estate. We are a passionate
+                team of experienced professionals dedicated to providing exceptional real estate services to our valued
+                clients. With a strong commitment to integrity, innovation, and customer satisfaction, we strive to make
+                the buying, selling, and investing in real estate a seamless and rewarding experience.
+            </p>
+<center>
+            <h2>Our Mission</h2></center>
+            <p>
+                Our mission is to empower individuals and families to achieve their real estate goals by providing them
+                with personalized and professional services. We aim to build lasting relationships with our clients based
+                on trust, transparency, and superior performance. At Atlas, we understand that each real estate journey
+                is unique, and our team is here to guide you every step of the way.
+            </p>
+
+           
+        <div class="section-content">
+            <!-- Agent 1 -->
+            <div class="agent-info">
+                <img class="agent-image" src="assets/teresa.jpg" alt="Teresa Brown">
+                <h3>Teresa Brown</h3>
+                <h4>Realtor</h4>
+                <p>
+                    Teresa is a full-time Realtor with years of experience in the industry. She specializes in helping
+                    buyers and sellers navigate the complexities of real estate transactions.
+                </p>
+            </div>
+
+            <!-- Agent 2 -->
+            <div class="agent-info">
+                <img class="agent-image" src="assets/erick.jpg" alt="Erick Ordaz">
+                <h3>Erick Ordaz</h3>
+                <h4>Realtor</h4>
+                <p>
+                    Erick comes from a hospitality background and enjoys servicing client needs. He attended Santa
+                    Monica College focusing on computer science, marketing, and graphic design.
+                </p>
+            </div>
+
+            <!-- Agent 3 -->
+            <div class="agent-info">
+                <img class="agent-image" src="assets/clinton.jpg" alt="Clinton Brown">
+                <h3>Clinton Brown</h3>
+                <h4>CEO/Broker</h4>
+                <p>
+                    Clinton grew up in a small town south of St. Louis, Missouri. After high school, he earned both a
+                    bachelor’s degree in Political Science from Manhattanville College and a master’s at Norwich
+                    University.
+                </p>
+                </div>
+            </div>
+  <h2 class="section-heading">Looking to Join our Team ?</h2>
+   
+            <p>
+                At Atlas we are always on the lookout for talented and driven 
+                real estate professionals to join our family. 
+                If you are a passionate and seasoned real estate agent looking for a thriving and supportive environment to grow your career, we invite you to consider becoming a part of our team.
+                Reach out and let's start a conversation.
+            </p>
+
+            
+        </div>
+    </section>
+
+   
+<form id="contactForm" action="https://script.google.com/macros/s/AKfycbzZYbAYOUz1vOMhNJNyTXQ2BAHAqdnMgJZeMQBFMcnJkg9aWQXLH3iVXbDkAIQfXwomaQ/exec" method="POST">
+    <center>
+        <h2 class="contact">Contact Us</h2>
+    </center>
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Name" class="center-input" required>
+    </div>
+    <div class="form-group">
+        <input type="email" name="email" placeholder="Email" class="center-input" required>
+    </div>
+    <div class="form-group">
+        <textarea name="message" placeholder="Message" class="full-width" required></textarea>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Submit" class="full-width">
+    </div>
+</form>
+
+<footer>
+    <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // JavaScript for fetching and populating the feed items
+        const feedContainer = document.querySelector('.rss-feed-container');
+
+        fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+            .then(response => response.json())
+            .then(data => {
+                const feedItems = data.items;
+
+                // Generate HTML for each feed item
+                const feedContent = feedItems.map(item => `
+                    <div class="feed-item">
+                        <img src="${item.thumbnail}" alt="Thumbnail">
+                        <div class="feed-item-content">
+                            <h3>${item.title}</h3>
+                            <a href="${item.link}" target="_blank">Read more</a>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Inject the feed content into the HTML
+                feedContainer.innerHTML = feedContent;
+
+                // JavaScript for horizontal scrolling with arrow buttons
+                const scrollContainer = document.querySelector('.rss-feed-container');
+                const scrollLeftButton = document.querySelector('.scroll-left');
+                const scrollRightButton = document.querySelector('.scroll-right');
+
+                const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
+                const feedItemMargin = 20; // Adjust this value according to your CSS margin
+
+                scrollLeftButton.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
+                });
+
+                scrollRightButton.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
+                });
+            })
+            .catch(error => console.error(error));
+
+       // Add an event listener to the form submission
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+    })
+    .then(function (response) {
+        if (response.ok) {
+            // Show the pop-up message for successful submission
+            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+            document.getElementById('contactForm').reset(); // Reset the form after successful submission
+
+            // Clear individual form fields
+            document.querySelector('[name="name"]').value = '';
+            document.querySelector('[name="email"]').value = '';
+            document.querySelector('[name="message"]').value = '';
+        } else {
+            // Show the pop-up message for submission error
+            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+             document.getElementById('contactForm').reset();
+        }
+    })
+    .catch(function (error) {
+        // Handle network or fetch API errors
+        showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+         document.getElementById('contactForm').reset();
+    });
+});
+
+
+        // Function to show the pop-up message
+        function showPopupMessage(message) {
+            var popup = document.createElement('div');
+            popup.innerHTML = '<p>' + message + '</p>';
+            popup.className = 'popup-message'; // Add the CSS class for styling
+            document.body.appendChild(popup);
+
+            // Automatically remove the popup after a few seconds
+            setTimeout(function () {
+                document.body.removeChild(popup);
+            }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
+        }
+    });
+</script>
+</body>
+</html>
