@@ -13,11 +13,11 @@
       
 
     .centered-content {
-        max-width: 1100px;
-        margin: 0 auto;
-        position: relative; /* Ensure content stays centered within the max width */
-        z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
-      
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative; /* Ensure content stays centered within the max width */
+            z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
+            text-align: center; /* Center all text */
     }
  .popup-message {
             position: fixed;
@@ -54,35 +54,33 @@ html, body {
 }
 
         .video-placeholder video {
-    display: block;
-    margin: 0 auto;
-    width: 980px;
-    height: 551.25px;
+            display: block;
+            margin: 0 auto;
+            max-width: 100%; /* Make the video responsive */
+            height: auto; /* Maintain aspect ratio */
 }
-
-        .reserve-button {
-    text-align: center;
-    margin-top: 20px; /* Adjust as needed */
+ .reserve-button {
+            margin-top: 20px; /* Adjust as needed */
 }
 
 .reserve-link {
-    display: inline-block;
-    font-size: 75px;
-    padding: 20px 40px;
-    border: 2px solid #333;
-    text-decoration: none;
-    color: #333;
-    position: relative;
-    transition: background-color 0.3s;
+            display: inline-block;
+            font-size: 24px; /* Adjust as needed */
+            padding: 10px 20px; /* Adjust as needed */
+            border: 2px solid #333;
+            text-decoration: none;
+            color: #fff; /* Text color is white */
+            background-color: #333; /* Background color is black */
+            position: relative;
+            transition: background-color 0.3s;
 }
 
 .reserve-link:hover {
-    background-color: #333;
-    color: #fff;
+            background-color: #555; /* Darken the background on hover*/
 }
 
-        .bedroom-info p {
-    font-size: 50px;
+       .bedroom-info p {
+            font-size: 30px; /* Adjust as needed */
 }
 
 
