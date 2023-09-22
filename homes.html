@@ -309,7 +309,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     .then(function (response) {
         if (response.ok) {
             // Show the pop-up message for successful submission
-            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+            showPopupMessage('Thank you for your interest, Atlas will keep you updated');
             document.getElementById('contactForm').reset(); // Reset the form after successful submission
 
             // Clear individual form fields
@@ -318,13 +318,13 @@ document.getElementById('contactForm').addEventListener('submit', function (even
             document.querySelector('[name="message"]').value = '';
         } else {
             // Show the pop-up message for submission error
-            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+            showPopupMessage('Thank you for your interest, Atlas will keep you updated');
              document.getElementById('contactForm').reset();
         }
     })
     .catch(function (error) {
         // Handle network or fetch API errors
-        showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+        showPopupMessage('Thank you for your interest, Atlas will keep you updated');
          document.getElementById('contactForm').reset();
     });
 });
