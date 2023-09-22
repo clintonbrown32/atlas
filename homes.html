@@ -313,9 +313,15 @@ document.getElementById('contactForm').addEventListener('submit', function (even
             document.getElementById('contactForm').reset(); // Reset the form after successful submission
 
             // Clear individual form fields
-            document.querySelector('[name="name"]').value = '';
+            document.querySelector('[name="first_name"]').value = '';
+            document.querySelector('[name="last_name"]').value = '';
             document.querySelector('[name="email"]').value = '';
-            document.querySelector('[name="message"]').value = '';
+            document.querySelector('[name="phone"]').value = '';
+            document.querySelector('[name="address"]').value = '';
+            document.querySelector('[name="city"]').value = '';
+            document.querySelector('[name="state"]').value = '';
+            document.querySelector('[name="zip_code"]').value = '';
+            document.querySelector('[name="comments"]').value = '';
         } else {
             // Show the pop-up message for submission error
             showPopupMessage('Thank you for your interest, Atlas will keep you updated');
@@ -328,7 +334,6 @@ document.getElementById('contactForm').addEventListener('submit', function (even
          document.getElementById('contactForm').reset();
     });
 });
-
 
         // Function to show the pop-up message
         function showPopupMessage(message) {
