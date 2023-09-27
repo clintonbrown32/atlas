@@ -24,13 +24,20 @@
     padding: 0;
     box-sizing: border-box;
 }
-        .video-placeholder {
-    margin-bottom: 0;  /* Remove any bottom margin */
+      .video-placeholder {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
 }
-        .video-placeholder iframe {
-    display: block;
-    margin: 0 auto;
+
+.video-placeholder iframe, .video-placeholder video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
+
         .bedroom-info {
     margin-top: 0;
 }
@@ -134,6 +141,23 @@ html, body {
 #contactForm input:focus, 
 #contactForm textarea:focus {
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+        @media only screen and (max-width: 600px) {
+    h2, .section-heading {
+        font-size: 24px;
+    }
+    .bedroom-info p, .description-text {
+        font-size: 18px;
+    }
+    .white-text p {
+        font-size: 16px;
+    }
+@media only screen and (max-width: 600px) {
+    .popup-message {
+        width: 90%;
+        font-size: 14px;
+    }
 }
 
 
