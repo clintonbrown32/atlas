@@ -19,7 +19,18 @@
             z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
             text-align: center; /* Center all text */
     }
-   
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+        .video-placeholder {
+    margin-bottom: 0;  /* Remove any bottom margin */
+}
+
+.translucent-box {
+    margin-top: 0;  /* Remove any top margin */
+}
  .popup-message {
             position: fixed;
             top: 50%;
@@ -97,58 +108,6 @@ html, body {
 .bedroom-info {
     margin-top: 0; /* Remove the top margin */
 }
-
-        /* General Form Styling */
-#contactForm {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
-    max-width: 500px; /* Fixed width for the form */
-    margin: 20px auto; /* Center the form */
-}
-
-/* Styling for form elements */
-.center-input {
-    width: 100%;
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-}
-
-.center-input:focus {
-    border-color: #007BFF; /* Highlight the input with a blue border when focused */
-    outline: none;
-}
-
-.full-width {
-    width: 100%;
-}
-
-/* Styling for the textarea */
-textarea.full-width {
-    min-height: 100px;
-    resize: vertical; /* Allow vertical resizing */
-}
-
-/* Styling for the submit button */
-input[type="submit"].full-width {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-input[type="submit"].full-width:hover {
-    background-color: #0056b3; /* Darken the button on hover */
-}
-
 
 </style>
         
@@ -341,6 +300,33 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 
+    <?php
+// Retrieve form data
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+$city = $_POST['city'];
+$state = $_POST['state'];
+$zip_code = $_POST['zip_code'];
+$message = $_POST['message'];
+
+// Compose the email
+$to = $email;
+$subject = "Your Interest in Atlas Hills has been received";
+$message = "Dear $first_name,\n\nThank you for your interest in Atlas Hills!\n\nWe have received your information and will be in touch soon.\n\nBest regards,\nAtlas Hills Team";
+$headers = "From: homes@atlasrei.co";
+
+// Send the email
+$mail_success = mail($to, $subject, $message, $headers);
+
+if ($mail_success) {
+    echo "Email sent successfully!";
+} else {
+    echo "Failed to send email. Please try again later.";
+}
+?>
 
 
 
