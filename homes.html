@@ -19,7 +19,30 @@
             z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
             text-align: center; /* Center all text */
     }
-   
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+        .video-placeholder {
+    margin-bottom: 0;  /* Remove any bottom margin */
+}
+        .video-placeholder iframe {
+    display: block;
+    margin: 0 auto;
+}
+        .bedroom-info {
+    margin-top: 0;
+}
+
+        section {
+    margin: 0;
+    padding: 0;
+}
+
+.translucent-box {
+    margin-top: 0;  /* Remove any top margin */
+}
  .popup-message {
             position: fixed;
             top: 50%;
@@ -89,6 +112,30 @@ html, body {
     font-size: 23px;
     
 }
+
+        .translucent-box {
+    background-color: rgba(0, 0, 0, 0.5); /* This is a black color with 50% transparency */
+    padding: 15px; /* Add some padding around the content for better aesthetics */
+}
+.bedroom-info {
+    margin-top: 0; /* Remove the top margin */
+}
+
+        .white-text, .white-text p, .white-text a, .white-text strong {
+    color: #fff !important;
+}
+
+       #contactForm input, 
+#contactForm textarea {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+#contactForm input:focus, 
+#contactForm textarea:focus {
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 
 </style>
         
@@ -168,70 +215,73 @@ s0.parentNode.insertBefore(s1,s0);
 
     <section>
     <div class="centered-content">
-        <!-- Video Placeholder -->
+    
         <div class="video-placeholder">
-            <!-- Replace 'your_video_url.mp4' with the actual URL of your video -->
-            <video controls>
-                <source src="assets/atlashillsvideo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <iframe width="1100" height="618.75" src="https://www.youtube.com/embed/JDNfDJ5oNxs" frameborder="0" allowfullscreen></iframe>
         </div>
-        
-        
-        
+
+         <section>
+    <div class="translucent-box">
         <!-- 3 Bedrooms, 2 Baths Info -->
         <div class="bedroom-info">
             <p>3 BEDROOMS 2 BATHS<br>FROM $1,089,300</p>
         </div>
-        
+
         <!-- Description Text -->
         <div class="description-text">
             <p>Atlas Hills will be a new, vibrant California neighborhood experience that offers a unique combination of urban amenities, stunning natural beauty, and suburban charm. Atlas Hills seeks to be the perfect place to call home! Homeowners will enjoy a variety of nearby shopping, dining, and entertainment options, as well as access to premier schools, parks, and recreational opportunities.</p>
-                   <p>Each home will be equipped with the latest in smart home technology, from automated energy-efficient systems to voice-activated appliances. Homeowners can enjoy the convenience of controlling heating and cooling systems, adjusting lighting levels, and even unlocking doors with their smartphones. At Atlas Hills, California living has never been so easy and accessible.</p>
+            <p>Each home will be equipped with the latest in smart home technology, from automated energy-efficient systems to voice-activated appliances. Homeowners can enjoy the convenience of controlling heating and cooling systems, adjusting lighting levels, and even unlocking doors with their smartphones. At Atlas Hills, California living has never been so easy and accessible.</p>
             <p>At Atlas Hills, homeowners can find the perfect balance of convenience, affordability, and comfort. With its variety of housing options, commitment to sustainability and community, Atlas Hills is an ideal place for you to call home!</p>
-
         </div>
-        
-        
-    
-        
-        
+
+        <div class="centered-content">
+             <div class="white-text" style="text-align: center;">
+                <p><strong>Disclaimer:</strong>
+                    This Preliminary Offering Circular is for informational purposes only and is not an offer to sell
+                    or a solicitation of an offer to buy any securities. Any offer or solicitation to buy the securities
+                    described herein will be made only in the Final Offering Circular when it is available.
+                </p>
+
+                <p><strong>Important:</strong> The Securities and Exchange Commission (SEC) has not approved or
+                    disapproved of these securities or passed upon the accuracy or adequacy of this
+                    Preliminary Offering Circular. Any representation to the contrary is a criminal offense.
+                </p>
+
+                <p><strong>No Money Solicitation:</strong> We do not solicit any money or other consideration at this
+                    stage, and if sent in response, it will not be accepted.<br>
+                    <strong>No Offer Acceptance:</strong> We cannot accept any offer to buy the securities, and no part
+                    of the purchase price can be received until the offering statement is qualified by the
+                    Securities and Exchange Commission (SEC). Any such offer may be withdrawn or
+                    revoked without obligation or commitment of any kind at any time before notice of its
+                    acceptance, given only after the qualification date specified by the SEC.
+                </p>
+
+                <p>
+                    <a href="assets/disclosure.pdf"><strong>Preliminary Offering Circular</strong></a>
+                </p>
+            </div>
         </div>
     </div>
 </section>
 
-  <div class="centered-content">
-<div style="text-align: center;">
-  <p><strong>Disclaimer:</strong>
-    This Preliminary Offering Circular is for informational purposes only and is not an offer to sell
-    or a solicitation of an offer to buy any securities. Any offer or solicitation to buy the securities
-    described herein will be made only in the Final Offering Circular when it is available.
-  </p>
+    </div>
+</section>
 
-  <p><strong>Important:</strong> The Securities and Exchange Commission (SEC) has not approved or
-    disapproved of these securities or passed upon the accuracy or adequacy of this
-    Preliminary Offering Circular. Any representation to the contrary is a criminal offense.
-  </p>
 
-  <p><strong>No Money Solicitation:</strong> We do not solicit any money or other consideration at this
-    stage, and if sent in response, it will not be accepted.<br>
-    <strong>No Offer Acceptance:</strong> We cannot accept any offer to buy the securities, and no part
-    of the purchase price can be received until the offering statement is qualified by the
-    Securities and Exchange Commission (SEC). Any such offer may be withdrawn or
-    revoked without obligation or commitment of any kind at any time before notice of its
-    acceptance, given only after the qualification date specified by the SEC.
-  </p>
-
-  <p>
-    <a href="assets/disclosure1.pdf"><strong>Preliminary Offering Circular</strong></a>
-  </p>
-</div>
-
- </div>
+        
+        
+        
+       
+        
+        
+    
+    
 
 
 
-
+<form id="contactForm" action="process_form.php" method="POST">
+    <!-- ... (your existing form fields) ... -->
+</form>
 
 
 
@@ -267,13 +317,15 @@ s0.parentNode.insertBefore(s1,s0);
         <input type="text" name="zip_code" placeholder="Zip Code" class="center-input" required>
     </div>
     <div class="form-group">
-        <textarea name="message" placeholder="Why is Atlas Hills for you?" class="full-width" required></textarea>
+    <textarea name="message" placeholder="Why is Atlas Hills for you?" class="full-width"></textarea>
+</div>
 
     </div>
     <div class="form-group">
         <input type="submit" value="Submit" class="full-width">
     </div>
 </form>
+
 
 
 <footer>
