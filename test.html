@@ -455,6 +455,11 @@ document.getElementById('contactForm').addEventListener('submit', function (even
             }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
         }
     });
+return ContentService.createTextOutput(JSON.stringify(yourJSONObject))
+    .setMimeType(ContentService.MimeType.JSON);
+
+    
+    
 </script>
 </body>
 </html>
