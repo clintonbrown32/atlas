@@ -90,14 +90,6 @@ html, body {
     
 }
 
-        .translucent-box {
-    background-color: rgba(0, 0, 0, 0.5); /* This is a black color with 50% transparency */
-    padding: 15px; /* Add some padding around the content for better aesthetics */
-}
-.bedroom-info {
-    margin-top: 0; /* Remove the top margin */
-}
-
 </style>
         
 
@@ -181,50 +173,18 @@ s0.parentNode.insertBefore(s1,s0);
             <iframe width="1100" height="618.75" src="https://www.youtube.com/embed/JDNfDJ5oNxs" frameborder="0" allowfullscreen></iframe>
         </div>
 
-         <section>
-    <div class="translucent-box">
-        <!-- 3 Bedrooms, 2 Baths Info -->
+         <!-- 3 Bedrooms, 2 Baths Info -->
         <div class="bedroom-info">
             <p>3 BEDROOMS 2 BATHS<br>FROM $1,089,300</p>
         </div>
-
+        
         <!-- Description Text -->
         <div class="description-text">
             <p>Atlas Hills is a new, vibrant California neighborhood experience that offers a unique combination of urban amenities, stunning natural beauty, and suburban charm. Atlas Hills is the perfect place to call home! Homeowners will enjoy a variety of nearby shopping, dining, and entertainment options, as well as access to premier schools, parks, and recreational opportunities.</p>
-            <p>Each home is equipped with the latest in smart home technology, from automated energy-efficient systems to voice-activated appliances. Homeowners can enjoy the convenience of controlling heating and cooling systems, adjusting lighting levels, and even unlocking doors with their smartphones. At Atlas Hills, California living has never been so easy and accessible.</p>
+                   <p>Each home is equipped with the latest in smart home technology, from automated energy-efficient systems to voice-activated appliances. Homeowners can enjoy the convenience of controlling heating and cooling systems, adjusting lighting levels, and even unlocking doors with their smartphones. At Atlas Hills, California living has never been so easy and accessible.</p>
             <p>At Atlas Hills, homeowners can find the perfect balance of convenience, affordability, and comfort. With its variety of housing options, commitment to sustainability and community, Atlas Hills is an ideal place for you to call home!</p>
+
         </div>
-
-        <div class="centered-content">
-            <div style="text-align: center;">
-                <p><strong>Disclaimer:</strong>
-                    This Preliminary Offering Circular is for informational purposes only and is not an offer to sell
-                    or a solicitation of an offer to buy any securities. Any offer or solicitation to buy the securities
-                    described herein will be made only in the Final Offering Circular when it is available.
-                </p>
-
-                <p><strong>Important:</strong> The Securities and Exchange Commission (SEC) has not approved or
-                    disapproved of these securities or passed upon the accuracy or adequacy of this
-                    Preliminary Offering Circular. Any representation to the contrary is a criminal offense.
-                </p>
-
-                <p><strong>No Money Solicitation:</strong> We do not solicit any money or other consideration at this
-                    stage, and if sent in response, it will not be accepted.<br>
-                    <strong>No Offer Acceptance:</strong> We cannot accept any offer to buy the securities, and no part
-                    of the purchase price can be received until the offering statement is qualified by the
-                    Securities and Exchange Commission (SEC). Any such offer may be withdrawn or
-                    revoked without obligation or commitment of any kind at any time before notice of its
-                    acceptance, given only after the qualification date specified by the SEC.
-                </p>
-
-                <p>
-                    <a href="assets/disclosure.pdf"><strong>Preliminary Offering Circular</strong></a>
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
     </div>
 </section>
 
@@ -236,7 +196,41 @@ s0.parentNode.insertBefore(s1,s0);
         
         
     
-    
+        
+        
+        </div>
+    </div>
+</section>
+
+  <div class="centered-content">
+<div style="text-align: center;">
+  <p><strong>Disclaimer:</strong>
+    This Preliminary Offering Circular is for informational purposes only and is not an offer to sell
+    or a solicitation of an offer to buy any securities. Any offer or solicitation to buy the securities
+    described herein will be made only in the Final Offering Circular when it is available.
+  </p>
+
+  <p><strong>Important:</strong> The Securities and Exchange Commission (SEC) has not approved or
+    disapproved of these securities or passed upon the accuracy or adequacy of this
+    Preliminary Offering Circular. Any representation to the contrary is a criminal offense.
+  </p>
+
+  <p><strong>No Money Solicitation:</strong> We do not solicit any money or other consideration at this
+    stage, and if sent in response, it will not be accepted.<br>
+    <strong>No Offer Acceptance:</strong> We cannot accept any offer to buy the securities, and no part
+    of the purchase price can be received until the offering statement is qualified by the
+    Securities and Exchange Commission (SEC). Any such offer may be withdrawn or
+    revoked without obligation or commitment of any kind at any time before notice of its
+    acceptance, given only after the qualification date specified by the SEC.
+  </p>
+
+  <p>
+    <a href="assets/disclosure.pdf"><strong>Preliminary Offering Circular</strong></a>
+  </p>
+</div>
+
+ </div>
+
 
 
 
@@ -289,40 +283,10 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 
-    <?php
-// Retrieve form data
-$first_name = $_POST['first_name'];
-$last_name = $_POST['last_name'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$address = $_POST['address'];
-$city = $_POST['city'];
-$state = $_POST['state'];
-$zip_code = $_POST['zip_code'];
-$message = $_POST['message'];
-
-// Compose the email
-$to = $email;
-$subject = "Your Interest in Atlas Hills has been received";
-$message = "Dear $first_name,\n\nThank you for your interest in Atlas Hills!\n\nWe have received your information and will be in touch soon.\n\nBest regards,\nAtlas Hills Team";
-$headers = "From: homes@atlasrei.co";
-
-// Send the email
-$mail_success = mail($to, $subject, $message, $headers);
-
-if ($mail_success) {
-    echo "Email sent successfully!";
-} else {
-    echo "Failed to send email. Please try again later.";
-}
-?>
-
 
 
 <footer>
     <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
-</footer>
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         // JavaScript for fetching and populating the feed items
