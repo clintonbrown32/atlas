@@ -449,6 +449,44 @@ document.getElementById('contactForm').addEventListener('submit', function (even
             }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
         }
     });
+
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+    })
+    .then(function (response) {
+        if (response.ok) {
+            // Show the pop-up message for successful submission
+            showPopupMessage('Thank you for your interest, Atlas will keep you updated');
+            document.getElementById('contactForm').reset(); // Reset the form after successful submission
+        } else {
+            // Show the pop-up message for submission error
+            showPopupMessage('There was an error. Please try again later.');
+        }
+    })
+    .catch(function (error) {
+        // Handle network or fetch API errors
+        showPopupMessage('There was a network error. Please try again later.');
+    });
+});
+
+// Function to show the pop-up message
+function showPopupMessage(message) {
+    var popup = document.createElement('div');
+    popup.innerHTML = '<p>' + message + '</p>';
+    popup.className = 'popup-message'; // Add the CSS class for styling
+    document.body.appendChild(popup);
+
+    // Automatically remove the popup after a few seconds
+    setTimeout(function () {
+        document.body.removeChild(popup);
+    }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
+}
+
 </script>
 </body>
 </html>
