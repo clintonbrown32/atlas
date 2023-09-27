@@ -156,9 +156,6 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
-
-    return HtmlService.createHtmlOutput("Your HTML content here");
-
     </script>
     <div class="container">
     <header>
@@ -328,6 +325,36 @@ s0.parentNode.insertBefore(s1,s0);
         <input type="submit" value="Submit" class="full-width">
     </div>
 </form>
+
+
+
+    <?php
+// Retrieve form data
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+$city = $_POST['city'];
+$state = $_POST['state'];
+$zip_code = $_POST['zip_code'];
+$message = $_POST['message'];
+
+// Compose the email
+$to = $email;
+$subject = "Your Interest in Atlas Hills has been received";
+$message = "Dear $first_name,\n\nThank you for your interest in Atlas Hills!\n\nWe have received your information and will be in touch soon.\n\nBest regards,\nAtlas Hills Team";
+$headers = "From: homes@atlasrei.co";
+
+// Send the email
+$mail_success = mail($to, $subject, $message, $headers);
+
+if ($mail_success) {
+    echo "Email sent successfully!";
+} else {
+    echo "Failed to send email. Please try again later.";
+}
+?>
 
 
 
