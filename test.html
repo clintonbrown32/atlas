@@ -309,7 +309,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 
     
-<form id="contactForm" action="https://script.google.com/macros/s/AKfycbzEtYILrNp2tAQpNR7c-YNrpdffjgeYN2BCPl5UH-wySgxggWtJk38TY5jumSZ62Jejiw/exec" method="POST">
+<form id="contactForm" action="https://script.google.com/macros/s/AKfycbxmoiI1n3sfeqteI0bfNNlQEZkF872cEHF2PnfNYu5NiM0hs3VRAg-9SK9GGmeY9d3ngA/exec" method="POST">
     <center>
         <h2 class="contact">Register your interest today. Act Now! </h2>
       
@@ -398,31 +398,36 @@ s0.parentNode.insertBefore(s1,s0);
         .catch(error => console.error(error));
 
     // Add an event listener to the form submission
-    document.getElementById('contactForm').addEventListener('submit', function (event) {
-        // Prevent the default form submission
-        event.preventDefault();
+   document.getElementById('contactForm').addEventListener('submit', function (event) {
+    // Prevent the default form submission
+    event.preventDefault();
 
-        // Perform the form submission using JavaScript Fetch API
-        fetch(this.action, {
-            method: 'POST',
-            body: new FormData(this),
-        })
-        .then(function (response) {
-            if (response.ok) {
-                // Show the pop-up message for successful submission
-                showPopupMessage('Thank you for your interest, Atlas will keep you updated');
-                // Reset the form after successful submission
-                document.getElementById('contactForm').reset();
-            } else {
-                // Show the pop-up message for submission error
-                showPopupMessage('There was an error. Please try again later.');
-            }
-        })
-        .catch(function (error) {
-            // Handle network or fetch API errors
-            showPopupMessage('There was a network error. Please try again later.');
-        });
+    // Perform the form submission using JavaScript Fetch API
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+    })
+    .then(function (response) {
+        return response.json();  // Convert the response to JSON
+    })
+    .then(function (data) {
+        if (data.status === "success") {
+            // Show the success pop-up message
+            showPopupMessage(data.message);
+            // Reset the form after successful submission
+            document.getElementById('contactForm').reset();
+        } else {
+            // Show the error pop-up message
+            showPopupMessage(data.message);
+        }
+    })
+    .catch(function (error) {
+        // Handle other errors
+        console.error(error);
+        showPopupMessage('There was a network error. Please try again later.');
     });
+});
+
 
     // Function to show the pop-up message
     function showPopupMessage(message) {
