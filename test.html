@@ -19,37 +19,7 @@
             z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
             text-align: center; /* Center all text */
     }
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-      .video-placeholder {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-}
-
-.video-placeholder iframe, .video-placeholder video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-        .bedroom-info {
-    margin-top: 0;
-}
-
-        section {
-    margin: 0;
-    padding: 0;
-}
-
-.translucent-box {
-    margin-top: 0;  /* Remove any top margin */
-}
+   
  .popup-message {
             position: fixed;
             top: 50%;
@@ -127,39 +97,6 @@ html, body {
 .bedroom-info {
     margin-top: 0; /* Remove the top margin */
 }
-
-        .white-text, .white-text p, .white-text a, .white-text strong {
-    color: #fff !important;
-}
-
-       #contactForm input, 
-#contactForm textarea {
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-#contactForm input:focus, 
-#contactForm textarea:focus {
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-        @media only screen and (max-width: 600px) {
-    h2, .section-heading {
-        font-size: 24px;
-    }
-    .bedroom-info p, .description-text {
-        font-size: 18px;
-    }
-    .white-text p {
-        font-size: 16px;
-    }
-@media only screen and (max-width: 600px) {
-    .popup-message {
-        width: 90%;
-        font-size: 14px;
-    }
-}
-
 
 </style>
         
@@ -253,13 +190,13 @@ s0.parentNode.insertBefore(s1,s0);
 
         <!-- Description Text -->
         <div class="description-text">
-            <p>Atlas Hills will be a new, vibrant California neighborhood experience that offers a unique combination of urban amenities, stunning natural beauty, and suburban charm. Atlas Hills seeks to be the perfect place to call home! Homeowners will enjoy a variety of nearby shopping, dining, and entertainment options, as well as access to premier schools, parks, and recreational opportunities.</p>
-            <p>Each home will be equipped with the latest in smart home technology, from automated energy-efficient systems to voice-activated appliances. Homeowners can enjoy the convenience of controlling heating and cooling systems, adjusting lighting levels, and even unlocking doors with their smartphones. At Atlas Hills, California living has never been so easy and accessible.</p>
+            <p>Atlas Hills is a new, vibrant California neighborhood experience that offers a unique combination of urban amenities, stunning natural beauty, and suburban charm. Atlas Hills is the perfect place to call home! Homeowners will enjoy a variety of nearby shopping, dining, and entertainment options, as well as access to premier schools, parks, and recreational opportunities.</p>
+            <p>Each home is equipped with the latest in smart home technology, from automated energy-efficient systems to voice-activated appliances. Homeowners can enjoy the convenience of controlling heating and cooling systems, adjusting lighting levels, and even unlocking doors with their smartphones. At Atlas Hills, California living has never been so easy and accessible.</p>
             <p>At Atlas Hills, homeowners can find the perfect balance of convenience, affordability, and comfort. With its variety of housing options, commitment to sustainability and community, Atlas Hills is an ideal place for you to call home!</p>
         </div>
 
         <div class="centered-content">
-             <div class="white-text" style="text-align: center;">
+            <div style="text-align: center;">
                 <p><strong>Disclaimer:</strong>
                     This Preliminary Offering Circular is for informational purposes only and is not an offer to sell
                     or a solicitation of an offer to buy any securities. Any offer or solicitation to buy the securities
@@ -281,7 +218,7 @@ s0.parentNode.insertBefore(s1,s0);
                 </p>
 
                 <p>
-                    <a href="assets/disclosure1.pdf"><strong>Preliminary Offering Circular</strong></a>
+                    <a href="assets/disclosure.pdf"><strong>Preliminary Offering Circular</strong></a>
                 </p>
             </div>
         </div>
@@ -303,13 +240,15 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 
-
+<form id="contactForm" action="process_form.php" method="POST">
+    <!-- ... (your existing form fields) ... -->
+</form>
 
 
 
 
     
-<form id="contactForm" action="https://script.google.com/macros/s/AKfycbxmoiI1n3sfeqteI0bfNNlQEZkF872cEHF2PnfNYu5NiM0hs3VRAg-9SK9GGmeY9d3ngA/exec" method="POST">
+<form id="contactForm" action="https://script.google.com/macros/s/AKfycbyhBF_g3BhEvivE0POubyLH20E1yq3-9IAdtWNJEkv5VyDhbuYLLwLB61fZBU3LNXCJaw/exec" method="POST">
     <center>
         <h2 class="contact">Register your interest today. Act Now! </h2>
       
@@ -339,7 +278,7 @@ s0.parentNode.insertBefore(s1,s0);
         <input type="text" name="zip_code" placeholder="Zip Code" class="center-input" required>
     </div>
     <div class="form-group">
-    <textarea name="message" placeholder="Why is Atlas Hills for you?" class="full-width"></textarea>
+    <textarea name="message" placeholder="Message" class="full-width"></textarea>
 </div>
 
     </div>
@@ -350,101 +289,133 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 
+    <?php
+// Retrieve form data
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+$city = $_POST['city'];
+$state = $_POST['state'];
+$zip_code = $_POST['zip_code'];
+$message = $_POST['message'];
+
+// Compose the email
+$to = $email;
+$subject = "Your Interest in Atlas Hills has been received";
+$message = "Dear $first_name,\n\nThank you for your interest in Atlas Hills!\n\nWe have received your information and will be in touch soon.\n\nBest regards,\nAtlas Hills Team";
+$headers = "From: homes@atlasrei.co";
+
+// Send the email
+$mail_success = mail($to, $subject, $message, $headers);
+
+if ($mail_success) {
+    echo "Email sent successfully!";
+} else {
+    echo "Failed to send email. Please try again later.";
+}
+?>
+
+
+
 <footer>
     <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
 </footer>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        // JavaScript for fetching and populating the feed items
+        const feedContainer = document.querySelector('.rss-feed-container');
 
-    // JavaScript for fetching and populating the feed items
-    const feedContainer = document.querySelector('.rss-feed-container');
+        fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+            .then(response => response.json())
+            .then(data => {
+                const feedItems = data.items;
 
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
-        .then(response => response.json())
-        .then(data => {
-            const feedItems = data.items;
-
-            // Generate HTML for each feed item
-            const feedContent = feedItems.map(item => `
-                <div class="feed-item">
-                    <img src="${item.thumbnail}" alt="Thumbnail">
-                    <div class="feed-item-content">
-                        <h3>${item.title}</h3>
-                        <a href="${item.link}" target="_blank">Read more</a>
+                // Generate HTML for each feed item
+                const feedContent = feedItems.map(item => `
+                    <div class="feed-item">
+                        <img src="${item.thumbnail}" alt="Thumbnail">
+                        <div class="feed-item-content">
+                            <h3>${item.title}</h3>
+                            <a href="${item.link}" target="_blank">Read more</a>
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `).join('');
 
-            // Inject the feed content into the HTML
-            feedContainer.innerHTML = feedContent;
+                // Inject the feed content into the HTML
+                feedContainer.innerHTML = feedContent;
 
-            // JavaScript for horizontal scrolling with arrow buttons
-            const scrollContainer = document.querySelector('.rss-feed-container');
-            const scrollLeftButton = document.querySelector('.scroll-left');
-            const scrollRightButton = document.querySelector('.scroll-right');
+                // JavaScript for horizontal scrolling with arrow buttons
+                const scrollContainer = document.querySelector('.rss-feed-container');
+                const scrollLeftButton = document.querySelector('.scroll-left');
+                const scrollRightButton = document.querySelector('.scroll-right');
 
-            const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
-            const feedItemMargin = 20; // Adjust this value according to your CSS margin
+                const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
+                const feedItemMargin = 20; // Adjust this value according to your CSS margin
 
-            scrollLeftButton.addEventListener('click', () => {
-                scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
-            });
+                scrollLeftButton.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
+                });
 
-            scrollRightButton.addEventListener('click', () => {
-                scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
-            });
-        })
-        .catch(error => console.error(error));
+                scrollRightButton.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
+                });
+            })
+            .catch(error => console.error(error));
 
-    // Add an event listener to the form submission
-   document.getElementById('contactForm').addEventListener('submit', function (event) {
-    // Prevent the default form submission
-    event.preventDefault();
+       // Add an event listener to the form submission
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
 
-    // Perform the form submission using JavaScript Fetch API
+    // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
     fetch(this.action, {
         method: 'POST',
         body: new FormData(this),
     })
     .then(function (response) {
-        return response.json();  // Convert the response to JSON
-    })
-    .then(function (data) {
-        if (data.status === "success") {
-            // Show the success pop-up message
-            showPopupMessage(data.message);
-            // Reset the form after successful submission
-            document.getElementById('contactForm').reset();
+        if (response.ok) {
+            // Show the pop-up message for successful submission
+            showPopupMessage('Thank you for your interest, Atlas will keep you updated');
+            document.getElementById('contactForm').reset(); // Reset the form after successful submission
+
+            // Clear individual form fields
+            document.querySelector('[name="first_name"]').value = '';
+            document.querySelector('[name="last_name"]').value = '';
+            document.querySelector('[name="email"]').value = '';
+            document.querySelector('[name="phone"]').value = '';
+            document.querySelector('[name="address"]').value = '';
+            document.querySelector('[name="city"]').value = '';
+            document.querySelector('[name="state"]').value = '';
+            document.querySelector('[name="zip_code"]').value = '';
+            document.querySelector('[name="comments"]').value = '';
         } else {
-            // Show the error pop-up message
-            showPopupMessage(data.message);
+            // Show the pop-up message for submission error
+            showPopupMessage('Thank you for your interest, Atlas will keep you updated');
+             document.getElementById('contactForm').reset();
         }
     })
     .catch(function (error) {
-        // Handle other errors
-        console.error(error);
-        showPopupMessage('There was a network error. Please try again later.');
+        // Handle network or fetch API errors
+        showPopupMessage('Thank you for your interest, Atlas will keep you updated');
+         document.getElementById('contactForm').reset();
     });
 });
 
+        // Function to show the pop-up message
+        function showPopupMessage(message) {
+            var popup = document.createElement('div');
+            popup.innerHTML = '<p>' + message + '</p>';
+            popup.className = 'popup-message'; // Add the CSS class for styling
+            document.body.appendChild(popup);
 
-    // Function to show the pop-up message
-    function showPopupMessage(message) {
-        var popup = document.createElement('div');
-        popup.innerHTML = '<p>' + message + '</p>';
-        popup.className = 'popup-message';
-        document.body.appendChild(popup);
-
-        // Automatically remove the popup after a few seconds
-        setTimeout(function () {
-            document.body.removeChild(popup);
-        }, 5000);
-    }
-
-});
-
-
+            // Automatically remove the popup after a few seconds
+            setTimeout(function () {
+                document.body.removeChild(popup);
+            }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
+        }
+    });
 </script>
 </body>
 </html>
