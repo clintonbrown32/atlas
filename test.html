@@ -3,83 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="assets/logo150.png" type="image/png">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
-
-<!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Atlas Real Estate">
-<meta property="og:description" content="Discover premium properties with Atlas Real Estate."> <!-- I added a basic description. You might want to customize it. -->
-<meta property="og:image" content="https://img.youtube.com/vi/JDNfDJ5oNxs/hqdefault.jpg">
-<meta property="og:url" content="https://www.atlasrei.co/homes">
-
-<!-- Twitter Card Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Atlas Real Estate">
-<meta name="twitter:description" content="Discover premium properties with Atlas Real Estate.">
-<meta name="twitter:image" content="https://img.youtube.com/vi/JDNfDJ5oNxs/hqdefault.jpg">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/logo150.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
     <style>
         /* Add custom CSS for the residential section */
-      
-
-    .centered-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            position: relative; /* Ensure content stays centered within the max width */
-            z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
-            text-align: center; /* Center all text */
+       .residential {
+        position: relative;
+        background-image: url("assets/marble.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 20px 0; /* Add vertical padding to separate content from background */
     }
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-      .video-placeholder {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-}
+        
+    .centered-content {
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative; /* Ensure content stays centered within the max width */
+        z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
+    }
 
-.video-placeholder iframe, .video-placeholder video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
 
-        .bedroom-info {
-    margin-top: 0;
-}
-
-        section {
-    margin: 0;
-    padding: 0;
-}
-
-.translucent-box {
-    margin-top: 0;  /* Remove any top margin */
-}
- .popup-message {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid #333;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-            text-align: center;
-            font-weight: bold;
-            z-index: 9999;
-        }
-
-        .centered-content p {
-            padding-bottom:30px;
-        }
         .section-heading {
             font-size: 30px;
             font-weight: bold;
@@ -90,99 +37,82 @@
             text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
         }
 
-html, body {
-    background-image: url("assets/mountains.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Optional, this will keep the background fixed even when scrolling */
-}
+        .residential p {
+            line-height: 1.6;
+            color: #555;
+        }
 
-        .video-placeholder video {
+        .residential h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 30px;
+            text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
+        }
+
+        .residential ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .residential li {
+            margin-bottom: 10px;
+        }
+
+        /* Image style */
+        .residential img {
+            max-width: 400px;
+            max-height: 286px;
             display: block;
-            margin: 0 auto;
-            max-width: 100%; /* Make the video responsive */
-            height: auto; /* Maintain aspect ratio */
-}
- .reserve-button {
-            margin-top: 20px; /* Adjust as needed */
-}
+            margin: 10px auto;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            filter: drop-shadow(0px 1px 10px #000);
+        }
 
-.reserve-link {
-            display: inline-block;
-            font-size: 24px; /* Adjust as needed */
-            padding: 10px 20px; /* Adjust as needed */
-            border: 2px solid #333;
-            text-decoration: none;
-            color: #fff; /* Text color is white */
-            background-color: #333; /* Background color is black */
-            position: relative;
-            transition: background-color 0.3s;
-}
+        /* Alternate the image position */
+        .residential .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.reserve-link:hover {
-            background-color: #555; /* Darken the background on hover*/
-}
+        .residential .section-content > div {
+            flex: 0 0 48%;
+            margin-bottom: 20px;
+        }
 
-       .bedroom-info p {
-            font-size: 30px; /* Adjust as needed */
-            color: #fff; /* Text color is white */
-}
-.description-text {
- color: #fff;
-    font-size: 23px;
-    
-}
+        .residential .section-content img {
+            margin: 10px auto;
+        }
 
-        .translucent-box {
-    background-color: rgba(0, 0, 0, 0.5); /* This is a black color with 50% transparency */
-    padding: 15px; /* Add some padding around the content for better aesthetics */
-}
-.bedroom-info {
-    margin-top: 0; /* Remove the top margin */
-}
+        /* Alternate the image position */
+        .residential .section-content:nth-child(odd) .residential-image {
+            order: 1;
+            text-align: right;
+        }
 
-        .white-text, .white-text p, .white-text a, .white-text strong {
-    color: #fff !important;
+        .residential .section-content:nth-child(even) .residential-image {
+            order: 0;
+            text-align: left;
+        }
+@media screen and (max-width: 768px) {
+    /* styles for mobile devices here */
 }
-
-       #contactForm input, 
-#contactForm textarea {
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-#contactForm input:focus, 
-#contactForm textarea:focus {
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-        @media only screen and (max-width: 600px) {
-    h2, .section-heading {
-        font-size: 24px;
-    }
-    .bedroom-info p, .description-text {
-        font-size: 18px;
-    }
-    .white-text p {
-        font-size: 16px;
-    }
-@media only screen and (max-width: 600px) {
-    .popup-message {
-        width: 90%;
-        font-size: 14px;
+        @media screen and (max-width: 768px) {
+    body {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
-
-</style>
-        
-
+    </style>
     <title>Atlas - Real Estate Investment Company</title>
 </head>
 
 <body>
-
-      <!--Start of Tawk.to Script-->
+    <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -193,7 +123,61 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
-    </script>
+
+
+// Add an event listener to the form submission
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+    })
+    .then(function (response) {
+        if (response.ok) {
+            // Show the pop-up message for successful submission
+            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+            document.getElementById('contactForm').reset(); // Reset the form after successful submission
+
+            // Clear individual form fields
+            document.querySelector('[name="name"]').value = '';
+            document.querySelector('[name="email"]').value = '';
+            document.querySelector('[name="message"]').value = '';
+        } else {
+            // Show the pop-up message for submission error
+            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+        }
+    })
+    .catch(function (error) {
+        // Handle network or fetch API errors
+        showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+    });
+});
+
+// Function to show the pop-up message
+function showPopupMessage(message) {
+    var popup = document.createElement('div');
+    popup.innerHTML = '<p>' + message + '</p>';
+    popup.className = 'popup-message'; // Add the CSS class for styling
+    document.body.appendChild(popup);
+
+    // Automatically remove the popup after a few seconds
+    setTimeout(function () {
+        document.body.removeChild(popup);
+    }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
+}
+
+
+
+
+
+
+
+
+
+    
+</script>
     <div class="container">
     <header>
         <div class="header-content">
@@ -244,132 +228,83 @@ s0.parentNode.insertBefore(s1,s0);
             </div>
             </div>
         </section>
+        
+           <section class="residential">
+        <div class="centered-content">
+            <h2 class="section-heading">Residential Buying and Selling</h2>
+            <p>Atlas is dedicated to providing you with comprehensive and personalized services for all your buying and selling needs. Whether you are looking for your dream home or planning to sell your property, our experienced team of real estate professionals is here to guide you every step of the way.</p>
 
-   
-            
+            <div class="section-content">
+                <div class="residential-image">
+                    <img src="assets/home.jpg" alt="Residential Image">
+                </div>
+                <div>
+                    <h3>Buying a Residential Property</h3>
+                    <p>Purchasing a residential property is an exciting milestone, and we understand the significance of finding the perfect home that aligns with your lifestyle and preferences. Our expert real estate agents are committed to helping you navigate the home-buying process seamlessly.</p>
+
+                    <ul>
+                        <li><strong>Personalized Property Search:</strong> We conduct an in-depth analysis of your requirements and preferences to match you with properties that best suit your needs.</li>
+                        <li><strong>Market Expertise:</strong> Our team stays up-to-date with the latest market trends and property values, ensuring you make an informed decision.</li>
+                        <li><strong>Guidance and Negotiation:</strong> We negotiate on your behalf to secure the best possible price and terms for your dream home.</li>
+                        <li><strong>Home Inspections:</strong> Our associates coordinate thorough home inspections to ensure the property meets your expectations.</li>
+                        <li><strong>Smooth Closing:</strong> We assist you with all the necessary paperwork and processes, ensuring a seamless and stress-free closing experience.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-content">
+                <div class="residential-image">
+                    <img src="assets/interior.jpg" alt="Selling Image">
+                </div>
+                <div>
+                    <h3>Selling Your Residential Property</h3>
+                    <p>Selling your home can be a significant decision, and we're here to make the process as smooth and profitable as possible. Our tailored marketing strategies and extensive network enable us to reach the right buyers for your property.</p>
+
+                    <ul>
+                        <li><strong>Home Valuation:</strong> We conduct a detailed market analysis to determine the optimal listing price for your property.</li>
+                        <li><strong>Property Marketing:</strong> Our team employs a multi-faceted marketing approach to showcase your home's best features to potential buyers.</li>
+                        <li><strong>Targeted Exposure:</strong> Through our extensive network and online platforms, we target qualified buyers actively seeking properties like yours.</li>
+                        <li><strong>Open Houses and Showings:</strong> We organize open houses and private showings to attract interested buyers.</li>
+                        <li><strong>Expert Negotiation:</strong> Our agents skillfully negotiate on your behalf to achieve the best possible sale price and terms.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-content">
+                <div class="residential-image">
+                    <img src="assets/keys.jpg" alt="Why Choose Us Image">
+                </div>
+                <div>
+                    <h3>Why Choose Us?</h3>
+                    <ul>
+                        <li><strong>Local Expertise:</strong> Our team's deep understanding of the local real estate market empowers us to offer insightful guidance.</li>
+                        <li><strong>Personalized Approach:</strong> We treat each client with individual attention, tailoring our services to meet their unique requirements.</li>
+                        <li><strong>Transparency and Integrity:</strong> We value honesty and integrity, ensuring that you have all the information needed to make informed decisions.</li>
+                        <li><strong>Customer Satisfaction:</strong> Our commitment to excellence has earned us a reputation for exceptional customer service.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section>
-    <div class="centered-content">
     
-        <div class="video-placeholder">
-           <iframe width="1100" height="618.75" src="https://www.youtube.com/embed/YzKhhcUIg_g" frameborder="0" allowfullscreen></iframe>
-
-        </div>
-
-         <section>
-    <div class="translucent-box">
-        <!-- 3 Bedrooms, 2 Baths Info -->
-        <div class="bedroom-info">
-            <p>3 BEDROOMS 2 BATHS<br>FROM $1,089,300</p>
-        </div>
-
-        <!-- Description Text -->
-        <div class="description-text">
-            <p>Atlas Hills will be a new, vibrant California neighborhood experience that offers a unique combination of urban amenities, stunning natural beauty, and suburban charm. Atlas Hills seeks to be the perfect place to call home! Homeowners will enjoy a variety of nearby shopping, dining, and entertainment options, as well as access to premier schools, parks, and recreational opportunities.</p>
-            <p>Each home will be equipped with the latest in smart home technology, from automated energy-efficient systems to voice-activated appliances. Homeowners can enjoy the convenience of controlling heating and cooling systems, adjusting lighting levels, and even unlocking doors with their smartphones. At Atlas Hills, California living has never been so easy and accessible.</p>
-            <p>At Atlas Hills, homeowners can find the perfect balance of convenience, affordability, and comfort. With its variety of housing options, commitment to sustainability and community, Atlas Hills is an ideal place for you to call home!</p>
-        </div>
-
-        <div class="centered-content">
-             <div class="white-text" style="text-align: center;">
-
-
-
-                 <p><strong>Note:</strong> The minimum purchase for this offering is one share, which represents ownership of one
-owner-occupied residence and is priced at $50,000 per share. Each investor may only purchase one
-share per owner-occupied residence. There are a total of 200 shares/homes available in this offering.
-Upon purchase of a share, it is important to note that the remaining balance of the property purchase
-price must be paid at the time of the share exchange, which is facilitated through a tender offer. This
-payment is a prerequisite for obtaining title to the property</p>
-                 
-                <p><strong>Disclaimer:</strong>
-                    This Preliminary Offering Circular is for informational purposes only and is not an offer to sell
-                    or a solicitation of an offer to buy any securities. Any offer or solicitation to buy the securities
-                    described herein will be made only in the Final Offering Circular when it is available.
-                </p>
-
-                <p><strong>Important:</strong> The Securities and Exchange Commission (SEC) has not approved or
-                    disapproved of these securities or passed upon the accuracy or adequacy of this
-                    Preliminary Offering Circular. Any representation to the contrary is a criminal offense.
-                </p>
-
-                <p><strong>No Money Solicitation:</strong> We do not solicit any money or other consideration at this
-                    stage, and if sent in response, it will not be accepted.<br>
-                    <strong>No Offer Acceptance:</strong> We cannot accept any offer to buy the securities, and no part
-                    of the purchase price can be received until the offering statement is qualified by the
-                    Securities and Exchange Commission (SEC). Any such offer may be withdrawn or
-                    revoked without obligation or commitment of any kind at any time before notice of its
-                    acceptance, given only after the qualification date specified by the SEC.
-                </p>
-
-                <p>
-                    <a href="assets/disclosure1.pdf"><strong>Preliminary Offering Circular</strong></a>
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    </div>
-</section>
-
-
-        
-        
-        
-       
-        
-        
-    
-    
-
-
-
-
-
-    
-<form id="contactForm" action="https://script.google.com/macros/s/AKfycbzX0gfOH6uNrr3QK4P6jfOe11Q2nluz8FP4BzbSiu_iw5-zsNVEq5ZtlqlpRdT4VeAhvw/exec" method="POST">
+<form id="contactForm" action="https://script.google.com/macros/s/AKfycbzZYbAYOUz1vOMhNJNyTXQ2BAHAqdnMgJZeMQBFMcnJkg9aWQXLH3iVXbDkAIQfXwomaQ/exec" method="POST">
     <center>
-        <h2 class="contact">Register your interest today. Act Now! </h2>
-      
+        <h2 class="contact">Contact Us</h2>
     </center>
     <div class="form-group">
-        <input type="text" name="first_name" placeholder="First Name" class="center-input" required>
+        <input type="text" name="name" placeholder="Name" class="center-input" required>
     </div>
     <div class="form-group">
-        <input type="text" name="last_name" placeholder="Last Name" class="center-input" required>
+        <input type="email" name="email" placeholder="Email" class="center-input" required>
     </div>
     <div class="form-group">
-        <input type="email" name="email" placeholder="E-mail" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <input type="tel" name="phone" placeholder="Phone" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <input type="text" name="address" placeholder="Address" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <input type="text" name="city" placeholder="City" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <input type="text" name="state" placeholder="State" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <input type="text" name="zip_code" placeholder="Zip Code" class="center-input" required>
-    </div>
-    <div class="form-group">
-    <textarea name="message" placeholder="Why is Atlas Hills for you?" class="full-width"></textarea>
-</div>
-
+        <textarea name="message" placeholder="What is your real estate dream?™" class="full-width" required></textarea>
     </div>
     <div class="form-group">
         <input type="submit" value="Submit" class="full-width">
     </div>
 </form>
-
-
 
 <footer>
     <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
@@ -377,77 +312,92 @@ payment is a prerequisite for obtaining title to the property</p>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-    // JavaScript for fetching and populating the feed items
-    const feedContainer = document.querySelector('.rss-feed-container');
+        // JavaScript for fetching and populating the feed items
+        const feedContainer = document.querySelector('.rss-feed-container');
 
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
-        .then(response => response.json())
-        .then(data => {
-            const feedItems = data.items;
+        fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+            .then(response => response.json())
+            .then(data => {
+                const feedItems = data.items;
 
-            const feedContent = feedItems.map(item => `
-                <div class="feed-item">
-                    <img src="${item.thumbnail}" alt="Thumbnail">
-                    <div class="feed-item-content">
-                        <h3>${item.title}</h3>
-                        <a href="${item.link}" target="_blank">Read more</a>
+                // Generate HTML for each feed item
+                const feedContent = feedItems.map(item => `
+                    <div class="feed-item">
+                        <img src="${item.thumbnail}" alt="Thumbnail">
+                        <div class="feed-item-content">
+                            <h3>${item.title}</h3>
+                            <a href="${item.link}" target="_blank">Read more</a>
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `).join('');
 
-            feedContainer.innerHTML = feedContent;
+                // Inject the feed content into the HTML
+                feedContainer.innerHTML = feedContent;
 
-            const scrollContainer = document.querySelector('.rss-feed-container');
-            const scrollLeftButton = document.querySelector('.scroll-left');
-            const scrollRightButton = document.querySelector('.scroll-right');
+                // JavaScript for horizontal scrolling with arrow buttons
+                const scrollContainer = document.querySelector('.rss-feed-container');
+                const scrollLeftButton = document.querySelector('.scroll-left');
+                const scrollRightButton = document.querySelector('.scroll-right');
 
-            const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
-            const feedItemMargin = 20;
+                const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
+                const feedItemMargin = 20; // Adjust this value according to your CSS margin
 
-            scrollLeftButton.addEventListener('click', () => {
-                scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
-            });
+                scrollLeftButton.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
+                });
 
-            scrollRightButton.addEventListener('click', () => {
-                scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
-            });
-        })
-        .catch(error => console.error(error));
+                scrollRightButton.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
+                });
+            })
+            .catch(error => console.error(error));
 
-    // Handle the form submission
-    document.getElementById('contactForm').addEventListener('submit', function (event) {
-        event.preventDefault();
+       // Add an event listener to the form submission
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
 
-        fetch(this.action, {
-            method: 'POST',
-            body: new FormData(this),
-        })
-        .then(response => {
-            if (response.ok) {
-                showPopupMessage('Thank you for your interest, Atlas will keep you updated');
-                document.getElementById('contactForm').reset();
-            } else {
-                showPopupMessage('Error occurred. Please try again.');
-            }
-        })
-        .catch(error => {
-            showPopupMessage('Network error. Please try again later.');
-        });
+    // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+    })
+    .then(function (response) {
+        if (response.ok) {
+            // Show the pop-up message for successful submission
+            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+            document.getElementById('contactForm').reset(); // Reset the form after successful submission
+
+            // Clear individual form fields
+            document.querySelector('[name="name"]').value = '';
+            document.querySelector('[name="email"]').value = '';
+            document.querySelector('[name="message"]').value = '';
+        } else {
+            // Show the pop-up message for submission error
+            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+             document.getElementById('contactForm').reset();
+        }
+    })
+    .catch(function (error) {
+        // Handle network or fetch API errors
+        showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+         document.getElementById('contactForm').reset();
     });
-
-    // Function to show the pop-up message
-    function showPopupMessage(message) {
-        const popup = document.createElement('div');
-        popup.innerHTML = '<p>' + message + '</p>';
-        popup.className = 'popup-message';
-        document.body.appendChild(popup);
-
-        setTimeout(() => {
-            document.body.removeChild(popup);
-        }, 5000);
-    }
 });
 
+
+        // Function to show the pop-up message
+        function showPopupMessage(message) {
+            var popup = document.createElement('div');
+            popup.innerHTML = '<p>' + message + '</p>';
+            popup.className = 'popup-message'; // Add the CSS class for styling
+            document.body.appendChild(popup);
+
+            // Automatically remove the popup after a few seconds
+            setTimeout(function () {
+                document.body.removeChild(popup);
+            }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
+        }
+    });
 </script>
 </body>
 </html>
