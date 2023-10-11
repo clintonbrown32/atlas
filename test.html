@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
@@ -7,21 +8,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Atlas - Real Estate">
     <meta property="og:description" content="Welcome to Atlas Real Estate, your trusted partner for all your real estate needs. We offer residential, commercial, solar, and investment services. Contact us for expert advice.">
-    <meta property="og:image" content="https://www.atlasrei.co/assets/logo150.png"> 
-    <meta property="og:url" content="https://www.atlasrei.co"> 
+    <meta property="og:image" content="https://www.atlasrei.co/assets/logo150.png">
+    <meta property="og:url" content="https://www.atlasrei.co">
 
-
-       <title>Atlas - Real Estate</title>
+    <title>Atlas - Real Estate</title>
 
     <style>
-.intro, .services {
-    background-image: url('assets/background.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-        
+        .intro,
+        .services {
+            background-image: url('assets/background.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .intro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* or any other desired height */
+        }
+
+        .search-bar {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .search-bar input,
+        .search-bar button {
+            margin: 5px 0;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #555;
+        }
+
     </style>
+</head>
+
+<body>
+    <!-- ... rest of the content ... -->
+
+    <section class="intro">
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+    </section>
+
+  
+
+
 </head>
 <body>
 
