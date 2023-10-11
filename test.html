@@ -1,118 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/logo150.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
+    <link rel="icon" href="assets/logo150.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Atlas - Real Estate">
+    <meta property="og:description" content="Welcome to Atlas Real Estate, your trusted partner for all your real estate needs. We offer residential, commercial, solar, and investment services. Contact us for expert advice.">
+    <meta property="og:image" content="https://www.atlasrei.co/assets/logo150.png"> 
+    <meta property="og:url" content="https://www.atlasrei.co"> 
+
+
+       <title>Atlas - Real Estate</title>
+
     <style>
-        /* Add custom CSS for the residential section */
-       .residential {
-        position: relative;
-        background-image: url("assets/marble.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        padding: 20px 0; /* Add vertical padding to separate content from background */
-    }
+.intro, .services {
+    background-image: url('assets/background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
         
-    .centered-content {
-        max-width: 1100px;
-        margin: 0 auto;
-        position: relative; /* Ensure content stays centered within the max width */
-        z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
-    }
-
-
-        .section-heading {
-            font-size: 30px;
-            font-weight: bold;
-            color: #333;
-            text-align: center;
-            padding-top: 30px;
-            padding-bottom: 10px;
-            text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
-        }
-
-        .residential p {
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .residential h3 {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-            margin-top: 30px;
-            text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
-        }
-
-        .residential ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
-        .residential li {
-            margin-bottom: 10px;
-        }
-
-        /* Image style */
-        .residential img {
-            max-width: 400px;
-            max-height: 286px;
-            display: block;
-            margin: 10px auto;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            border-radius: 4px;
-            filter: drop-shadow(0px 1px 10px #000);
-        }
-
-        /* Alternate the image position */
-        .residential .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .residential .section-content > div {
-            flex: 0 0 48%;
-            margin-bottom: 20px;
-        }
-
-        .residential .section-content img {
-            margin: 10px auto;
-        }
-
-        /* Alternate the image position */
-        .residential .section-content:nth-child(odd) .residential-image {
-            order: 1;
-            text-align: right;
-        }
-
-        .residential .section-content:nth-child(even) .residential-image {
-            order: 0;
-            text-align: left;
-        }
-@media screen and (max-width: 768px) {
-    /* styles for mobile devices here */
-}
-        @media screen and (max-width: 768px) {
-    body {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-}
-
     </style>
-    <title>Atlas - Real Estate Investment Company</title>
 </head>
-
 <body>
-    <!--Start of Tawk.to Script-->
+
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -123,171 +35,66 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
-
-
-// Add an event listener to the form submission
-document.getElementById('contactForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
-    fetch(this.action, {
-        method: 'POST',
-        body: new FormData(this),
-    })
-    .then(function (response) {
-        if (response.ok) {
-            // Show the pop-up message for successful submission
-            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-            document.getElementById('contactForm').reset(); // Reset the form after successful submission
-
-            // Clear individual form fields
-            document.querySelector('[name="name"]').value = '';
-            document.querySelector('[name="email"]').value = '';
-            document.querySelector('[name="message"]').value = '';
-        } else {
-            // Show the pop-up message for submission error
-            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-        }
-    })
-    .catch(function (error) {
-        // Handle network or fetch API errors
-        showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-    });
-});
-
-// Function to show the pop-up message
-function showPopupMessage(message) {
-    var popup = document.createElement('div');
-    popup.innerHTML = '<p>' + message + '</p>';
-    popup.className = 'popup-message'; // Add the CSS class for styling
-    document.body.appendChild(popup);
-
-    // Automatically remove the popup after a few seconds
-    setTimeout(function () {
-        document.body.removeChild(popup);
-    }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
-}
-
-
-
-
-
-
-
-
-
-    
 </script>
-    <div class="container">
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <a href="index.html"> <!-- Replace "index.html" with the URL of your homepage -->
-                    <img src="assets/logo150.png" alt="Atlas Logo">
-                </a>
-            </div>
-            <h2>Every Dream Begins With Real Estate&trade;</h2>
+
+
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <img src="assets/logo150.png" alt="Atlas Logo">
         </div>
-    </header>
-</div>
-        <section class="intro">
-            <img src="assets/background.webp" alt="Particles">
-            <div class="search-bar">
-                <input type="text" placeholder="Search">
-                <button>Search</button>
-            </div>
-        </section>
+        <h2>Every Dream Begins With Real Estate&trade;</h2>
+    </div>
+</header>
 
-        <section class="services">
-            <h2 class="services-heading">Our Real Estate Services</h2>
-            <div class="service-items-container">
-                <div class="service-item">
-                    <a href="residential.html">
-                        <img src="assets/residential.jpg" alt="Residential">
-                    </a>
-                </div>
-                <div class="service-item">
-                    <a href="commercial.html">
-                        <img src="assets/commercialserv.jpg" alt="Commercial">
-                    </a>
-                </div>
-                <div class="service-item">
-                    <a href="solar.html">
-                        <img src="assets/solar.jpg" alt="Solar">
-                    </a>
-                </div>
-                <div class="service-item">
-                    <a href="investment.html">
-                        <img src="assets/investment.jpg" alt="Investment">
-                    </a>
-                </div>
-                <div class="service-item">
-                <a href="about.html">
-                    <img src="assets/about.jpg" alt="about us">
-                </a>
-            </div>
-            </div>
-        </section>
-        
-           <section class="residential">
-        <div class="centered-content">
-            <h2 class="section-heading">Residential Buying and Selling</h2>
-            <p>Atlas is dedicated to providing you with comprehensive and personalized services for all your buying and selling needs. Whether you are looking for your dream home or planning to sell your property, our experienced team of real estate professionals is here to guide you every step of the way.</p>
+<section class="intro">
+    <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <button>Search</button>
+    </div>
+</section>
 
-            <div class="section-content">
-                <div class="residential-image">
-                    <img src="assets/home.jpg" alt="Residential Image">
-                </div>
-                <div>
-                    <h3>Buying a Residential Property</h3>
-                    <p>Purchasing a residential property is an exciting milestone, and we understand the significance of finding the perfect home that aligns with your lifestyle and preferences. Our expert real estate agents are committed to helping you navigate the home-buying process seamlessly.</p>
-
-                    <ul>
-                        <li><strong>Personalized Property Search:</strong> We conduct an in-depth analysis of your requirements and preferences to match you with properties that best suit your needs.</li>
-                        <li><strong>Market Expertise:</strong> Our team stays up-to-date with the latest market trends and property values, ensuring you make an informed decision.</li>
-                        <li><strong>Guidance and Negotiation:</strong> We negotiate on your behalf to secure the best possible price and terms for your dream home.</li>
-                        <li><strong>Home Inspections:</strong> Our associates coordinate thorough home inspections to ensure the property meets your expectations.</li>
-                        <li><strong>Smooth Closing:</strong> We assist you with all the necessary paperwork and processes, ensuring a seamless and stress-free closing experience.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="section-content">
-                <div class="residential-image">
-                    <img src="assets/interior.jpg" alt="Selling Image">
-                </div>
-                <div>
-                    <h3>Selling Your Residential Property</h3>
-                    <p>Selling your home can be a significant decision, and we're here to make the process as smooth and profitable as possible. Our tailored marketing strategies and extensive network enable us to reach the right buyers for your property.</p>
-
-                    <ul>
-                        <li><strong>Home Valuation:</strong> We conduct a detailed market analysis to determine the optimal listing price for your property.</li>
-                        <li><strong>Property Marketing:</strong> Our team employs a multi-faceted marketing approach to showcase your home's best features to potential buyers.</li>
-                        <li><strong>Targeted Exposure:</strong> Through our extensive network and online platforms, we target qualified buyers actively seeking properties like yours.</li>
-                        <li><strong>Open Houses and Showings:</strong> We organize open houses and private showings to attract interested buyers.</li>
-                        <li><strong>Expert Negotiation:</strong> Our agents skillfully negotiate on your behalf to achieve the best possible sale price and terms.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="section-content">
-                <div class="residential-image">
-                    <img src="assets/keys.jpg" alt="Why Choose Us Image">
-                </div>
-                <div>
-                    <h3>Why Choose Us?</h3>
-                    <ul>
-                        <li><strong>Local Expertise:</strong> Our team's deep understanding of the local real estate market empowers us to offer insightful guidance.</li>
-                        <li><strong>Personalized Approach:</strong> We treat each client with individual attention, tailoring our services to meet their unique requirements.</li>
-                        <li><strong>Transparency and Integrity:</strong> We value honesty and integrity, ensuring that you have all the information needed to make informed decisions.</li>
-                        <li><strong>Customer Satisfaction:</strong> Our commitment to excellence has earned us a reputation for exceptional customer service.</li>
-                    </ul>
-                </div>
-            </div>
+<section class="services">
+    <h2 class="services-heading">Our Real Estate Services</h2>
+    <div class="service-items-container">
+        <div class="service-item">
+            <a href="residential.html">
+                <img src="assets/residential.jpg" alt="Residential">
+            </a>
         </div>
-    </section>
+        <div class="service-item">
+            <a href="commercial.html">
+                <img src="assets/commercialserv.jpg" alt="Commercial">
+            </a>
+        </div>
+        <div class="service-item">
+            <a href="solar.html">
+                <img src="assets/solar.jpg" alt="Solar">
+            </a>
+        </div>
+        <div class="service-item">
+            <a href="investment.html">
+                <img src="assets/investment.jpg" alt="Investment">
+            </a>
+        </div>
+        <div class="service-item">
+            <a href="about.html">
+                <img src="assets/about.jpg" alt="about us">
+            </a>
+        </div>
+    </div>
+</section>
 
-    
+<section class="rss-feed">
+    <h2 class="rss-feed-heading">Industry News</h2>
+    <div class="rss-feed-container">
+        <!-- The RSS feed content will be injected here -->
+    </div>
+    <!-- Arrow buttons for horizontal scrolling -->
+    <div class="scroll-arrow scroll-left">&#8249;</div>
+    <div class="scroll-arrow scroll-right">&#8250;</div>
+</section>
+
 <form id="contactForm" action="https://script.google.com/macros/s/AKfycbzZYbAYOUz1vOMhNJNyTXQ2BAHAqdnMgJZeMQBFMcnJkg9aWQXLH3iVXbDkAIQfXwomaQ/exec" method="POST">
     <center>
         <h2 class="contact">Contact Us</h2>
