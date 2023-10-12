@@ -12,6 +12,65 @@
 
 
        <title>Atlas - Real Estate</title>
+
+    <style>
+        .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #126094; /* Changed from #fefefe to #126094 for blue background */
+    color: #ffffff;  /* Added this for white text */
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;  /* Added this for centering */
+    flex-direction: column;  /* Added this to stack content vertically */
+    align-items: center;  /* Center items horizontally */
+    text-align: center;  /* Center text and other inline elements */
+}
+
+/* Ensure iframe takes up the maximum width while maintaining its aspect ratio */
+.modal-content iframe {
+    max-width: 100%;
+    height: auto;
+}
+/* Styles for the video container to maintain the iframe's aspect ratio */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    margin-bottom: 15px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensure "Learn More" link doesn't change color after being clicked */
+.modal-content a:visited {
+    color: #ffffff; /* Same color as the original link */
+}
+
+
+
+    </style>
 </head>
 <body>
 
@@ -25,6 +84,25 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ... [Your previous JavaScript code]
+
+    // Display the modal
+    var modal = document.getElementById('promoModal');
+    modal.style.display = 'block';
+
+    
+
+    // Close the modal if anywhere outside of the modal is clicked
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+
+    
 </script>
 
 
@@ -197,5 +275,16 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         }
     });
 </script>
+    <div class="modal" id="promoModal">
+    <div class="modal-content">
+       
+       <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/YzKhhcUIg_g" frameborder="0" allowfullscreen></iframe>
+</div>
+
+        <p><strong>Express your interest in living at Atlas Hills, a future California neighborhood with 3 bedroom 2 bathroom single family homes starting at $1,089,300.</strong> <a href="https://www.atlasrei.co/homes" target="_blank">Learn More</a></p>
+
+    </div>
+</div>
 </body>
 </html>
