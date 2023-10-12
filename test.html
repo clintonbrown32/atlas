@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-<!DOCTYPE html>
-<html>
-
 <head>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
@@ -10,62 +7,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Atlas - Real Estate">
     <meta property="og:description" content="Welcome to Atlas Real Estate, your trusted partner for all your real estate needs. We offer residential, commercial, solar, and investment services. Contact us for expert advice.">
-    <meta property="og:image" content="https://www.atlasrei.co/assets/logo150.png">
-    <meta property="og:url" content="https://www.atlasrei.co">
+    <meta property="og:image" content="https://www.atlasrei.co/assets/logo150.png"> 
+    <meta property="og:url" content="https://www.atlasrei.co"> 
 
-    <title>Atlas - Real Estate</title>
 
-<style>
-    .intro, .services {
-        background-image: url('assets/background.webp');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
+       <title>Atlas - Real Estate</title>
 
-    .intro {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
+    <style>
+        .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
 
-    .search-bar {
-        background-color: rgba(255, 255, 255, 0.8); /* Increased opacity for better visibility */
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
-        display: flex; 
-        align-items: center; /* Align the input and button vertically */
-    }
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
 
-    .search-bar input, .search-bar button {
-        margin: 5px; /* Uniform margin around the input and button */
-    }
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
-    .search-bar input {
-        flex-grow: 1; /* Make input take available space */
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-    .search-bar button {
-        padding: 10px 15px;
-        background-color: #126094; /* Changed color to match the theme */
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s; /* Smooth transition for hover effect */
-    }
-
-    .search-bar button:hover {
-        background-color: #0a4c7d; /* Slightly darker on hover */
-    }
-
-</style>
-
+    </style>
 </head>
 <body>
 
@@ -79,6 +65,29 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ... [Your previous JavaScript code]
+
+    // Display the modal
+    var modal = document.getElementById('promoModal');
+    modal.style.display = 'block';
+
+    // Close the modal when 'x' is clicked
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close the modal if anywhere outside of the modal is clicked
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+
+    
 </script>
 
 
@@ -91,12 +100,13 @@ s0.parentNode.insertBefore(s1,s0);
     </div>
 </header>
 
- <section class="intro">
-        <div class="search-bar">
-            <input type="text" placeholder="Search">
-            <button>Search</button>
-        </div>
-    </section>
+<section class="intro">
+    <img src="assets/background.webp" alt="Particles">
+    <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <button>Search</button>
+    </div>
+</section>
 
 <section class="services">
     <h2 class="services-heading">Our Real Estate Services</h2>
@@ -250,5 +260,12 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         }
     });
 </script>
+    <div class="modal" id="promoModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YzKhhcUIg_g" frameborder="0" allowfullscreen></iframe>
+        <p>Express your interest in living at Atlas Hills, a future California neighborhood with 3 bedroom 2 bathroom single family homes starting at 1,089,300.</p>
+    </div>
+</div>
 </body>
 </html>
