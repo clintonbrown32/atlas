@@ -268,36 +268,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
 </div>
 <!-- Rest of your HTML code -->
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Tawk.io chat integration
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function () {
-            var s1 = document.createElement("script"),
-                s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/64c730d994cf5d49dc676ce6/1h6l1dl20';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
 
-        // Display the modal
-        var modal = document.getElementById('promoModal');
-        modal.style.display = 'block';
-
-        // Close the modal if anywhere outside of the modal is clicked
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        // RSS feed and form submission logic (keep all the code you have here)
-
-        // ... rest of your existing code inside DOMContentLoaded event listener ...
-    });
-</script>
 </body>
 </html>
 
