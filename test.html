@@ -68,7 +68,34 @@
     color: #ffffff; /* Same color as the original link */
 }
 
+@media (max-width: 768px) {
+    .header-content h2 {
+        font-size: 1.5rem;
+    }
 
+    .search-bar {
+        flex-direction: column; /* Stack the input and button vertically */
+        align-items: stretch; /* Make them take up the full width */
+    }
+
+    .search-bar input,
+    .search-bar button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .service-items-container {
+        flex-wrap: wrap; /* Allow service items to wrap */
+    }
+
+    .service-item {
+        width: 50%; /* Two items per row */
+        box-sizing: border-box;
+        padding: 10px; /* Some spacing between items */
+    }
+
+    /* ... Additional mobile optimizations ... */
+}
 
     </style>
 </head>
