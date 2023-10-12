@@ -61,11 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var modal = document.getElementById('promoModal');
     modal.style.display = 'block';
 
-    // Close the modal when 'x' is clicked
-    var span = document.getElementsByClassName("close")[0];
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
+    
 
     // Close the modal if anywhere outside of the modal is clicked
     window.onclick = function(event) {
@@ -250,7 +246,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
 </script>
     <div class="modal" id="promoModal">
     <div class="modal-content">
-        <span class="close">&times;</span>
+       
         <iframe width="560" height="315" src="https://www.youtube.com/embed/YzKhhcUIg_g" frameborder="0" allowfullscreen></iframe>
         <p>Express your interest in living at Atlas Hills, a future California neighborhood with 3 bedroom 2 bathroom single family homes starting at 1,089,300. <a href="https://www.atlasrei.co/homes" target="_blank">Learn More</a></p>
 
