@@ -97,6 +97,278 @@
     /* ... Additional mobile optimizations ... */
 }
 
+        /* Reset some default styles in browsers */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Brandon Grotesque', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url("assets/drywall.jpg");
+    overflow-x: hidden; /* added to fix horizontal scrolling issue on mobile */
+}
+
+header {
+    background: #126094;
+    color: #ffffff;
+    text-align: center;
+    padding: 0rem 0;
+    font-family: 'Brandon Grotesque', sans-serif;
+}
+
+.header-content .logo img {
+    height: 100px;
+    width: 100px;
+}
+
+.header-content h2 {
+    margin: 0;
+    font-size: 0.8rem;
+    padding-bottom: 5px;
+}
+
+.intro {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('background.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.intro img {
+    width: 100%;
+    max-height: 95px;
+    display: block;
+}
+
+.intro .search-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.intro .search-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.intro .search-bar .search-icon {
+    margin-right: 10px;
+    color: #000000;
+    font-size: 18px;
+}
+
+.intro .search-bar input[type="text"] {
+    padding-left: 30px;
+}
+
+.intro .search-bar button {
+    display: none;
+}
+
+.services {
+    text-align: center;
+    background-image: url('assets/background.webp');
+}
+
+.services-heading {
+    margin-bottom: 1rem;
+    color: #ffffff;
+    padding-top: 25px;
+    font-family: 'Brandon Grotesque', sans-serif;
+}
+
+.service-items-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.service-item {
+    flex: 0 0 calc(20% - 1rem);
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+}
+
+.service-item p {
+    margin-top: 1rem;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.contact {
+    font-size: 1.5em;
+    padding-top: 15px;
+}
+
+form {
+    text-align: center;
+    background-image: url('assets/background2.webp');
+}
+
+.popup-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-weight: bold;
+    z-index: 9999;
+}
+
+form input,
+form textarea {
+    margin-bottom: 1rem;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+form input[type="submit"] {
+    background-color: #126094;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.rss-feed {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* changed from fixed 1200px to be more responsive */
+  margin: 0 auto;
+  background-image: url("assets/marble.jpg");
+}
+
+.rss-feed-heading {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.rss-feed-container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: scroll;
+}
+
+.feed-item {
+  flex: 0 0 calc(25% - 20px);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.feed-item img {
+  width: 100%;
+  height: 135px;
+  object-fit: cover;
+}
+
+.feed-item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-item-content h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.feed-item-content a {
+  font-size: 12px;
+  color: #126094;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  margin-top: auto;
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #126094;
+  z-index: 1;
+}
+
+.scroll-left {
+  left: 0;
+}
+
+.scroll-right {
+  right: 0;
+}
+
+footer {
+    background: #126094;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer p {
+    font-size: 10px;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
     </style>
 </head>
 <body>
