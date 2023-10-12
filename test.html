@@ -40,18 +40,7 @@
     flex-direction: column;  /* Added this to stack content vertically */
     align-items: center;  /* Center items horizontally */
     text-align: center;  /* Center text and other inline elements */
-    max-height: 90vh;  /* Limit height to 90% of the viewport height */
-    overflow-y: auto; 
-   
 }
-
-        @media only screen and (max-width: 767px) {
-    .modal-content {
-        padding: 10px;  /* Reduced padding for mobile */
-        width: 95%;  /* Increased width for a better full-screen experience */
-    }
-
-        
 
 /* Ensure iframe takes up the maximum width while maintaining its aspect ratio */
 .modal-content iframe {
@@ -64,7 +53,6 @@
     width: 100%;
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     margin-bottom: 15px;
-     padding-bottom: 56.25%; 
 }
 
 .video-container iframe {
@@ -86,6 +74,26 @@
 </head>
 <body>
 
+<script type="text/javascript">
+
+ 
+
+    // Display the modal
+    var modal = document.getElementById('promoModal');
+    modal.style.display = 'block';
+
+    
+
+    // Close the modal if anywhere outside of the modal is clicked
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+
+    
+</script>
 
 
 <header>
@@ -169,7 +177,9 @@
 </footer>
 
 <script>
-    
+    document.addEventListener('DOMContentLoaded', () => {
+        // JavaScript for fetching and populating the feed items
+        const feedContainer = document.querySelector('.rss-feed-container');
 
         fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
             .then(response => response.json())
@@ -266,11 +276,5 @@ document.getElementById('contactForm').addEventListener('submit', function (even
 
     </div>
 </div>
-<!-- Rest of your HTML code -->
-
-
-</body>
-</html>
-
 </body>
 </html>
