@@ -40,7 +40,18 @@
     flex-direction: column;  /* Added this to stack content vertically */
     align-items: center;  /* Center items horizontally */
     text-align: center;  /* Center text and other inline elements */
+    max-height: 90vh;  /* Limit height to 90% of the viewport height */
+    overflow-y: auto; 
+   
 }
+
+        @media only screen and (max-width: 767px) {
+    .modal-content {
+        padding: 10px;  /* Reduced padding for mobile */
+        width: 95%;  /* Increased width for a better full-screen experience */
+    }
+
+        
 
 /* Ensure iframe takes up the maximum width while maintaining its aspect ratio */
 .modal-content iframe {
@@ -53,6 +64,7 @@
     width: 100%;
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     margin-bottom: 15px;
+     padding-bottom: 56.25%; 
 }
 
 .video-container iframe {
@@ -68,61 +80,7 @@
     color: #ffffff; /* Same color as the original link */
 }
 
-        /* CSS Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    font-family: 'Brandon Grotesque', sans-serif;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* Mobile-first styles go here */
-
-/* Styles for tablets and above */
-@media screen and (min-width: 768px) {
-    /* Adjust styles for tablets here */
-}
-
-/* Styles for desktops and above */
-@media screen and (min-width: 1024px) {
-    /* Adjust styles for desktops here */
-}
-
-.service-items-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.service-item {
-    flex: 1 1 100%; /* By default, take 100% of the width (stack) */
-}
-
-@media screen and (min-width: 768px) {
-    .service-item {
-        flex: 1 1 calc(50% - 10px); /* Two items per row with a little gap */
-        margin: 5px;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .service-item {
-        flex: 1 1 calc(25% - 10px); /* Four items per row with a little gap */
-    }
-}
-
-        button, input, textarea {
-    max-width: 100%;
-}
-
-footer p {
-    word-wrap: break-word;
-    font-size: 0.8em; /* Adjust size as needed */
-}
 
     </style>
 </head>
