@@ -28,7 +28,8 @@
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #126094;
+    color: white;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -36,20 +37,32 @@
     max-width: 600px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
-
+.modal-content a {
+    color: #FFF;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+        .modal-content a:hover {
+    text-decoration: none;
+}
 .close {
-    color: #aaaaaa;
-    float: right;
+    color: white; /* Match the text color */
+    position: absolute; /* Absolute positioning */
+    top: 10px; /* 10px from the top */
+    right: 20px; /* 20px from the right */
     font-size: 28px;
     font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.2); /* Slight background for better visibility */
+    border-radius: 50%; /* Round shape */
+    padding: 5px 10px; /* Padding to give it space */
 }
 
-.close:hover,
-.close:focus {
-    color: #000;
+.close:hover, .close:focus {
+    color: #aaaaaa;
     text-decoration: none;
     cursor: pointer;
 }
+
 
     </style>
 </head>
@@ -264,7 +277,8 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     <div class="modal-content">
         <span class="close">&times;</span>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/YzKhhcUIg_g" frameborder="0" allowfullscreen></iframe>
-        <p>Express your interest in living at Atlas Hills, a future California neighborhood with 3 bedroom 2 bathroom single family homes starting at 1,089,300.</p>
+        <p>Express your interest in living at Atlas Hills, a future California neighborhood with 3 bedroom 2 bathroom single family homes starting at 1,089,300. <a href="https://www.atlasrei.co/homes" target="_blank">Learn More</a></p>
+
     </div>
 </div>
 </body>
