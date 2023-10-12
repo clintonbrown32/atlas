@@ -47,6 +47,26 @@
     max-width: 100%;
     height: auto;
 }
+/* Styles for the video container to maintain the iframe's aspect ratio */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    margin-bottom: 15px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensure "Learn More" link doesn't change color after being clicked */
+.modal-content a:visited {
+    color: #ffffff; /* Same color as the original link */
+}
 
 
 
@@ -258,7 +278,10 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     <div class="modal" id="promoModal">
     <div class="modal-content">
        
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/YzKhhcUIg_g" frameborder="0" allowfullscreen></iframe>
+       <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/YzKhhcUIg_g" frameborder="0" allowfullscreen></iframe>
+</div>
+
         <p>Express your interest in living at Atlas Hills, a future California neighborhood with 3 bedroom 2 bathroom single family homes starting at $1,089,300. <a href="https://www.atlasrei.co/homes" target="_blank">Learn More</a></p>
 
     </div>
