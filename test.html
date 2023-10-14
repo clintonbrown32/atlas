@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
     <link rel="icon" href="assets/logo150.png" type="image/png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta property="og:title" content="Atlas - Real Estate">
     <meta property="og:description" content="Welcome to Atlas Real Estate, your trusted partner for all your real estate needs. We offer residential, commercial, solar, and investment services. Contact us for expert advice.">
     <meta property="og:image" content="https://www.atlasrei.co/assets/logo150.png"> 
@@ -25,6 +25,10 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
+            display: flex;
+    justify-content: center;
+    align-items: center;
+}
 }
 
 .modal-content {
@@ -40,6 +44,7 @@
     flex-direction: column;  /* Added this to stack content vertically */
     align-items: center;  /* Center items horizontally */
     text-align: center;  /* Center text and other inline elements */
+     max-width: 90%; /
 }
 
 /* Ensure iframe takes up the maximum width while maintaining its aspect ratio */
@@ -282,8 +287,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     <iframe src="https://www.youtube.com/embed/YzKhhcUIg_g" frameborder="0" allowfullscreen></iframe>
 </div>
 
-       <p><strong>Express your interest in living at Atlas Hills, a future California neighborhood with 3 bedroom 2 bathroom single family homes starting at $1,089,300.</strong> <br><a href="https://www.atlasrei.co/homes" target="_blank">Learn More</a></p>
-
+        <p><strong>Express your interest in living at Atlas Hills, a future California neighborhood with 3 bedroom 2 bathroom single family homes starting at $1,089,300.</strong> <br><a href="https://www.atlasrei.co/homes" target="_blank">Learn More</a></p>
 
     </div>
 </div>
