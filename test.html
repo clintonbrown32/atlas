@@ -88,6 +88,27 @@
         @media screen and (max-width: 768px) {
     /* styles for screens smaller than 768 pixels */
 }
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* for 16:9 aspect ratio, adjust accordingly if different */
+    padding-top: 25px;
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-video-container iframe,   
+.responsive-video-container object,  
+.responsive-video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.content-container {
+    width: 100%;
+    overflow-x: hidden; /* This ensures no horizontal scrolling */
+}
 
 
     </style>
