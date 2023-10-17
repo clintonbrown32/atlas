@@ -1,222 +1,241 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/logo150.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
-    <link rel="icon" href="assets/logo150.png" type="image/png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* ... (previous styles) ... */
 
-    <meta property="og:title" content="Atlas - Real Estate">
-    <meta property="og:description" content="Welcome to Atlas Real Estate, your trusted partner for all your real estate needs. We offer residential, commercial, solar, and investment services. Contact us for expert advice.">
-    <meta property="og:image" content="https://www.atlasrei.co/assets/logo150.png"> 
-    <meta property="og:url" content="https://www.atlasrei.co"> 
-
-
-       <title>Atlas - Real Estate</title>
-
-    <style>
-        .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-    background-color: #126094; /* Changed from #fefefe to #126094 for blue background */
-    color: #ffffff;  /* Added this for white text */
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    display: flex;  /* Added this for centering */
-    flex-direction: column;  /* Added this to stack content vertically */
-    align-items: center;  /* Center items horizontally */
-    text-align: center;  /* Center text and other inline elements */
-}
-
-/* Ensure iframe takes up the maximum width while maintaining its aspect ratio */
-.modal-content iframe {
-    max-width: 100%;
-    height: auto;
-}
-/* Styles for the video container to maintain the iframe's aspect ratio */
-.video-container {
+.solar-image {
     position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    margin-bottom: 15px;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Ensure "Learn More" link doesn't change color after being clicked */
-.modal-content a:visited {
-    color: #ffffff; /* Same color as the original link */
-}
-
-.modal-content.minimized {
-            width: 150px; /* Width when minimized */
-            height: 85px; /* Height when minimized */
-            bottom: 10px; /* Distance from the bottom */
-            left: 10px; /* Distance from the left */
-            position: fixed; /* Fixes the minimized video to a position */
-            padding: 0;
-            box-shadow: none; /* Remove shadow when minimized */
-            border: none; /* Remove border when minimized */
-            overflow: hidden; /* Hide overflowing content */
-        }
-
-        .modal-content.minimized iframe {
-            width: 150px; /* Width when minimized */
-            height: 85px; /* Height when minimized */
-        }
-        @media screen and (max-width: 768px) {
-    /* styles for screens smaller than 768 pixels */
-}
-.responsive-video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* for 16:9 aspect ratio, adjust accordingly if different */
-    padding-top: 25px;
-    height: 0;
+    max-height: 520px;
     overflow: hidden;
+     border-radius: 4px;
+}
+    
+.solar-image img {
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    object-fit: cover;
+     border-radius: 4px;
 }
 
-.responsive-video-container iframe,   
-.responsive-video-container object,  
-.responsive-video-container embed {
+.solar-text {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.content-container {
-    width: 100%;
-    overflow-x: hidden; /* This ensures no horizontal scrolling */
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #000000; 
+    z-index: 1; 
 }
 
-        /* Styles for screens smaller than 768 pixels */
-@media screen and (max-width: 768px) {
-    /* Adjustments for smaller screens */
+.solar-text h3 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
+}
+
+.solar-text p {
+    font-size: 27px;
+    margin: 10px 0 0;
+    padding: 0;
+    text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
+}
+ .additional-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .additional-content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+.content-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            padding-top: 40px;
+        }
+
+    .content-section img {
+border-radius: 4px;
+        
+    }
+        .content-text {
+        flex: 1; /* Expand to full width on smaller screens */
+        padding-right: 0;
+        }
+
+        .content-image {
+            flex: 0 0 40%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        filter: drop-shadow(0px 1px 10px #000);
+        }
     body {
-        font-size: 16px; /* Adjust font size for readability */
+    
+     background-image: url("assets/texture.jpg");
+}
+@media (max-width: 767px) {
+    .content-section {
+        flex-direction: column; /* Stack content vertically on smaller screens */
     }
-    .modal-content {
-        width: 95%; /* Make the modal content almost full-width on small screens */
-    }
-    .video-container {
-        padding-bottom: 42.5%; /* Adjust the aspect ratio for the video container */
-    }
-    .modal-content iframe {
-        width: 100%;
-        height: 100%;
-    }
-    .intro {
-        text-align: center; /* Center align the intro section text */
-    }
-    .search-bar {
-        margin-top: 20px; /* Add some spacing to the search bar */
-    }
-    .service-items-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around; /* Center-align service items */
-    }
-    .service-item {
-        flex: 0 0 calc(50% - 20px); /* Two columns on small screens */
-        margin-bottom: 20px;
-    }
-    .rss-feed-container {
-        overflow-x: auto; /* Enable horizontal scrolling for small screens */
-        white-space: nowrap;
-    }
-    .scroll-arrow {
-        display: none; /* Hide the scroll arrows on small screens */
-    }
-    .contact {
-        font-size: 24px; /* Increase font size for the contact form header */
+h3 {
+        font-size: 1.5rem; /* Example font size for h3 on mobile */
     }
 
-
-
-
-    </style>
+    p {
+        font-size: 1rem; /* Example font size for p on mobile */
+    }
+</style>
+    
+    <title>Atlas - Real Estate Investment Company</title>
 </head>
+
 <body>
 
-<header>
-    <div class="header-content">
-        <div class="logo">
-            <img src="assets/logo150.png" alt="Atlas Logo">
+    <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64c730d994cf5d49dc676ce6/1h6l1dl20';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+    <div class="container">
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html"> <!-- Replace "index.html" with the URL of your homepage -->
+                    <img src="assets/logo150.png" alt="Atlas Logo">
+                </a>
+            </div>
+            <h2>Every Dream Begins With Real Estate&trade;</h2>
         </div>
-        <h2>Every Dream Begins With Real Estate&trade;</h2>
-    </div>
-</header>
+    </header>
+</div>
 
-<section class="intro">
-    <img src="assets/background.webp" alt="Particles">
-    <div class="search-bar">
-        <input type="text" placeholder="Search">
-        <button>Search</button>
-    </div>
-</section>
 
-<section class="services">
-    <h2 class="services-heading">Our Real Estate Services</h2>
-    <div class="service-items-container">
-        <div class="service-item">
-            <a href="residential.html">
-                <img src="assets/residential.jpg" alt="Residential">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="commercial.html">
-                <img src="assets/commercialserv.jpg" alt="Commercial">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="solar.html">
-                <img src="assets/solar.jpg" alt="Solar">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="investment.html">
-                <img src="assets/investment.jpg" alt="Investment">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="about.html">
-                <img src="assets/about.jpg" alt="about us">
-            </a>
-        </div>
-    </div>
-</section>
+        <section class="intro">
+            <img src="assets/background.webp" alt="Particles">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </section>
 
-<section class="rss-feed">
-    <h2 class="rss-feed-heading">Industry News</h2>
-    <div class="rss-feed-container">
-        <!-- The RSS feed content will be injected here -->
-    </div>
-    <!-- Arrow buttons for horizontal scrolling -->
-    <div class="scroll-arrow scroll-left">&#8249;</div>
-    <div class="scroll-arrow scroll-right">&#8250;</div>
-</section>
+        <section class="services">
+            <h2 class="services-heading">Our Real Estate Services</h2>
+            <div class="service-items-container">
+                <div class="service-item">
+                    <a href="residential.html">
+                        <img src="assets/residential.jpg" alt="Residential">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="commercial.html">
+                        <img src="assets/commercialserv.jpg" alt="Commercial">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="solar.html">
+                        <img src="assets/solar.jpg" alt="Solar">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="investment.html">
+                        <img src="assets/investment.jpg" alt="Investment">
+                    </a>
+                </div>
+                <div class="service-item">
+                <a href="about.html">
+                    <img src="assets/about.jpg" alt="about us">
+                </a>
+            </div>
+            </div>
+        </section>
+    
 
+
+ <div class="solar-image">
+    <div class="solar-text">
+        <h3>Autonomous Solar Fields&trade;</h3>
+        <p>The future of solar field efficiency is here.</p>
+    </div>
+    <img src="assets/solardrone.webp" alt="drone hovering">
+</div>
+
+<div class="additional-content">
+            <div class="content-section">
+                <div class="content-text">
+                    <h3>We’re Changing the Way the World Thinks About Solar Fields</h3>
+                    <p>Imagine a solar field entirely run by autonomous technology that monitors, protects and learns every second of the day. Autonomous Solar Fields are the workhorses that drive all aspects of a utility-scaled operation, including grid management, security, cleaning and battery storage. All connecting effortlessly and seamlessly with Atlas’ proprietary technology.</p>
+                </div>
+                <div class="content-image">
+                    <img src="assets/greenpanel.jpeg" alt="Image 1">
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="content-image">
+                    <img src="assets/blackpanel.webp" alt="Image 2">
+                </div>
+                <div class="content-text">
+                    <h3>AUTONOMOUS SOLAR FIELDS</h3>
+                    <p>Atlas Autonomous Solar Fields are comprised of three main foundational principles: Real-time information, A.I. machine learning and security.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="content-text">
+                    <h3>REAL-TIME INFORMATION</h3>
+                    <p>Drone-enabled A.I. Autonomy allows drones to learn and make decisions based on the data received from overhead flights that monitor operations and security. Although two distinct systems and purposes the drones continually share information and learn from one another to increase productivity and safety.</p>
+                </div>
+                <div class="content-image">
+                    <img src="assets/solarinfo.webp" alt="Image 3">
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="content-image">
+                    <img src="assets/dronescanning.webp" alt="Image 4">
+                </div>
+                <div class="content-text">
+                    <h3>A.I. MACHINE LEARNING</h3>
+                    <p>Continuous Machine Learning and Application of Knowledge allows the autonomous solar field to continuously learn and implement the best practices to increase solar production efficiency at the sites. Cloud Synced and Streamed Data allows for data collection sharing and analyses by the autonomous systems which is synced and streamed across both national and international facilities.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="content-text">
+                    <h3>WHY ATLAS?</h3>
+                    <p>A different approach, using autonomous technology and A.I. machine learning and security.
+                    Fortified, Independent Security Apparatus ensures that hostile foreign powers and actors are not able to disrupt the autonomous operations of the solar field by utilizing a stand-alone network for each facility and implementing the strictest of security solutions to the changing and evolving threats to our critical infrastructure. Security, reliability and innovation are the cornerstone of the company's product and mission.</p>
+                </div>
+                <div class="content-image">
+                    <img src="assets/wire.webp" alt="Image 5">
+                </div>
+            </div>
+        </div>
+
+
+    
+        
 <form id="contactForm" action="https://script.google.com/macros/s/AKfycbzZYbAYOUz1vOMhNJNyTXQ2BAHAqdnMgJZeMQBFMcnJkg9aWQXLH3iVXbDkAIQfXwomaQ/exec" method="POST">
     <center>
         <h2 class="contact">Contact Us</h2>
@@ -239,49 +258,17 @@
     <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
 </footer>
 
-<script type="text/javascript">
-    var Tawk_API = Tawk_API || {},
-        Tawk_LoadStart = new Date();
-
-    (function() {
-        var s1 = document.createElement("script"),
-            s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/64c730d994cf5d49dc676ce6/1h6l1dl20';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-    })();
-
+<script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Modal display
-        var modal = document.getElementById('promoModal');
-        var modalContent = document.querySelector(".modal-content");
-
-        modal.style.display = 'block';
-
-        // Minimize the modal if anywhere outside of the modal is clicked
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modalContent.classList.add("minimized");
-                modal.style.background = "none";
-            }
-        };
-
-        // Expand the minimized modal when clicked on
-        modalContent.addEventListener('click', function() {
-            if (modalContent.classList.contains("minimized")) {
-                modalContent.classList.remove("minimized");
-                modal.style.background = "rgba(0,0,0,0.4)";
-            }
-        });
-
-        // RSS Feed
+        // JavaScript for fetching and populating the feed items
         const feedContainer = document.querySelector('.rss-feed-container');
+
         fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
             .then(response => response.json())
             .then(data => {
                 const feedItems = data.items;
+
+                // Generate HTML for each feed item
                 const feedContent = feedItems.map(item => `
                     <div class="feed-item">
                         <img src="${item.thumbnail}" alt="Thumbnail">
@@ -291,65 +278,74 @@
                         </div>
                     </div>
                 `).join('');
+
+                // Inject the feed content into the HTML
                 feedContainer.innerHTML = feedContent;
 
-                // Horizontal scrolling
+                // JavaScript for horizontal scrolling with arrow buttons
                 const scrollContainer = document.querySelector('.rss-feed-container');
                 const scrollLeftButton = document.querySelector('.scroll-left');
                 const scrollRightButton = document.querySelector('.scroll-right');
+
                 const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
                 const feedItemMargin = 20; // Adjust this value according to your CSS margin
 
                 scrollLeftButton.addEventListener('click', () => {
                     scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
                 });
+
                 scrollRightButton.addEventListener('click', () => {
                     scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
                 });
             })
             .catch(error => console.error(error));
 
-        // Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            fetch(this.action, {
-                method: 'POST',
-                body: new FormData(this),
-            })
-            .then(response => {
-                showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-                document.getElementById('contactForm').reset();
-            })
-            .catch(error => {
-                showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-                document.getElementById('contactForm').reset();
-            });
-        });
+       // Add an event listener to the form submission
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
 
-        // Popup Message Function
+    // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+    })
+    .then(function (response) {
+        if (response.ok) {
+            // Show the pop-up message for successful submission
+            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+            document.getElementById('contactForm').reset(); // Reset the form after successful submission
+
+            // Clear individual form fields
+            document.querySelector('[name="name"]').value = '';
+            document.querySelector('[name="email"]').value = '';
+            document.querySelector('[name="message"]').value = '';
+        } else {
+            // Show the pop-up message for submission error
+            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+             document.getElementById('contactForm').reset();
+        }
+    })
+    .catch(function (error) {
+        // Handle network or fetch API errors
+        showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+         document.getElementById('contactForm').reset();
+    });
+});
+
+
+        // Function to show the pop-up message
         function showPopupMessage(message) {
             var popup = document.createElement('div');
             popup.innerHTML = '<p>' + message + '</p>';
-            popup.className = 'popup-message';
+            popup.className = 'popup-message'; // Add the CSS class for styling
             document.body.appendChild(popup);
 
-            setTimeout(() => {
+            // Automatically remove the popup after a few seconds
+            setTimeout(function () {
                 document.body.removeChild(popup);
-            }, 5000);
+            }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
         }
     });
 </script>
-
-    <div class="modal" id="promoModal">
-    <div class="modal-content">
-       
-       <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/YzKhhcUIg_g" frameborder="0" allowfullscreen></iframe>
-</div>
-
-       <p><strong>Express your interest in living at Atlas Hills, a future California neighborhood with 3 bedroom 2 bathroom single family homes starting at $1,089,300.</strong> <br><a href="https://www.atlasrei.co/homes" target="_blank" style="color: white;">Learn More</a></p>
-
-    </div>
-</div>
 </body>
 </html>
