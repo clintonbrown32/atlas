@@ -8,105 +8,132 @@
     <link rel="icon" href="assets/logo150.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
-<style>
-/* ... (previous styles) ... */
-
-.solar-image {
-    position: relative;
-    max-height: 520px;
-    overflow: hidden;
-     border-radius: 4px;
-}
-    
-.solar-image img {
-    width: 100%;
-    height: auto;
-    max-height: 520px;
-    object-fit: cover;
-     border-radius: 4px;
-}
-
-.solar-text {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #000000; 
-    z-index: 1; 
-}
-
-.solar-text h3 {
-    font-size: 40px;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
-}
-
-.solar-text p {
-    font-size: 27px;
-    margin: 10px 0 0;
-    padding: 0;
-    text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
-}
- .additional-content {
+    <style>
+        /* Add custom CSS for the investment section */
+        .investment {
+            position: relative;
+            background-image: url("assets/coins.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 20px 0; /* Add vertical padding to separate content from background */
+        }
+  .popup-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #333;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            font-weight: bold;
+            z-index: 9999;
+        }
+        .centered-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 30px;
+            position: relative; /* Ensure content stays centered within the max width */
+            z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
         }
 
-        .additional-content img {
+        .section-heading {
+            font-size: 30px;
+            font-weight: bold;
+            color: #000000;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
+        }
+
+        .investment p {
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        .investment h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000000;
+            margin-top: 30px;
+            text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
+        }
+
+        .investment ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .investment li {
+            margin-bottom: 10px;
+        }
+
+        /* Image style */
+        .investment img {
             max-width: 100%;
             height: auto;
+            display: block;
+            margin: 10px auto;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            filter: drop-shadow(0px 1px 10px #000);
+        }
+
+        /* Alternate the image position */
+        .investment .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
         }
-.content-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 50px;
-            padding-top: 40px;
+
+        .investment .section-content > div {
+            flex: 0 0 48%;
         }
 
-    .content-section img {
-border-radius: 4px;
+        .investment .section-content img {
+            margin: 10px auto;
+        }
+
+        /* Alternate the image position */
+    .investment .section-content:nth-child(odd) .investment-image {
+            order: 0; /* Change order to 0 for odd sections to move the image to the left */
+            text-align: left; /* Align the text to the left in odd sections */
+        }
+
+        .investment .section-content:nth-child(even) .investment-image {
+            order: 1; /* Change order to 1 for even sections to move the image to the right */
+            text-align: right; /* Align the text to the right in even sections */
+        }
+
+        /* Add some space between the image and text in the final two sections */
+        .investment .section-content:last-child .investment-image {
+            margin-bottom: 20px; /* Add margin at the bottom of the last image */
+        }
+
+        .investment .section-content:last-child .investment-text {
+            margin-top: 20px; /* Add marg
+        /* Custom styling for the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Additional styles for the contact form */
         
-    }
-        .content-text {
-        flex: 1; /* Expand to full width on smaller screens */
-        padding-right: 0;
-        }
-
-        .content-image {
-            flex: 0 0 40%;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        border-radius: 4px;
-        filter: drop-shadow(0px 1px 10px #000);
-        }
-    body {
-    
-     background-image: url("assets/texture.jpg");
-}
-@media (max-width: 767px) {
-    .content-section {
-        flex-direction: column; /* Stack content vertically on smaller screens */
-    }
-h3 {
-        font-size: 1.5rem; /* Example font size for h3 on mobile */
-    }
-
-    p {
-        font-size: 1rem; /* Example font size for p on mobile */
-    }
-</style>
-    
+    </style>
     <title>Atlas - Real Estate Investment Company</title>
 </head>
 
 <body>
-
-    <script type="text/javascript">
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -116,126 +143,124 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
-</script>
+    </script>
     <div class="container">
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <a href="index.html"> <!-- Replace "index.html" with the URL of your homepage -->
-                    <img src="assets/logo150.png" alt="Atlas Logo">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"> <!-- Replace "index.html" with the URL of your homepage -->
+                        <img src="assets/logo150.png" alt="Atlas Logo">
+                    </a>
+                </div>
+                <h2>Every Dream Begins With Real Estate&trade;</h2>
+            </div>
+        </header>
+    </div>
+    <section class="intro">
+        <img src="assets/background.webp" alt="Particles">
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="services-heading">Our Real Estate Services</h2>
+        <div class="service-items-container">
+            <div class="service-item">
+                <a href="residential.html">
+                    <img src="assets/residential.jpg" alt="Residential">
                 </a>
             </div>
-            <h2>Every Dream Begins With Real Estate&trade;</h2>
-        </div>
-    </header>
-</div>
-
-
-        <section class="intro">
-            <img src="assets/background.webp" alt="Particles">
-            <div class="search-bar">
-                <input type="text" placeholder="Search">
-                <button>Search</button>
+            <div class="service-item">
+                <a href="commercial.html">
+                    <img src="assets/commercialserv.jpg" alt="Commercial">
+                </a>
             </div>
-        </section>
-
-        <section class="services">
-            <h2 class="services-heading">Our Real Estate Services</h2>
-            <div class="service-items-container">
-                <div class="service-item">
-                    <a href="residential.html">
-                        <img src="assets/residential.jpg" alt="Residential">
-                    </a>
-                </div>
-                <div class="service-item">
-                    <a href="commercial.html">
-                        <img src="assets/commercialserv.jpg" alt="Commercial">
-                    </a>
-                </div>
-                <div class="service-item">
-                    <a href="solar.html">
-                        <img src="assets/solar.jpg" alt="Solar">
-                    </a>
-                </div>
-                <div class="service-item">
-                    <a href="investment.html">
-                        <img src="assets/investment.jpg" alt="Investment">
-                    </a>
-                </div>
-                <div class="service-item">
+            <div class="service-item">
+                <a href="solar.html">
+                    <img src="assets/solar.jpg" alt="Solar">
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="investment.html">
+                    <img src="assets/investment.jpg" alt="Investment">
+                </a>
+            </div>
+            <div class="service-item">
                 <a href="about.html">
                     <img src="assets/about.jpg" alt="about us">
                 </a>
             </div>
-            </div>
-        </section>
-    
+        </div>
+    </section>
 
+    <section class="investment">
+        <div class="centered-content">
+            <h2 class="section-heading">Real Estate Investment: Building Wealth and Securing Your Future</h2>
+            <p>
+                Real estate investing can be a powerful tool for building wealth and securing your financial future. Whether you are a seasoned investor looking to expand your portfolio or a beginner eager to dip your toes into the world of real estate, we have the expertise and resources to guide you on your investment journey.
+            </p>
 
- <div class="solar-image">
-    <div class="solar-text">
-        <h3>Autonomous Solar Fields&trade;</h3>
-        <p>The future of solar field efficiency is here.</p>
-    </div>
-    <img src="assets/solardrone.webp" alt="drone hovering">
-</div>
-
-<div class="additional-content">
-            <div class="content-section">
-                <div class="content-text">
-                    <h3>We’re Changing the Way the World Thinks About Solar Fields</h3>
-                    <p>Imagine a solar field entirely run by autonomous technology that monitors, protects and learns every second of the day. Autonomous Solar Fields are the workhorses that drive all aspects of a utility-scaled operation, including grid management, security, cleaning and battery storage. All connecting effortlessly and seamlessly with Atlas’ proprietary technology.</p>
+            <!-- Add images here as placeholders -->
+            <div class="section-content">
+                <div class="investment-image">
+                    <img src="assets/Invest.jpg" alt="Placeholder Image">
                 </div>
-                <div class="content-image">
-                    <img src="assets/greenpanel.jpeg" alt="Image 1">
-                </div>
-            </div>
-
-            <div class="content-section">
-                <div class="content-image">
-                    <img src="assets/blackpanel.webp" alt="Image 2">
-                </div>
-                <div class="content-text">
-                    <h3>AUTONOMOUS SOLAR FIELDS</h3>
-                    <p>Atlas Autonomous Solar Fields are comprised of three main foundational principles: Real-time information, A.I. machine learning and security.</p>
+                
+                <div class="investment-text">
+                    <h3>Why Invest in Real Estate?</h3>
+                    <ul>
+                        <li>Potential for Appreciation: Real estate properties have historically shown steady appreciation in value over time. By carefully selecting properties in high-growth areas and holding onto them for the long term, investors can build substantial equity and wealth.</li>
+                        <li>Passive Income Generation: Rental properties provide a consistent source of passive income. The rental income from tenants can help cover mortgage payments, property maintenance, and even generate positive cash flow.</li>
+                        <li>Diversification: Real estate investing allows you to diversify your investment portfolio beyond traditional stocks and bonds. Adding real estate to your portfolio can reduce overall risk and provide stability during market fluctuations.</li>
+                        <li>Tax Advantages: Real estate investors can take advantage of various tax benefits, including deductions for mortgage interest, property taxes, depreciation, and more. These tax incentives can significantly reduce your tax liability.</li>
+                        <li>Hedge Against Inflation: Real estate is considered an inflation hedge, as property values and rental income tend to rise with inflation. As the cost of living increases, your real estate investments retain their value and purchasing power.</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="content-section">
-                <div class="content-text">
-                    <h3>REAL-TIME INFORMATION</h3>
-                    <p>Drone-enabled A.I. Autonomy allows drones to learn and make decisions based on the data received from overhead flights that monitor operations and security. Although two distinct systems and purposes the drones continually share information and learn from one another to increase productivity and safety.</p>
+            <div class="section-content">
+                <div class="investment-text">
+                    <h3>Types of Real Estate Investments:</h3>
+                    <p>There are several ways to invest in real estate, each with its own set of advantages and considerations. Here are some common types of real estate investments:</p>
+                    <ul>
+                        <li>Residential Properties: Residential real estate includes single-family homes, condominiums, townhouses, and multi-unit properties. Residential properties are popular among investors seeking stable rental income and potential for long-term appreciation.</li>
+                        <li>Commercial Properties: Commercial real estate includes office buildings, retail spaces, industrial warehouses, and more. Commercial properties offer higher rental yields but may require longer lease terms and higher initial investments.</li>
+                        <li>Real Estate Investment Trusts (REITs): REITs are companies that own, operate, or finance income-generating real estate. Investing in REITs allows you to own a share of real estate properties without the hassle of property management.</li>
+                        <li>Fix-and-Flip Properties: This strategy involves purchasing distressed properties, renovating them, and selling them for a profit. It requires a keen eye for property value and an understanding of the local real estate market.</li>
+                        <li>Real Estate Crowdfunding: Crowdfunding platforms allow multiple investors to pool their resources and invest in large-scale real estate projects. It offers a more accessible entry point for individual investors.</li>
+                    </ul>
                 </div>
-                <div class="content-image">
-                    <img src="assets/solarinfo.webp" alt="Image 3">
-                </div>
-            </div>
-
-            <div class="content-section">
-                <div class="content-image">
-                    <img src="assets/dronescanning.webp" alt="Image 4">
-                </div>
-                <div class="content-text">
-                    <h3>A.I. MACHINE LEARNING</h3>
-                    <p>Continuous Machine Learning and Application of Knowledge allows the autonomous solar field to continuously learn and implement the best practices to increase solar production efficiency at the sites. Cloud Synced and Streamed Data allows for data collection sharing and analyses by the autonomous systems which is synced and streamed across both national and international facilities.</p>
+                <div class="investment-image">
+                    <img src="assets/Invest2.jpg" alt="Placeholder Image">
                 </div>
             </div>
 
-            <div class="content-section">
-                <div class="content-text">
-                    <h3>WHY ATLAS?</h3>
-                    <p>A different approach, using autonomous technology and A.I. machine learning and security.
-                    Fortified, Independent Security Apparatus ensures that hostile foreign powers and actors are not able to disrupt the autonomous operations of the solar field by utilizing a stand-alone network for each facility and implementing the strictest of security solutions to the changing and evolving threats to our critical infrastructure. Security, reliability and innovation are the cornerstone of the company's product and mission.</p>
+            <div class="section-content">
+                <div class="investment-image">
+                    <img src="assets/Invest3.jpg" alt="Placeholder Image">
                 </div>
-                <div class="content-image">
-                    <img src="assets/wire.webp" alt="Image 5">
+                <div class="investment-text">
+                    <h3>Our Approach to Real Estate Investment:</h3>
+                    <p>At Atlas, we take a personalized approach to real estate investment. Our team of experienced investment specialists works closely with you to understand your financial goals, risk tolerance, and investment preferences. We provide comprehensive market analyses and insights, helping you identify promising investment opportunities with favorable potential returns.</p>
+                    <p>Whether you are interested in rental properties for passive income or seeking to diversify your portfolio with commercial real estate, we tailor investment strategies that align with your objectives. Our commitment to transparency, due diligence, and customer satisfaction sets us apart as your trusted partner in real estate investment.</p>
+                </div>
+            </div>
+
+            <div class="section-content">
+                <div class="investment-text">
+                    <h3>Take the Next Step:</h3>
+                    <p>Ready to embark on your real estate investment journey? Contact us today to schedule a consultation with one of our investment advisors. Let us help you make informed investment decisions and build a robust and prosperous real estate portfolio. Whether you are a seasoned investor or just getting started, we are here to guide you toward a brighter financial future through real estate investing.</p>
+                </div>
+                <div class="investment-image">
+                    <img src="assets/up.jpg" alt="Placeholder Image">
                 </div>
             </div>
         </div>
+    </section>
 
-
-    
-        
+   
 <form id="contactForm" action="https://script.google.com/macros/s/AKfycbzZYbAYOUz1vOMhNJNyTXQ2BAHAqdnMgJZeMQBFMcnJkg9aWQXLH3iVXbDkAIQfXwomaQ/exec" method="POST">
     <center>
         <h2 class="contact">Contact Us</h2>
@@ -246,6 +271,10 @@ s0.parentNode.insertBefore(s1,s0);
     <div class="form-group">
         <input type="email" name="email" placeholder="Email" class="center-input" required>
     </div>
+    <div class="form-group">
+        <input type="phone" name="phone" placeholder="Phone " class="center-input" required>
+    </div>
+    
     <div class="form-group">
         <textarea name="message" placeholder="What is your real estate dream?™" class="full-width" required></textarea>
     </div>
