@@ -375,63 +375,63 @@ payment is a prerequisite for obtaining title to the property</p>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-    // JavaScript for fetching and populating the feed items
-    const feedContainer = document.querySelector('.rss-feed-container');
+        // JavaScript for fetching and populating the feed items
+        const feedContainer = document.querySelector('.rss-feed-container');
 
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
-        .then(response => response.json())
-        .then(data => {
-            const feedItems = data.items;
+        fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+            .then(response => response.json())
+            .then(data => {
+                const feedItems = data.items;
 
-            const feedContent = feedItems.map(item => `
-                <div class="feed-item">
-                    <img src="${item.thumbnail}" alt="Thumbnail">
-                    <div class="feed-item-content">
-                        <h3>${item.title}</h3>
-                        <a href="${item.link}" target="_blank">Read more</a>
+                const feedContent = feedItems.map(item => `
+                    <div class="feed-item">
+                        <img src="${item.thumbnail}" alt="Thumbnail">
+                        <div class="feed-item-content">
+                            <h3>${item.title}</h3>
+                            <a href="${item.link}" target="_blank">Read more</a>
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `).join('');
 
-            feedContainer.innerHTML = feedContent;
+                feedContainer.innerHTML = feedContent;
 
-            const scrollContainer = document.querySelector('.rss-feed-container');
-            const scrollLeftButton = document.querySelector('.scroll-left');
-            const scrollRightButton = document.querySelector('.scroll-right');
+                const scrollContainer = document.querySelector('.rss-feed-container');
+                const scrollLeftButton = document.querySelector('.scroll-left');
+                const scrollRightButton = document.querySelector('.scroll-right');
 
-            const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
-            const feedItemMargin = 20;
+                const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
+                const feedItemMargin = 20;
 
-            scrollLeftButton.addEventListener('click', () => {
-                scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
+                scrollLeftButton.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
+                });
+
+                scrollRightButton.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
+                });
+            })
+            .catch(error => console.error(error));
+
+        // Handle the form submission
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+            })
+            .then(response => {
+                if (response.ok) {
+                    showPopupMessage('Thank you for your interest, Atlas will keep you updated');
+                    document.getElementById('contactForm').reset();
+                }
+            })
+            .catch(error => {
+                console.error("An error occurred:", error);  // This will log the error to the console
+                // No popup message will be shown
             });
-
-            scrollRightButton.addEventListener('click', () => {
-                scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
-            });
-        })
-        .catch(error => console.error(error));
-
-    // Handle the form submission
-document.getElementById('contactForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    fetch(this.action, {
-        method: 'POST',
-        body: new FormData(this),
-    })
-    .then(response => {
-        if (response.ok) {
-            showPopupMessage('Thank you for your interest, Atlas will keep you updated');
-            document.getElementById('contactForm').reset();
-        }
-    })
-    .catch(error => {
-        console.error("An error occurred:", error);  // This will log the error to the console
-        // No popup message will be shown
+        });
     });
-});
-
 </script>
 </body>
 </html>
