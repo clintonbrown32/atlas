@@ -378,19 +378,6 @@ payment is a prerequisite for obtaining title to the property</p>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Function to show the pop-up message
-    function showPopupMessage(message) {
-        const popup = document.createElement('div');
-        popup.innerHTML = '<p>' + message + '</p>';
-        popup.className = 'popup-message';
-        document.body.appendChild(popup);
-
-        // Remove the popup after 2 seconds
-        setTimeout(() => {
-            document.body.removeChild(popup);
-        }, 2000);  // 2 seconds delay just to read the message
-    }
-
     // Handle the form submission
     document.getElementById('contactForm').addEventListener('submit', function (event) {
         event.preventDefault();
@@ -401,9 +388,6 @@ document.addEventListener('DOMContentLoaded', () => {
             body: new FormData(this),
         })
         .then(() => {
-            // Show the popup message
-            showPopupMessage('Thank you for your interest, Atlas will keep you updated');
-            
             // Reset the form
             document.getElementById('contactForm').reset();
         });
@@ -414,5 +398,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 
 
