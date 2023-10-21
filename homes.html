@@ -386,7 +386,8 @@ payment is a prerequisite for obtaining title to the property</p>
 
             setTimeout(() => {
                 document.body.removeChild(popup);
-            }, 5000);
+                window.location.href = 'https://atlasrei.co';  // Redirect to the homepage
+            }, 5000);  // 5 seconds delay
         }
 
         // Handle the form submission
@@ -404,10 +405,10 @@ payment is a prerequisite for obtaining title to the property</p>
                 }
             })
             .catch(error => {
-                // If you don't want to show any error, you can leave this catch block empty.
+                console.error("An error occurred:", error);  // This will log the error to the console
+                // No popup message will be shown
             });
         });
     });
 </script>
-</body>
-</html>
+
