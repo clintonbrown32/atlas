@@ -375,29 +375,7 @@ payment is a prerequisite for obtaining title to the property</p>
     <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
 </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
 
-    // Handle the form submission
-    document.getElementById('contactForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        // Send the form data
-        fetch(this.action, {
-            method: 'POST',
-            body: new FormData(this),
-        })
-        .then(() => {
-            // Reset the form
-            document.getElementById('contactForm').reset();
-        });
-    });
-});
-
-</script>
-
-</body>
-</html>
 
 
 
