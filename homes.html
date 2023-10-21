@@ -377,7 +377,6 @@ payment is a prerequisite for obtaining title to the property</p>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // ... [rest of the code for fetching and populating the feed items]
 
     // Function to show the pop-up message
     function showPopupMessage(message) {
@@ -386,10 +385,9 @@ document.addEventListener('DOMContentLoaded', () => {
         popup.className = 'popup-message';
         document.body.appendChild(popup);
 
-        // Immediately remove the popup and redirect
+        // Remove the popup after 2 seconds
         setTimeout(() => {
             document.body.removeChild(popup);
-            window.location.href = 'https://atlasrei.co';  // Redirect to the homepage
         }, 2000);  // 2 seconds delay just to read the message
     }
 
@@ -397,22 +395,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('contactForm').addEventListener('submit', function (event) {
         event.preventDefault();
 
+        // Send the form data
         fetch(this.action, {
             method: 'POST',
             body: new FormData(this),
         })
-        .then(response => {
-            if (response.ok) {
-                showPopupMessage('Thank you for your interest, Atlas will keep you updated');
-                document.getElementById('contactForm').reset();
-            }
-        })
-        .catch(error => {
-            console.error("An error occurred:", error);  // This will log the error to the console
-            // No popup message will be shown
+        .then(() => {
+            // Show the popup message
+            showPopupMessage('Thank you for your interest, Atlas will keep you updated');
+            
+            // Reset the form
+            document.getElementById('contactForm').reset();
         });
     });
 });
+
 </script>
 
 </body>
