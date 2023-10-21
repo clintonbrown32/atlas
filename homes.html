@@ -413,37 +413,23 @@ payment is a prerequisite for obtaining title to the property</p>
         .catch(error => console.error(error));
 
     // Handle the form submission
-    document.getElementById('contactForm').addEventListener('submit', function (event) {
-        event.preventDefault();
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
 
-        fetch(this.action, {
-            method: 'POST',
-            body: new FormData(this),
-        })
-        .then(response => {
-            if (response.ok) {
-                showPopupMessage('Thank you for your interest, Atlas will keep you updated');
-                document.getElementById('contactForm').reset();
-            } else {
-                showPopupMessage('Error occurred. Please try again.');
-            }
-        })
-        .catch(error => {
-            showPopupMessage('Network error. Please try again later.');
-        });
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+    })
+    .then(response => {
+        if (response.ok) {
+            showPopupMessage('Thank you for your interest, Atlas will keep you updated');
+            document.getElementById('contactForm').reset();
+        }
+    })
+    .catch(error => {
+        console.error("An error occurred:", error);  // This will log the error to the console
+        // No popup message will be shown
     });
-
-    // Function to show the pop-up message
-    function showPopupMessage(message) {
-        const popup = document.createElement('div');
-        popup.innerHTML = '<p>' + message + '</p>';
-        popup.className = 'popup-message';
-        document.body.appendChild(popup);
-
-        setTimeout(() => {
-            document.body.removeChild(popup);
-        }, 5000);
-    }
 });
 
 </script>
