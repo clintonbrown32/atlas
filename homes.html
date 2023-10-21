@@ -369,46 +369,53 @@ payment is a prerequisite for obtaining title to the property</p>
 
 
 
+<!-- ... (Rest of your HTML) -->
+
 <footer>
     <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
 </footer>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // ... [rest of the code for fetching and populating the feed items]
+document.addEventListener('DOMContentLoaded', () => {
+    // ... [rest of the code for fetching and populating the feed items]
 
-        // Function to show the pop-up message
-        function showPopupMessage(message) {
-            const popup = document.createElement('div');
-            popup.innerHTML = '<p>' + message + '</p>';
-            popup.className = 'popup-message';
-            document.body.appendChild(popup);
+    // Function to show the pop-up message
+    function showPopupMessage(message) {
+        const popup = document.createElement('div');
+        popup.innerHTML = '<p>' + message + '</p>';
+        popup.className = 'popup-message';
+        document.body.appendChild(popup);
 
-            setTimeout(() => {
-                document.body.removeChild(popup);
-                window.location.href = 'https://atlasrei.co';  // Redirect to the homepage
-            }, 5000);  // 5 seconds delay
-        }
+        // Immediately remove the popup and redirect
+        setTimeout(() => {
+            document.body.removeChild(popup);
+            window.location.href = 'https://atlasrei.co';  // Redirect to the homepage
+        }, 2000);  // 2 seconds delay just to read the message
+    }
 
-        // Handle the form submission
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault();
+    // Handle the form submission
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-            fetch(this.action, {
-                method: 'POST',
-                body: new FormData(this),
-            })
-            .then(response => {
-                if (response.ok) {
-                    showPopupMessage('Thank you for your interest, Atlas will keep you updated');
-                    document.getElementById('contactForm').reset();
-                }
-            })
-            .catch(error => {
-                console.error("An error occurred:", error);  // This will log the error to the console
-                // No popup message will be shown
-            });
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+        })
+        .then(response => {
+            if (response.ok) {
+                showPopupMessage('Thank you for your interest, Atlas will keep you updated');
+                document.getElementById('contactForm').reset();
+            }
+        })
+        .catch(error => {
+            console.error("An error occurred:", error);  // This will log the error to the console
+            // No popup message will be shown
         });
     });
+});
 </script>
+
+</body>
+</html>
+
 
