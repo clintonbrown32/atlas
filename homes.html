@@ -330,9 +330,10 @@ payment is a prerequisite for obtaining title to the property</p>
 
 
     
-<form id="contactForm" action="https://formspree.io/f/mknlygeb" method="POST">
+<form id="contactForm" action="https://script.google.com/macros/s/AKfycbz4Aq4dHm1if6OVvbzqFl8ZAMGMreKrdsjMOcjvd_Ejy7GYHdIi7t71Copa-tjf-5tDTw/exec" method="POST">
     <center>
-        <h2 class="contact">Register your interest today. Act Now! </h2>
+        <h2 class="contact">Register your interest today. Act Now!! </h2>
+      
     </center>
     <div class="form-group">
         <input type="text" name="first_name" placeholder="First Name" class="center-input" required>
@@ -359,7 +360,9 @@ payment is a prerequisite for obtaining title to the property</p>
         <input type="text" name="zip_code" placeholder="Zip Code" class="center-input" required>
     </div>
     <div class="form-group">
-        <textarea name="message" placeholder="Why is Atlas Hills for you?" class="full-width" required></textarea>
+    <textarea name="message" placeholder="Why is Atlas Hills for you?" class="full-width" required></textarea>
+</div>
+
     </div>
     <div class="form-group">
         <input type="submit" value="Submit" class="full-width">
@@ -368,14 +371,84 @@ payment is a prerequisite for obtaining title to the property</p>
 
 
 
-
-<!-- ... (Rest of your HTML) -->
-
 <footer>
     <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
 </footer>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // JavaScript for fetching and populating the feed items
+    const feedContainer = document.querySelector('.rss-feed-container');
 
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+        .then(response => response.json())
+        .then(data => {
+            const feedItems = data.items;
 
+            const feedContent = feedItems.map(item => `
+                <div class="feed-item">
+                    <img src="${item.thumbnail}" alt="Thumbnail">
+                    <div class="feed-item-content">
+                        <h3>${item.title}</h3>
+                        <a href="${item.link}" target="_blank">Read more</a>
+                    </div>
+                </div>
+            `).join('');
 
+            feedContainer.innerHTML = feedContent;
 
+            const scrollContainer = document.querySelector('.rss-feed-container');
+            const scrollLeftButton = document.querySelector('.scroll-left');
+            const scrollRightButton = document.querySelector('.scroll-right');
+
+            const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
+            const feedItemMargin = 20;
+
+            scrollLeftButton.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
+            });
+
+            scrollRightButton.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
+            });
+        })
+        .catch(error => console.error(error));
+
+    // Handle the form submission
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+        })
+        .then(response => {
+            if (response.ok) {
+                showPopupMessage('Thank you for your interest, Atlas will keep you updated');
+                document.getElementById('contactForm').reset();
+            } else {
+                showPopupMessage('Error occurred. Please try again.');
+            }
+        })
+        .catch(error => {
+            showPopupMessage('Network error. Please try again later.');
+        });
+    });
+
+    // Function to show the pop-up message
+    function showPopupMessage(message) {
+        const popup = document.createElement('div');
+        popup.innerHTML = '<p>' + message + '</p>';
+        popup.className = 'popup-message';
+        document.body.appendChild(popup);
+
+        setTimeout(() => {
+            document.body.removeChild(popup);
+        }, 5000);
+    }
+});
+GmailApp.sendEmail('homes@atlasrei.co', 'New Interest in Atlas Hills', emailBody);
+v
+</script>
+</body>
+</html>
