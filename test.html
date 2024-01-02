@@ -191,21 +191,24 @@ document.addEventListener('DOMContentLoaded', () => {
         // JavaScript for fetching and populating the feed items
         const feedContainer = document.querySelector('.rss-feed-container');
 
-        fetch('https://rss.app/feeds/v1.1/NMymQovSkybOH6Ac.json')
-            .then(response => response.json())
-            .then(data => {
-                const feedItems = data.items;
+        fetch('https://rss.app/feeds/NMymQovSkybOH6Ac.csv')
+            .then(response => response.text())
+            .then(csvData => {
+                const feedItems = parseCSV(csvData);
 
                 // Generate HTML for each feed item
-                const feedContent = feedItems.map(item => `
-                    <div class="feed-item">
-                        <img src="${item.thumbnail}" alt="Thumbnail">
-                        <div class="feed-item-content">
-                            <h3>${item.title}</h3>
-                            <a href="${item.link}" target="_blank">Read more</a>
+                const feedContent = feedItems.map(item => {
+                    const thumbnailUrl = getThumbnailUrl(item);
+                    return `
+                        <div class="feed-item">
+                            <img src="${thumbnailUrl}" alt="${item.title} Thumbnail">
+                            <div class="feed-item-content">
+                                <h3>${item.title}</h3>
+                                <a href="${item.link}" target="_blank">Read more</a>
+                            </div>
                         </div>
-                    </div>
-                `).join('');
+                    `;
+                }).join('');
 
                 // Inject the feed content into the HTML
                 feedContainer.innerHTML = feedContent;
@@ -228,49 +231,30 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => console.error(error));
 
-        // Add an event listener to the form submission
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
+        // Function to parse CSV data into an array of objects
+        function parseCSV(csvData) {
+            const lines = csvData.split('\n');
+            const headers = lines[0].split(',');
+            const result = [];
 
-            // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
-            fetch(this.action, {
-                method: 'POST',
-                body: new FormData(this),
-            })
-            .then(function (response) {
-                if (response.ok) {
-                    // Show the pop-up message for successful submission
-                    showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-                    document.getElementById('contactForm').reset(); // Reset the form after successful submission
-
-                    // Clear individual form fields
-                    document.querySelector('[name="name"]').value = '';
-                    document.querySelector('[name="email"]').value = '';
-                    document.querySelector('[name="message"]').value = '';
-                } else {
-                    // Show the pop-up message for submission error
-                    showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-                    document.getElementById('contactForm').reset();
+            for (let i = 1; i < lines.length; i++) {
+                const currentLine = lines[i].split(',');
+                if (currentLine.length === headers.length) {
+                    const item = {};
+                    for (let j = 0; j < headers.length; j++) {
+                        item[headers[j].trim()] = currentLine[j].trim();
+                    }
+                    result.push(item);
                 }
-            })
-            .catch(function (error) {
-                // Handle network or fetch API errors
-                showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-                document.getElementById('contactForm').reset();
-            });
-        });
+            }
 
-        // Function to show the pop-up message
-        function showPopupMessage(message) {
-            var popup = document.createElement('div');
-            popup.innerHTML = '<p>' + message + '</p>';
-            popup.className = 'popup-message'; // Add the CSS class for styling
-            document.body.appendChild(popup);
+            return result;
+        }
 
-            // Automatically remove the popup after a few seconds
-            setTimeout(function () {
-                document.body.removeChild(popup);
-            }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
+        // Function to get the thumbnail URL, fallback to a default URL if not available
+        function getThumbnailUrl(item) {
+            const thumbnailUrl = item.thumbnail || 'default-thumbnail-url.jpg';
+            return thumbnailUrl !== 'Thumbnail' ? thumbnailUrl : 'default-thumbnail-url.jpg';
         }
     });
 </script>
