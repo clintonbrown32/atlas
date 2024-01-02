@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </section>
 
 <section class="rss-feed">
-    <h2 class="rss-feed-heading">Industry News</h2>
+    <h2 class="rss-feed-heading">Industry News.</h2>
     <div class="rss-feed-container">
         <!-- The RSS feed content will be injected here -->
     </div>
@@ -188,35 +188,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // JavaScript for fetching and populating the feed items
         const feedContainer = document.querySelector('.rss-feed-container');
 
         fetch('https://rss.app/feeds/v1.1/36XnwqMaz74xhQlv.json')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch RSS feed');
+                }
+                return response.json();
+            })
             .then(data => {
+                if (!data.items || !Array.isArray(data.items)) {
+                    throw new Error('Invalid feed data structure');
+                }
+
                 const feedItems = data.items;
 
-                // Generate HTML for each feed item
                 const feedContent = feedItems.map(item => `
                     <div class="feed-item">
-                        <img src="${item.enclosure.link}" alt="Thumbnail">
+                        <img src="${item.enclosure && item.enclosure.link ? item.enclosure.link : ''}" alt="Thumbnail">
                         <div class="feed-item-content">
-                            <h3>${item.title}</h3>
-                            <a href="${item.link}" target="_blank">Read more</a>
+                            <h3>${item.title || ''}</h3>
+                            <a href="${item.link || '#'}" target="_blank">Read more</a>
                         </div>
                     </div>
                 `).join('');
 
-                // Inject the feed content into the HTML
                 feedContainer.innerHTML = feedContent;
 
-                // JavaScript for horizontal scrolling with arrow buttons
                 const scrollContainer = document.querySelector('.rss-feed-container');
                 const scrollLeftButton = document.querySelector('.scroll-left');
                 const scrollRightButton = document.querySelector('.scroll-right');
 
                 const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
-                const feedItemMargin = 20; // Adjust this value according to your CSS margin
+                const feedItemMargin = 20;
 
                 scrollLeftButton.addEventListener('click', () => {
                     scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
@@ -226,19 +231,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
                 });
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                console.error(error);
+            });
 
-        // Add an event listener to the form submission
         document.getElementById('contactForm').addEventListener('submit', function (event) {
             // ... (unchanged code for form submission)
         });
 
-        // Function to show the pop-up message
         function showPopupMessage(message) {
             // ... (unchanged code for showing pop-up message)
         }
     });
 </script>
+
+
 
     <div class="modal" id="promoModal">
     <div class="modal-content">
