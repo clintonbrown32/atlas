@@ -191,24 +191,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // JavaScript for fetching and populating the feed items
         const feedContainer = document.querySelector('.rss-feed-container');
 
-        fetch('https://rss.app/feeds/NMymQovSkybOH6Ac.csv')
-            .then(response => response.text())
-            .then(csvData => {
-                const feedItems = parseCSV(csvData);
+        fetch('https://rss.app/feeds/v1.1/36XnwqMaz74xhQlv.json')
+            .then(response => response.json())
+            .then(data => {
+                const feedItems = data.items;
 
                 // Generate HTML for each feed item
-                const feedContent = feedItems.map(item => {
-                    const thumbnailUrl = getThumbnailUrl(item);
-                    return `
-                        <div class="feed-item">
-                            <img src="${thumbnailUrl}" alt="${item.title} Thumbnail">
-                            <div class="feed-item-content">
-                                <h3>${item.title}</h3>
-                                <a href="${item.link}" target="_blank">Read more</a>
-                            </div>
+                const feedContent = feedItems.map(item => `
+                    <div class="feed-item">
+                        <img src="${item.enclosure.link}" alt="Thumbnail">
+                        <div class="feed-item-content">
+                            <h3>${item.title}</h3>
+                            <a href="${item.link}" target="_blank">Read more</a>
                         </div>
-                    `;
-                }).join('');
+                    </div>
+                `).join('');
 
                 // Inject the feed content into the HTML
                 feedContainer.innerHTML = feedContent;
@@ -231,39 +228,17 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => console.error(error));
 
-        // Function to parse CSV data into an array of objects
-        function parseCSV(csvData) {
-            const lines = csvData.split('\n');
-            const headers = lines[0].split(',');
-            const result = [];
+        // Add an event listener to the form submission
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            // ... (unchanged code for form submission)
+        });
 
-            for (let i = 1; i < lines.length; i++) {
-                const currentLine = lines[i].split(',');
-                if (currentLine.length === headers.length) {
-                    const item = {};
-                    for (let j = 0; j < headers.length; j++) {
-                        item[headers[j].trim()] = currentLine[j].trim();
-                    }
-                    result.push(item);
-                }
-            }
-
-            return result;
-        }
-
-        // Function to get the thumbnail URL, fallback to a default URL if not available
-        function getThumbnailUrl(item) {
-            const thumbnailUrl = item.thumbnail || 'default-thumbnail-url.jpg';
-            return thumbnailUrl !== 'Thumbnail' ? thumbnailUrl : 'default-thumbnail-url.jpg';
+        // Function to show the pop-up message
+        function showPopupMessage(message) {
+            // ... (unchanged code for showing pop-up message)
         }
     });
 </script>
-
-
-
-
-
-
 
     <div class="modal" id="promoModal">
     <div class="modal-content">
