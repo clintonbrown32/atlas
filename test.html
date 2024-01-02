@@ -196,30 +196,20 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 const feedItems = data.items;
 
-// Generate HTML for each feed item
-const feedContent = feedItems.map(item => {
-    const thumbnailUrl = item.thumbnail || extractThumbnailFromDescription(item.description) || 'default-thumbnail-url.jpg';
+                // Generate HTML for each feed item
+                const feedContent = feedItems.map(item => {
+                    const thumbnailUrl = getThumbnailUrl(item);
 
-    return `
-        <div class="feed-item">
-            <img src="${thumbnailUrl}" alt="${item.title} Thumbnail">
-            <div class="feed-item-content">
-                <h3>${item.title}</h3>
-                <a href="${item.link}" target="_blank">Read more</a>
-            </div>
-        </div>
-    `;
-}).join('');
-
-// Function to extract thumbnail from description using a simple regex
-function extractThumbnailFromDescription(description) {
-    const matches = description.match(/<img.*?src=["'](.*?)["']/);
-    return matches && matches.length > 1 ? matches[1] : null;
-}
-
-
-
-
+                    return `
+                        <div class="feed-item">
+                            <img src="${thumbnailUrl}" alt="${item.title} Thumbnail">
+                            <div class="feed-item-content">
+                                <h3>${item.title}</h3>
+                                <a href="${item.link}" target="_blank">Read more</a>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
 
                 // Inject the feed content into the HTML
                 feedContainer.innerHTML = feedContent;
@@ -286,8 +276,19 @@ function extractThumbnailFromDescription(description) {
                 document.body.removeChild(popup);
             }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
         }
+
+        // Function to get the thumbnail URL, fallback to a default URL if not available
+        function getThumbnailUrl(item) {
+            if (item.thumbnail && item.thumbnail !== 'Thumbnail') {
+                return item.thumbnail;
+            }
+
+            const descriptionMatches = item.description.match(/<img.*?src=["'](.*?)["']/);
+            return descriptionMatches && descriptionMatches.length > 1 ? descriptionMatches[1] : 'default-thumbnail-url.jpg';
+        }
     });
 </script>
+
 
     <div class="modal" id="promoModal">
     <div class="modal-content">
