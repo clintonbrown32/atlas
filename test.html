@@ -197,18 +197,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const feedItems = data.items;
 
                 // Generate HTML for each feed item
-                const feedContent = feedItems.map(item => {
-                    const thumbnailUrl = getThumbnailUrl(item);
-                    return `
-                        <div class="feed-item">
-                            <img src="${thumbnailUrl}" alt="${item.title} Thumbnail">
-                            <div class="feed-item-content">
-                                <h3>${item.title}</h3>
-                                <a href="${item.link}" target="_blank">Read more</a>
-                            </div>
+                const feedContent = feedItems.map(item => `
+                    <div class="feed-item">
+                        <img src="${item.thumbnail}" alt="Thumbnail">
+                        <div class="feed-item-content">
+                            <h3>${item.title}</h3>
+                            <a href="${item.link}" target="_blank">Read more</a>
                         </div>
-                    `;
-                }).join('');
+                    </div>
+                `).join('');
 
                 // Inject the feed content into the HTML
                 feedContainer.innerHTML = feedContent;
@@ -231,19 +228,53 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => console.error(error));
 
-        // Function to get the thumbnail URL, fallback to a default URL if not available
-        function getThumbnailUrl(item) {
-            const thumbnailUrl = item.thumbnail || extractThumbnailFromDescription(item.description) || 'default-thumbnail-url.jpg';
-            return thumbnailUrl !== 'Thumbnail' ? thumbnailUrl : 'default-thumbnail-url.jpg';
-        }
+        // Add an event listener to the form submission
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
 
-        // Function to extract thumbnail from description using a simple regex
-        function extractThumbnailFromDescription(description) {
-            const matches = description.match(/<img.*?src=["'](.*?)["']/);
-            return matches && matches.length > 1 ? matches[1] : null;
+            // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+            })
+            .then(function (response) {
+                if (response.ok) {
+                    // Show the pop-up message for successful submission
+                    showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+                    document.getElementById('contactForm').reset(); // Reset the form after successful submission
+
+                    // Clear individual form fields
+                    document.querySelector('[name="name"]').value = '';
+                    document.querySelector('[name="email"]').value = '';
+                    document.querySelector('[name="message"]').value = '';
+                } else {
+                    // Show the pop-up message for submission error
+                    showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+                    document.getElementById('contactForm').reset();
+                }
+            })
+            .catch(function (error) {
+                // Handle network or fetch API errors
+                showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+                document.getElementById('contactForm').reset();
+            });
+        });
+
+        // Function to show the pop-up message
+        function showPopupMessage(message) {
+            var popup = document.createElement('div');
+            popup.innerHTML = '<p>' + message + '</p>';
+            popup.className = 'popup-message'; // Add the CSS class for styling
+            document.body.appendChild(popup);
+
+            // Automatically remove the popup after a few seconds
+            setTimeout(function () {
+                document.body.removeChild(popup);
+            }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
         }
     });
 </script>
+
 
 
 
