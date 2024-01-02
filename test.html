@@ -198,20 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Generate HTML for each feed item
 const feedContent = feedItems.map(item => {
-    let thumbnailUrl = item.thumbnail;
-
-    // Check if thumbnail property is not present or empty
-    if (!thumbnailUrl || thumbnailUrl.trim() === 'Thumbnail') {
-        // Use the description as a fallback to extract the image URL
-        const descriptionMatches = item.description.match(/<img.*?src=["'](.*?)["']/);
-
-        if (descriptionMatches && descriptionMatches.length > 1) {
-            thumbnailUrl = descriptionMatches[1];
-        } else {
-            // If no thumbnail or description image, you may provide a default image URL
-            thumbnailUrl = 'default-thumbnail-url.jpg';
-        }
-    }
+    const thumbnailUrl = item.thumbnail || extractThumbnailFromDescription(item.description) || 'default-thumbnail-url.jpg';
 
     return `
         <div class="feed-item">
@@ -223,6 +210,13 @@ const feedContent = feedItems.map(item => {
         </div>
     `;
 }).join('');
+
+// Function to extract thumbnail from description using a simple regex
+function extractThumbnailFromDescription(description) {
+    const matches = description.match(/<img.*?src=["'](.*?)["']/);
+    return matches && matches.length > 1 ? matches[1] : null;
+}
+
 
 
 
