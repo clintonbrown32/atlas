@@ -197,15 +197,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const feedItems = data.items;
 
                 // Generate HTML for each feed item
-                const feedContent = feedItems.map(item => `
-                    <div class="feed-item">
-                        <img src="${item.thumbnail}" alt="Thumbnail">
-                        <div class="feed-item-content">
-                            <h3>${item.title}</h3>
-                            <a href="${item.link}" target="_blank">Read more</a>
-                        </div>
-                    </div>
-                `).join('');
+const feedContent = feedItems.map(item => `
+    <div class="feed-item">
+        <img src="${item.thumbnail}" alt="${item.title} Thumbnail"> <!-- Use item.thumbnail directly -->
+        <div class="feed-item-content">
+            <h3>${item.title}</h3>
+            <a href="${item.link}" target="_blank">Read more</a>
+        </div>
+    </div>
+`).join('');
+
 
                 // Inject the feed content into the HTML
                 feedContainer.innerHTML = feedContent;
