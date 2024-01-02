@@ -196,16 +196,35 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 const feedItems = data.items;
 
-                // Generate HTML for each feed item
-const feedContent = feedItems.map(item => `
-    <div class="feed-item">
-        <img src="${item.thumbnail}" alt="${item.title} Thumbnail"> <!-- Use item.thumbnail directly -->
-        <div class="feed-item-content">
-            <h3>${item.title}</h3>
-            <a href="${item.link}" target="_blank">Read more</a>
+// Generate HTML for each feed item
+const feedContent = feedItems.map(item => {
+    let thumbnailUrl = item.thumbnail;
+
+    // Check if thumbnail property is not present or empty
+    if (!thumbnailUrl || thumbnailUrl.trim() === 'Thumbnail') {
+        // Use the description as a fallback to extract the image URL
+        const descriptionMatches = item.description.match(/<img.*?src=["'](.*?)["']/);
+
+        if (descriptionMatches && descriptionMatches.length > 1) {
+            thumbnailUrl = descriptionMatches[1];
+        } else {
+            // If no thumbnail or description image, you may provide a default image URL
+            thumbnailUrl = 'default-thumbnail-url.jpg';
+        }
+    }
+
+    return `
+        <div class="feed-item">
+            <img src="${thumbnailUrl}" alt="${item.title} Thumbnail">
+            <div class="feed-item-content">
+                <h3>${item.title}</h3>
+                <a href="${item.link}" target="_blank">Read more</a>
+            </div>
         </div>
-    </div>
-`).join('');
+    `;
+}).join('');
+
+
 
 
                 // Inject the feed content into the HTML
