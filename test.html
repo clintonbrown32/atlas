@@ -196,109 +196,106 @@ document.addEventListener('DOMContentLoaded', () => {
     <!-- Your HTML content -->
 
    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // JavaScript for fetching and populating the feed items
-        const feedContainer = document.querySelector('.rss-feed-container');
+document.addEventListener('DOMContentLoaded', () => {
+    // JavaScript for fetching and populating the feed items
+    const feedContainer = document.querySelector('.rss-feed-container');
 
-        fetch('https://rss.app/feeds/v1.1/x9KvI82MriWv0ibK.json')
-            .then(response => response.json())
-            .then(data => {
-                const feedItems = data.items;
+    fetch('https://rss.app/feeds/v1.1/NMymQovSkybOH6Ac.json?rss_url=https://www.forbes.com/real-estate/?sh=6958f34730ef')
+        .then(response => response.json())
+        .then(data => {
+            const feedItems = data.items;
 
-                // Generate HTML for each feed item
-                const feedContent = feedItems.map(item => `
-                    <div class="feed-item">
-                        <img src="${item.thumbnail}" alt="Thumbnail">
-                        <div class="feed-item-content">
-                            <h3>${item.title}</h3>
-                            <a href="${item.link}" target="_blank">Read more</a>
-                        </div>
+            // Function to generate the thumbnail HTML
+            function generateThumbnail(item) {
+                return item.enclosure ? `<img src="${item.enclosure.url}" alt="Thumbnail">` : '<img src="" alt="No Thumbnail">';
+            }
+
+            // Function to generate the "Read more" link HTML
+            function generateReadMoreLink(item) {
+                return `<a href="${item.link}" target="_blank">Read more</a>`;
+            }
+
+            // Generate HTML for each feed item
+            const feedContent = feedItems.map(item => `
+                <div class="feed-item">
+                    ${generateThumbnail(item)}
+                    <div class="feed-item-content">
+                        <h3>${item.title}</h3>
+                        ${generateReadMoreLink(item)}
                     </div>
-                `).join('');
+                </div>
+            `).join('');
 
-                // Inject the feed content into the HTML
-                feedContainer.innerHTML = feedContent;
+            // Inject the feed content into the HTML
+            feedContainer.innerHTML = feedContent;
 
-                // JavaScript for horizontal scrolling with arrow buttons
-                const scrollContainer = document.querySelector('.rss-feed-container');
-                const scrollLeftButton = document.querySelector('.scroll-left');
-                const scrollRightButton = document.querySelector('.scroll-right');
+            // JavaScript for horizontal scrolling with arrow buttons
+            const scrollContainer = document.querySelector('.rss-feed-container');
+            const scrollLeftButton = document.querySelector('.scroll-left');
+            const scrollRightButton = document.querySelector('.scroll-right');
 
-                const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
-                const feedItemMargin = 20; // Adjust this value according to your CSS margin
+            const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
+            const feedItemMargin = 20; // Adjust this value according to your CSS margin
 
-                scrollLeftButton.addEventListener('click', () => {
-                    scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
-                });
+            scrollLeftButton.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
+            });
 
-                scrollRightButton.addEventListener('click', () => {
-                    scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
-                });
-            })
-            .catch(error => console.error(error));
+            scrollRightButton.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
+            });
+        })
+        .catch(error => console.error(error));
 
-       // Add an event listener to the form submission
-document.getElementById('contactForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    // Rest of your script...
 
-    // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
-    fetch(this.action, {
-        method: 'POST',
-        body: new FormData(this),
-    })
-    .then(function (response) {
-        if (response.ok) {
-            // Show the pop-up message for successful submission
+    // Add an event listener to the form submission
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+        })
+        .then(function (response) {
+            if (response.ok) {
+                // Show the pop-up message for successful submission
+                showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+                document.getElementById('contactForm').reset(); // Reset the form after successful submission
+
+                // Clear individual form fields
+                document.querySelector('[name="name"]').value = '';
+                document.querySelector('[name="email"]').value = '';
+                document.querySelector('[name="message"]').value = '';
+            } else {
+                // Show the pop-up message for submission error
+                showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+                document.getElementById('contactForm').reset();
+            }
+        })
+        .catch(function (error) {
+            // Handle network or fetch API errors
             showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-            document.getElementById('contactForm').reset(); // Reset the form after successful submission
+            document.getElementById('contactForm').reset();
+        });
 
-            // Clear individual form fields
-            document.querySelector('[name="name"]').value = '';
-            document.querySelector('[name="email"]').value = '';
-            document.querySelector('[name="message"]').value = '';
-        } else {
-            // Show the pop-up message for submission error
-            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-             document.getElementById('contactForm').reset();
+        // Function to show the pop-up message
+        function showPopupMessage(message) {
+            var popup = document.createElement('div');
+            popup.innerHTML = '<p>' + message + '</p>';
+            popup.className = 'popup-message'; // Add the CSS class for styling
+            document.body.appendChild(popup);
+
+            // Automatically remove the popup after a few seconds
+            setTimeout(function () {
+                document.body.removeChild(popup);
+            }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
         }
-    })
-    .catch(function (error) {
-        // Handle network or fetch API errors
-        showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-         document.getElementById('contactForm').reset();
     });
 });
-
-
-        // Function to show the pop-up message
-        function showPopupMessage(message) {
-            var popup = document.createElement('div');
-            popup.innerHTML = '<p>' + message + '</p>';
-            popup.className = 'popup-message'; // Add the CSS class for styling
-            document.body.appendChild(popup);
-
-            // Automatically remove the popup after a few seconds
-            setTimeout(function () {
-                document.body.removeChild(popup);
-            }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
-        }
-    });
 </script>
 
-        // Function to show the pop-up message
-        function showPopupMessage(message) {
-            var popup = document.createElement('div');
-            popup.innerHTML = '<p>' + message + '</p>';
-            popup.className = 'popup-message'; // Add the CSS class for styling
-            document.body.appendChild(popup);
-
-            // Automatically remove the popup after a few seconds
-            setTimeout(function () {
-                document.body.removeChild(popup);
-            }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
-        }
-    });
-</script>
 </body>
 </html>
 
