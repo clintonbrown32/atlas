@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // JavaScript for fetching and populating the feed items
         const feedContainer = document.querySelector('.rss-feed-container');
 
-        fetch('crypto_news.json')
+        fetch('https://rss.app/feeds/v1.1/NMymQovSkybOH6Ac.json')
             .then(response => response.json())
             .then(data => {
                 const feedItems = data.items;
