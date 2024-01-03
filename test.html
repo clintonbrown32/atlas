@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </form>
 
 <footer>
-    <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
+    <p>DISCLAIMER: -This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
 </footer>
 <!DOCTYPE html>
 <html lang="en">
@@ -197,24 +197,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
    <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // JavaScript for fetching and populating the feed items
-        const feedContainer = document.querySelector('.rss-feed-container');
+    // JavaScript for fetching and populating the feed items
+    const feedContainer = document.querySelector('.rss-feed-container');
 
-        fetch('https://rss.app/feeds/v1.1/NMymQovSkybOH6Ac.json')
-            .then(response => response.json())
-            .then(data => {
-                const feedItems = data.items;
+    fetch('https://rss.app/feeds/v1.1/NMymQovSkybOH6Ac.json')
+        .then(response => response.json())
+        .then(data => {
+            const feedItems = data.items;
 
-                // Generate HTML for each feed item
-                const feedContent = feedItems.map(item => `
-                    <div class="feed-item">
-                        <img src="${item.thumbnail}" alt="Thumbnail">
-                        <div class="feed-item-content">
-                            <h3>${item.title}</h3>
-                            <a href="${item.link}" target="_blank">Read more</a>
-                        </div>
+            // Log the structure of the first item in the console
+            console.log(feedItems[0]);
+
+            // Generate HTML for each feed item
+            const feedContent = feedItems.map(item => `
+                <div class="feed-item">
+                    ${item.thumbnail ? `<img src="${item.thumbnail}" alt="Thumbnail">` : ''}
+                    <div class="feed-item-content">
+                        <h3>${item.title}</h3>
+                        ${item.link ? `<a href="${item.link}" target="_blank">Read more</a>` : ''}
                     </div>
-                `).join('');
+                </div>
+            `).join('');
+
 
                 // Inject the feed content into the HTML
                 feedContainer.innerHTML = feedContent;
