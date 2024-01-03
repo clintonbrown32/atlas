@@ -196,25 +196,24 @@ document.addEventListener('DOMContentLoaded', () => {
     <!-- Your HTML content -->
 
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // JavaScript for fetching and populating the feed items
-        const feedContainer = document.querySelector('.rss-feed-container');
+   document.addEventListener('DOMContentLoaded', () => {
+    // JavaScript for fetching and populating the feed items
+    const feedContainer = document.querySelector('.rss-feed-container');
 
-        fetch('https://rss.app/feeds/v1.1/NMymQovSkybOH6Ac.json?rss_url=https://www.forbes.com/real-estate/?sh=6958f34730ef')
-            .then(response => response.json())
-            .then(data => {
-                const feedItems = data.items;
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.forbes.com/real-estate/feed/')
+        .then(response => response.json())
+        .then(data => {
+            const feedItems = data.items;
 
-                // Generate HTML for each feed item
-                const feedContent = feedItems.map(item => `
-                    <div class="feed-item">
-                        <img src="${item.thumbnail}" alt="Thumbnail">
-                        <div class="feed-item-content">
-                            <h3>${item.title}</h3>
-                            <a href="${item.link}" target="_blank">Read more</a>
-                        </div>
+            // Generate HTML for each feed item
+            const feedContent = feedItems.map(item => `
+                <div class="feed-item">
+                    ${item.thumbnail ? `<img src="${item.thumbnail}" alt="Thumbnail">` : ''}
+                    <div class="feed-item-content">
+                        <h3>${item.title}</h3>
+                        ${item.link ? `<a href="${item.link}" target="_blank">Read more</a>` : ''}
                     </div>
-                `).join('');
+                </div>`).join('');
 
                 // Inject the feed content into the HTML
                 feedContainer.innerHTML = feedContent;
