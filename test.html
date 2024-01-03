@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </form>
 
 <footer>
-    <p>DISCLAIMER: -This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
+    <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
 </footer>
 <!DOCTYPE html>
 <html lang="en">
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to generate the thumbnail HTML
     function generateThumbnail(item) {
-        return item.thumbnail ? `<img src="${item.thumbnail}" alt="Thumbnail">` : '';
+        return item.thumbnail ? `<img src="${item.thumbnail}" alt="Thumbnail">` : '<img src="" alt="No Thumbnail">';
     }
 
     // Function to generate the "Read more" link HTML
@@ -235,6 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return item.link ? `<a href="${item.link}" target="_blank">Read more</a>` : '';
     }
 });
+
 
 
                 // Inject the feed content into the HTML
