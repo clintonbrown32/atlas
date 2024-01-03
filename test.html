@@ -74,6 +74,36 @@
 </head>
 <body>
 
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64c730d994cf5d49dc676ce6/1h6l1dl20';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ... [Your previous JavaScript code]
+
+    // Display the modal
+    var modal = document.getElementById('promoModal');
+    modal.style.display = 'block';
+
+    
+
+    // Close the modal if anywhere outside of the modal is clicked
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+
+    
+</script>
 
 
 <header>
@@ -161,7 +191,7 @@
         // JavaScript for fetching and populating the feed items
         const feedContainer = document.querySelector('.rss-feed-container');
 
-        fetch('https://rss.app/feeds/v1.1/NMymQovSkybOH6Ac.json')
+        fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.forbes.com/real-estate/feed/')
             .then(response => response.json())
             .then(data => {
                 const feedItems = data.items;
@@ -169,10 +199,10 @@
                 // Generate HTML for each feed item
                 const feedContent = feedItems.map(item => `
                     <div class="feed-item">
-                        <img src="${item.enclosure && item.enclosure.link ? item.enclosure.link : ''}" alt="Thumbnail">
+                        <img src="${item.thumbnail}" alt="Thumbnail">
                         <div class="feed-item-content">
-                            <h3>${item.title || ''}</h3>
-                            <a href="${item.link || '#'}" target="_blank">Read more</a>
+                            <h3>${item.title}</h3>
+                            <a href="${item.link}" target="_blank">Read more</a>
                         </div>
                     </div>
                 `).join('');
@@ -198,10 +228,38 @@
             })
             .catch(error => console.error(error));
 
-        // Add an event listener to the form submission
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            // ... (unchanged code for form submission)
-        });
+       // Add an event listener to the form submission
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+    })
+    .then(function (response) {
+        if (response.ok) {
+            // Show the pop-up message for successful submission
+            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+            document.getElementById('contactForm').reset(); // Reset the form after successful submission
+
+            // Clear individual form fields
+            document.querySelector('[name="name"]').value = '';
+            document.querySelector('[name="email"]').value = '';
+            document.querySelector('[name="message"]').value = '';
+        } else {
+            // Show the pop-up message for submission error
+            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+             document.getElementById('contactForm').reset();
+        }
+    })
+    .catch(function (error) {
+        // Handle network or fetch API errors
+        showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
+         document.getElementById('contactForm').reset();
+    });
+});
+
 
         // Function to show the pop-up message
         function showPopupMessage(message) {
@@ -217,9 +275,6 @@
         }
     });
 </script>
-
-
-
     <div class="modal" id="promoModal">
     <div class="modal-content">
        
