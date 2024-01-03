@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </form>
 
 <footer>
-    <p>DISCLAIMER: -This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
+    <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
 </footer>
 <!DOCTYPE html>
 <html lang="en">
@@ -196,40 +196,27 @@ document.addEventListener('DOMContentLoaded', () => {
     <!-- Your HTML content -->
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // JavaScript for fetching and populating the feed items
-            const feedContainer = document.querySelector('.rss-feed-container');
+    document.addEventListener('DOMContentLoaded', () => {
+        // JavaScript for fetching and populating the feed items
+        const feedContainer = document.querySelector('.rss-feed-container');
 
-            fetch('https://rss.app/feeds/v1.1/NMymQovSkybOH6Ac.json?rss_url=https://www.forbes.com/real-estate/?sh=6958f34730ef')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const feedItems = data.items;
+        fetch('https://rss.app/feeds/v1.1/NMymQovSkybOH6Ac.json?rss_url=https://www.forbes.com/real-estate/?sh=6958f34730ef')
+            .then(response => response.json())
+            .then(data => {
+                const feedItems = data.items;
 
-                    if (!feedItems || feedItems.length === 0) {
-                        throw new Error('No feed items found');
-                    }
-
+                // Check if feedItems is an array and not empty
+                if (Array.isArray(feedItems) && feedItems.length > 0) {
                     // Generate HTML for each feed item
-                    const feedContent = feedItems.map(item => {
-                        if (!item.thumbnail || !item.title || !item.link) {
-                            throw new Error('Invalid feed item structure');
-                        }
-
-                        return `
-                            <div class="feed-item">
-                                <img src="${item.thumbnail}" alt="Thumbnail">
-                                <div class="feed-item-content">
-                                    <h3>${item.title}</h3>
-                                    <a href="${item.link}" target="_blank">Read more</a>
-                                </div>
+                    const feedContent = feedItems.map(item => `
+                        <div class="feed-item">
+                            <img src="${item.enclosure.link}" alt="Thumbnail">
+                            <div class="feed-item-content">
+                                <h3>${item.title}</h3>
+                                <a href="${item.link}" target="_blank">Read more</a>
                             </div>
-                        `;
-                    }).join('');
+                        </div>
+                    `).join('');
 
                     // Inject the feed content into the HTML
                     feedContainer.innerHTML = feedContent;
@@ -249,55 +236,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     scrollRightButton.addEventListener('click', () => {
                         scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
                     });
-                })
-                .catch(error => console.error(error));
+                } else {
+                    // Log an error if the feed is empty or not an array
+                    console.error('Invalid feed structure');
+                }
+            })
+            .catch(error => console.error(error));
+        
+        // Rest of your code...
+    });
+</script>
 
-            // Add an event listener to the form submission
-            document.getElementById('contactForm').addEventListener('submit', function (event) {
-                event.preventDefault(); // Prevent the default form submission
-
-                // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
-                fetch(this.action, {
-                    method: 'POST',
-                    body: new FormData(this),
-                })
-                .then(function (response) {
-                    if (response.ok) {
-                        // Show the pop-up message for successful submission
-                        showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-                        document.getElementById('contactForm').reset(); // Reset the form after successful submission
-
-                        // Clear individual form fields
-                        document.querySelector('[name="name"]').value = '';
-                        document.querySelector('[name="email"]').value = '';
-                        document.querySelector('[name="message"]').value = '';
-                    } else {
-                        // Show the pop-up message for submission error
-                        showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-                        document.getElementById('contactForm').reset();
-                    }
-                })
-                .catch(function (error) {
-                    // Handle network or fetch API errors
-                    showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-                    document.getElementById('contactForm').reset();
-                });
-            });
-
-            // Function to show the pop-up message
-            function showPopupMessage(message) {
-                var popup = document.createElement('div');
-                popup.innerHTML = '<p>' + message + '</p>';
-                popup.className = 'popup-message'; // Add the CSS class for styling
-                document.body.appendChild(popup);
-
-                // Automatically remove the popup after a few seconds
-                setTimeout(function () {
-                    document.body.removeChild(popup);
-                }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
-            }
-        });
-    </script>
 </body>
 </html>
 
