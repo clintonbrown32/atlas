@@ -196,25 +196,25 @@ document.addEventListener('DOMContentLoaded', () => {
     <!-- Your HTML content -->
 
    <script>
-   document.addEventListener('DOMContentLoaded', () => {
-    const feedContainer = document.querySelector('.rss-feed-container');
+    document.addEventListener('DOMContentLoaded', () => {
+        // JavaScript for fetching and populating the feed items
+        const feedContainer = document.querySelector('.rss-feed-container');
 
-    fetch('https://rss.nytimes.com/services/xml/rss/nyt/RealEstate.xml')
-        .then(response => response.text())
-        .then(xmlData => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
-            const items = xmlDoc.querySelectorAll('item');
+        fetch('crypto_news.json')
+            .then(response => response.json())
+            .then(data => {
+                const feedItems = data.items;
 
-            const feedContent = Array.from(items).map(item => `
-                <div class="feed-item">
-                    <img src="${item.querySelector('thumbnail').textContent}" alt="Thumbnail">
-                    <div class="feed-item-content">
-                        <h3>${item.querySelector('title').textContent}</h3>
-                        <a href="${item.querySelector('link').textContent}" target="_blank">Read more</a>
+                // Generate HTML for each feed item
+                const feedContent = feedItems.map(item => `
+                    <div class="feed-item">
+                        <img src="${item.thumbnail}" alt="Thumbnail">
+                        <div class="feed-item-content">
+                            <h3>${item.title}</h3>
+                            <a href="${item.link}" target="_blank">Read more</a>
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `).join('');
 
                 // Inject the feed content into the HTML
                 feedContainer.innerHTML = feedContent;
