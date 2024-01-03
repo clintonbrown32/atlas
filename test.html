@@ -196,47 +196,25 @@ document.addEventListener('DOMContentLoaded', () => {
     <!-- Your HTML content -->
 
    <script>
-   document.addEventListener('DOMContentLoaded', () => {
-    // JavaScript for fetching and populating the feed items
-    const feedContainer = document.querySelector('.rss-feed-container');
+    document.addEventListener('DOMContentLoaded', () => {
+        // JavaScript for fetching and populating the feed items
+        const feedContainer = document.querySelector('.rss-feed-container');
 
-    fetch('https://rss.app/feeds/v1.1/NMymQovSkybOH6Ac.json')
-        .then(response => response.json())
-        .then(data => {
-            const feedItems = data.items;
+        fetch('https://rss.app/feeds/v1.1/x9KvI82MriWv0ibK.json')
+            .then(response => response.json())
+            .then(data => {
+                const feedItems = data.items;
 
-            // Generate HTML for each feed item
-            const feedContent = feedItems.map(item => `
-                <div class="feed-item">
-                    ${generateThumbnail(item)}
-                    <div class="feed-item-content">
-                        <h3>${item.title}</h3>
-                        ${generateReadMoreLink(item)}
+                // Generate HTML for each feed item
+                const feedContent = feedItems.map(item => `
+                    <div class="feed-item">
+                        <img src="${item.thumbnail}" alt="Thumbnail">
+                        <div class="feed-item-content">
+                            <h3>${item.title}</h3>
+                            <a href="${item.link}" target="_blank">Read more</a>
+                        </div>
                     </div>
-                </div>
-            `).join('');
-
-            // Inject the feed content into the HTML
-            feedContainer.innerHTML = feedContent;
-
-            // ... (rest of the script remains unchanged)
-        })
-        .catch(error => console.error(error));
-
-    // Rest of your script...
-
-    // Function to generate the thumbnail HTML
-    function generateThumbnail(item) {
-        return item.thumbnail ? `<img src="${item.thumbnail}" alt="Thumbnail">` : '<img src="" alt="No Thumbnail">';
-    }
-
-    // Function to generate the "Read more" link HTML
-    function generateReadMoreLink(item) {
-        return item.link ? `<a href="${item.link}" target="_blank">Read more</a>` : '';
-    }
-});
-
-
+                `).join('');
 
                 // Inject the feed content into the HTML
                 feedContainer.innerHTML = feedContent;
@@ -291,6 +269,21 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     });
 });
 
+
+        // Function to show the pop-up message
+        function showPopupMessage(message) {
+            var popup = document.createElement('div');
+            popup.innerHTML = '<p>' + message + '</p>';
+            popup.className = 'popup-message'; // Add the CSS class for styling
+            document.body.appendChild(popup);
+
+            // Automatically remove the popup after a few seconds
+            setTimeout(function () {
+                document.body.removeChild(popup);
+            }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
+        }
+    });
+</script>
 
         // Function to show the pop-up message
         function showPopupMessage(message) {
