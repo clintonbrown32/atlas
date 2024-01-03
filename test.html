@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <!-- Your HTML content -->
 
    <script>
-    document.addEventListener('DOMContentLoaded', () => {
+   document.addEventListener('DOMContentLoaded', () => {
     // JavaScript for fetching and populating the feed items
     const feedContainer = document.querySelector('.rss-feed-container');
 
@@ -204,9 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             const feedItems = data.items;
-
-            // Log the structure of the first item in the console
-            console.log(feedItems[0]);
 
             // Generate HTML for each feed item
             const feedContent = feedItems.map(item => `
@@ -218,6 +215,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             `).join('');
+
+            // Inject the feed content into the HTML
+            feedContainer.innerHTML = feedContent;
+
+            // ... (rest of the script remains unchanged)
+        })
+        .catch(error => console.error(error));
+
+    // Rest of your script...
+});
 
 
                 // Inject the feed content into the HTML
