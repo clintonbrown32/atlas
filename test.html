@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </form>
 
 <footer>
-    <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
+    <p>DISCLAIMER: -This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
 </footer>
 
 <script>
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // JavaScript for fetching and populating the feed items
         const feedContainer = document.querySelector('.rss-feed-container');
 
-        fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.forbes.com/real-estate/feed/')
+        fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.forbes.com/real-estate/?sh=6958f34730ef')
             .then(response => response.json())
             .then(data => {
                 const feedItems = data.items;
