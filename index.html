@@ -185,13 +185,22 @@ document.addEventListener('DOMContentLoaded', () => {
 <footer>
     <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
 </footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
+</head>
+<body>
 
-<script>
+    <!-- Your HTML content -->
+
+   <script>
     document.addEventListener('DOMContentLoaded', () => {
         // JavaScript for fetching and populating the feed items
         const feedContainer = document.querySelector('.rss-feed-container');
 
-        fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.forbes.com/real-estate/feed/')
+        fetch('https://rss.app/feeds/v1.1/36XnwqMaz74xhQlv.json')
             .then(response => response.json())
             .then(data => {
                 const feedItems = data.items;
@@ -199,10 +208,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Generate HTML for each feed item
                 const feedContent = feedItems.map(item => `
                     <div class="feed-item">
-                        <img src="${item.thumbnail}" alt="Thumbnail">
+                        <img src="${item.image}" alt="Thumbnail">
                         <div class="feed-item-content">
                             <h3>${item.title}</h3>
-                            <a href="${item.link}" target="_blank">Read more</a>
+                            <a href="${item.link || item.url || item.guid}" target="_blank">Read more</a>
                         </div>
                     </div>
                 `).join('');
@@ -275,6 +284,10 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         }
     });
 </script>
+</body>
+</html>
+
+
     <div class="modal" id="promoModal">
     <div class="modal-content">
        
