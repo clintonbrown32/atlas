@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img src="${item.image}" alt="Thumbnail">
                         <div class="feed-item-content">
                             <h3>${item.title}</h3>
-                            <a href="${item.feed}" target="_blank">Read more</a>
+                            <a href="${item.link || item.url || item.guid}" target="_blank">Read more</a>
                         </div>
                     </div>
                 `).join('');
