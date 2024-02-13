@@ -196,50 +196,45 @@ document.addEventListener('DOMContentLoaded', () => {
     <!-- Your HTML content -->
 
    <script>
-   document.addEventListener('DOMContentLoaded', () => {
-    // JavaScript for fetching and populating the feed items
-    const feedContainer = document.querySelector('.rss-feed-container');
+      document.addEventListener('DOMContentLoaded', () => {
+            const feedContainer = document.querySelector('.rss-feed-container');
 
-    fetch('https://www.worldpropertyjournal.com/feed.xml')
-        .then(response => response.text())
-        .then(xmlData => {
-            // Parse the XML data
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
-            const items = xmlDoc.querySelectorAll('item');
+            fetch('https://www.worldpropertyjournal.com/feed.xml')
+                .then(response => response.text())
+                .then(xmlData => {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
+                    const items = xmlDoc.querySelectorAll('item');
 
-            // Generate HTML for each feed item
-            const feedContent = Array.from(items).map(item => `
-                <div class="feed-item">
-                    <img src="${item.querySelector('image').textContent}" alt="Thumbnail">
-                    <div class="feed-item-content">
-                        <h3>${item.querySelector('title').textContent}</h3>
-                        <a href="${item.querySelector('link').textContent}" target="_blank">Read more</a>
-                    </div>
-                </div>
-            `).join('');
+                    const feedContent = Array.from(items).map(item => `
+                        <div class="feed-item">
+                            <img src="${item.querySelector('image').textContent}" alt="Thumbnail">
+                            <div class="feed-item-content">
+                                <h3>${item.querySelector('title').textContent}</h3>
+                                <a href="${item.querySelector('link').textContent}" target="_blank">Read more</a>
+                            </div>
+                        </div>
+                    `).join('');
 
-            // Inject the feed content into the HTML
-            feedContainer.innerHTML = feedContent;
+                    feedContainer.innerHTML = feedContent;
 
-            // JavaScript for horizontal scrolling with arrow buttons
-            const scrollContainer = document.querySelector('.rss-feed-container');
-            const scrollLeftButton = document.querySelector('.scroll-left');
-            const scrollRightButton = document.querySelector('.scroll-right');
+                    const scrollContainer = document.querySelector('.rss-feed-container');
+                    const scrollLeftButton = document.querySelector('.scroll-left');
+                    const scrollRightButton = document.querySelector('.scroll-right');
 
-            const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
-            const feedItemMargin = 20; // Adjust this value according to your CSS margin
+                    const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
+                    const feedItemMargin = 20;
 
-            scrollLeftButton.addEventListener('click', () => {
-                scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
-            });
+                    scrollLeftButton.addEventListener('click', () => {
+                        scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
+                    });
 
-            scrollRightButton.addEventListener('click', () => {
-                scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
-            });
-        })
-        .catch(error => console.error(error));
-});
+                    scrollRightButton.addEventListener('click', () => {
+                        scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
+                    });
+                })
+                .catch(error => console.error(error));
+        });
 
        // Add an event listener to the form submission
 document.getElementById('contactForm').addEventListener('submit', function (event) {
