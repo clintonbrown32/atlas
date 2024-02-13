@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/logo150.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
     <style>
@@ -18,19 +17,7 @@
             background-position: center;
             padding: 20px 0; /* Add vertical padding to separate content from background */
         }
-  .popup-message {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid #333;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-            text-align: center;
-            font-weight: bold;
-            z-index: 9999;
-        }
+
         .centered-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -157,12 +144,12 @@ s0.parentNode.insertBefore(s1,s0);
         </header>
     </div>
     <section class="intro">
-        <!--<img src="assets/background.webp" alt="Particles">
+        <img src="assets/background.webp" alt="Particles">
         <div class="search-bar">
             <input type="text" placeholder="Search">
             <button>Search</button>
         </div>
-    </section>-->
+    </section>
 
     <section class="services">
         <h2 class="services-heading">Our Real Estate Services</h2>
@@ -260,117 +247,29 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
     </section>
 
-   
-<form id="contactForm" action="https://script.google.com/macros/s/AKfycbzZYbAYOUz1vOMhNJNyTXQ2BAHAqdnMgJZeMQBFMcnJkg9aWQXLH3iVXbDkAIQfXwomaQ/exec" method="POST">
-    <center>
-        <h2 class="contact">Contact Us</h2>
-    </center>
-    <div class="form-group">
-        <input type="text" name="name" placeholder="Name" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <input type="email" name="email" placeholder="Email" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <textarea name="message" placeholder="What is your real estate dream?™" class="full-width" required></textarea>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Submit" class="full-width">
-    </div>
-</form>
-
-<footer>
-    <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
-</footer>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // JavaScript for fetching and populating the feed items
-        const feedContainer = document.querySelector('.rss-feed-container');
-
-        fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
-            .then(response => response.json())
-            .then(data => {
-                const feedItems = data.items;
-
-                // Generate HTML for each feed item
-                const feedContent = feedItems.map(item => `
-                    <div class="feed-item">
-                        <img src="${item.thumbnail}" alt="Thumbnail">
-                        <div class="feed-item-content">
-                            <h3>${item.title}</h3>
-                            <a href="${item.link}" target="_blank">Read more</a>
-                        </div>
-                    </div>
-                `).join('');
-
-                // Inject the feed content into the HTML
-                feedContainer.innerHTML = feedContent;
-
-                // JavaScript for horizontal scrolling with arrow buttons
-                const scrollContainer = document.querySelector('.rss-feed-container');
-                const scrollLeftButton = document.querySelector('.scroll-left');
-                const scrollRightButton = document.querySelector('.scroll-right');
-
-                const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
-                const feedItemMargin = 20; // Adjust this value according to your CSS margin
-
-                scrollLeftButton.addEventListener('click', () => {
-                    scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
-                });
-
-                scrollRightButton.addEventListener('click', () => {
-                    scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
-                });
-            })
-            .catch(error => console.error(error));
-
-       // Add an event listener to the form submission
-document.getElementById('contactForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
-    fetch(this.action, {
-        method: 'POST',
-        body: new FormData(this),
-    })
-    .then(function (response) {
-        if (response.ok) {
-            // Show the pop-up message for successful submission
-            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-            document.getElementById('contactForm').reset(); // Reset the form after successful submission
-
-            // Clear individual form fields
-            document.querySelector('[name="name"]').value = '';
-            document.querySelector('[name="email"]').value = '';
-            document.querySelector('[name="message"]').value = '';
-        } else {
-            // Show the pop-up message for submission error
-            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-             document.getElementById('contactForm').reset();
-        }
-    })
-    .catch(function (error) {
-        // Handle network or fetch API errors
-        showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-         document.getElementById('contactForm').reset();
-    });
-});
+    <form action="https://script.google.com/macros/s/AKfycbw5JTHAeLHL1dY-xrfPJRIvAHNKT5ioc3NmiGZKue_TBLco9t8sDfnouZeox6ClYXYw8Q/exec" method="post">
+        <center>
+            <h2 class="contact">Contact Us</h2>
+        </center>
+        <div class="form-group">
+            <input type="text" name="name" placeholder="Name" class="center-input">
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Email" class="center-input">
+        </div>
+        <div class="form-group">
+            <textarea name="message" placeholder="Message" class="full-width"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="full-width">
+        </div>
+    </form>
 
 
-        // Function to show the pop-up message
-        function showPopupMessage(message) {
-            var popup = document.createElement('div');
-            popup.innerHTML = '<p>' + message + '</p>';
-            popup.className = 'popup-message'; // Add the CSS class for styling
-            document.body.appendChild(popup);
 
-            // Automatically remove the popup after a few seconds
-            setTimeout(function () {
-                document.body.removeChild(popup);
-            }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
-        }
-    });
-</script>
+    <footer>
+        <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
+    </footer>
 </body>
+
 </html>
