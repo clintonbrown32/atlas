@@ -202,10 +202,12 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch('https://www.worldpropertyjournal.com/feed.xml')
                 .then(response => response.text())
                 .then(xmlData => {
+                    console.log(xmlData);
                     const parser = new DOMParser();
                     const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
+                    console.log(xmlDoc);
                     const items = xmlDoc.querySelectorAll('item');
-
+console.log(items); 
                     const feedContent = Array.from(items).map(item => `
                         <div class="feed-item">
                             <img src="${item.querySelector('image').textContent}" alt="Thumbnail">
