@@ -3,186 +3,123 @@
 
 <head>
     <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="assets/logo150.png" type="image/png">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
-
-<!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Atlas Real Estate">
-<meta property="og:description" content="Discover premium properties with Atlas Real Estate."> <!-- I added a basic description. You might want to customize it. -->
-<meta property="og:image" content="https://img.youtube.com/vi/JDNfDJ5oNxs/hqdefault.jpg">
-<meta property="og:url" content="https://www.atlasrei.co/homes">
-
-<!-- Twitter Card Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Atlas Real Estate">
-<meta name="twitter:description" content="Discover premium properties with Atlas Real Estate.">
-<meta name="twitter:image" content="https://img.youtube.com/vi/JDNfDJ5oNxs/hqdefault.jpg">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
     <style>
-        /* Add custom CSS for the residential section */
-      
+        /* Add custom CSS for the investment section */
+        .investment {
+            position: relative;
+            background-image: url("assets/coins.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 20px 0; /* Add vertical padding to separate content from background */
+        }
 
-    .centered-content {
-            max-width: 1100px;
+        .centered-content {
+            max-width: 1200px;
             margin: 0 auto;
             position: relative; /* Ensure content stays centered within the max width */
             z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
-            text-align: center; /* Center all text */
-    }
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-      .video-placeholder {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-}
-
-.video-placeholder iframe, .video-placeholder video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-        .bedroom-info {
-    margin-top: 0;
-}
-
-        section {
-    margin: 0;
-    padding: 0;
-}
-
-.translucent-box {
-    margin-top: 0;  /* Remove any top margin */
-}
- .popup-message {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid #333;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-            text-align: center;
-            font-weight: bold;
-            z-index: 9999;
         }
 
-        .centered-content p {
-            padding-bottom:30px;
-        }
         .section-heading {
             font-size: 30px;
             font-weight: bold;
-            color: #333;
+            color: #000000;
             text-align: center;
             padding-top: 30px;
             padding-bottom: 10px;
             text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
         }
 
-html, body {
-    background-image: url("assets/mountains.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Optional, this will keep the background fixed even when scrolling */
-}
+        .investment p {
+            line-height: 1.6;
+            color: #000000;
+        }
 
-        .video-placeholder video {
+        .investment h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000000;
+            margin-top: 30px;
+            text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
+        }
+
+        .investment ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .investment li {
+            margin-bottom: 10px;
+        }
+
+        /* Image style */
+        .investment img {
+            max-width: 100%;
+            height: auto;
             display: block;
-            margin: 0 auto;
-            max-width: 100%; /* Make the video responsive */
-            height: auto; /* Maintain aspect ratio */
-}
- .reserve-button {
-            margin-top: 20px; /* Adjust as needed */
-}
+            margin: 10px auto;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            filter: drop-shadow(0px 1px 10px #000);
+        }
 
-.reserve-link {
-            display: inline-block;
-            font-size: 24px; /* Adjust as needed */
-            padding: 10px 20px; /* Adjust as needed */
-            border: 2px solid #333;
-            text-decoration: none;
-            color: #fff; /* Text color is white */
-            background-color: #333; /* Background color is black */
-            position: relative;
-            transition: background-color 0.3s;
-}
+        /* Alternate the image position */
+        .investment .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
-.reserve-link:hover {
-            background-color: #555; /* Darken the background on hover*/
-}
+        .investment .section-content > div {
+            flex: 0 0 48%;
+        }
 
-       .bedroom-info p {
-            font-size: 30px; /* Adjust as needed */
-            color: #fff; /* Text color is white */
-}
-.description-text {
- color: #fff;
-    font-size: 23px;
-    
-}
+        .investment .section-content img {
+            margin: 10px auto;
+        }
 
-        .translucent-box {
-    background-color: rgba(0, 0, 0, 0.5); /* This is a black color with 50% transparency */
-    padding: 15px; /* Add some padding around the content for better aesthetics */
-}
-.bedroom-info {
-    margin-top: 0; /* Remove the top margin */
-}
+        /* Alternate the image position */
+    .investment .section-content:nth-child(odd) .investment-image {
+            order: 0; /* Change order to 0 for odd sections to move the image to the left */
+            text-align: left; /* Align the text to the left in odd sections */
+        }
 
-        .white-text, .white-text p, .white-text a, .white-text strong {
-    color: #fff !important;
-}
+        .investment .section-content:nth-child(even) .investment-image {
+            order: 1; /* Change order to 1 for even sections to move the image to the right */
+            text-align: right; /* Align the text to the right in even sections */
+        }
 
-       #contactForm input, 
-#contactForm textarea {
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
+        /* Add some space between the image and text in the final two sections */
+        .investment .section-content:last-child .investment-image {
+            margin-bottom: 20px; /* Add margin at the bottom of the last image */
+        }
 
-#contactForm input:focus, 
-#contactForm textarea:focus {
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
-}
+        .investment .section-content:last-child .investment-text {
+            margin-top: 20px; /* Add marg
+        /* Custom styling for the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
 
-        @media only screen and (max-width: 600px) {
-    h2, .section-heading {
-        font-size: 24px;
-    }
-    .bedroom-info p, .description-text {
-        font-size: 18px;
-    }
-    .white-text p {
-        font-size: 16px;
-    }
-@media only screen and (max-width: 600px) {
-    .popup-message {
-        width: 90%;
-        font-size: 14px;
-    }
-}
-
-
-</style>
+        /* Additional styles for the contact form */
         
-
+    </style>
     <title>Atlas - Real Estate Investment Company</title>
 </head>
 
 <body>
-
-      <!--Start of Tawk.to Script-->
+    <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -195,247 +132,144 @@ s0.parentNode.insertBefore(s1,s0);
 })();
     </script>
     <div class="container">
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <a href="index.html"> <!-- Replace "index.html" with the URL of your homepage -->
-                    <img src="assets/logo150.png" alt="Atlas Logo">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"> <!-- Replace "index.html" with the URL of your homepage -->
+                        <img src="assets/logo150.png" alt="Atlas Logo">
+                    </a>
+                </div>
+                <h2>Every Dream Begins With Real Estate&trade;</h2>
+            </div>
+        </header>
+    </div>
+    <section class="intro">
+        <img src="assets/background.webp" alt="Particles">
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="services-heading">Our Real Estate Services</h2>
+        <div class="service-items-container">
+            <div class="service-item">
+                <a href="residential.html">
+                    <img src="assets/residential.jpg" alt="Residential">
                 </a>
             </div>
-            <h2>Every Dream Begins With Real Estate&trade;</h2>
-        </div>
-    </header>
-</div>
-        <!--<section class="intro">
-            <img src="assets/background.webp" alt="Particles">
-            <div class="search-bar">
-                <input type="text" placeholder="Search">
-                <button>Search</button>
+            <div class="service-item">
+                <a href="commercial.html">
+                    <img src="assets/commercialserv.jpg" alt="Commercial">
+                </a>
             </div>
-        </section>-->
-
-        <section class="services">
-            <h2 class="services-heading">Our Real Estate Services</h2>
-            <div class="service-items-container">
-                <div class="service-item">
-                    <a href="residential.html">
-                        <img src="assets/residential.jpg" alt="Residential">
-                    </a>
-                </div>
-                <div class="service-item">
-                    <a href="commercial.html">
-                        <img src="assets/commercialserv.jpg" alt="Commercial">
-                    </a>
-                </div>
-                <div class="service-item">
-                    <a href="solar.html">
-                        <img src="assets/solar.jpg" alt="Solar">
-                    </a>
-                </div>
-                <div class="service-item">
-                    <a href="investment.html">
-                        <img src="assets/investment.jpg" alt="Investment">
-                    </a>
-                </div>
-                <div class="service-item">
+            <div class="service-item">
+                <a href="solar.html">
+                    <img src="assets/solar.jpg" alt="Solar">
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="investment.html">
+                    <img src="assets/investment.jpg" alt="Investment">
+                </a>
+            </div>
+            <div class="service-item">
                 <a href="about.html">
                     <img src="assets/about.jpg" alt="about us">
                 </a>
             </div>
-            </div>
-        </section>
-
-   
-            
         </div>
     </section>
 
-    <section>
-    <div class="centered-content">
-    
-        <div class="video-placeholder">
-           <iframe width="1100" height="618.75" src="https://www.youtube.com/embed/YzKhhcUIg_g" frameborder="0" allowfullscreen></iframe>
+    <section class="investment">
+        <div class="centered-content">
+            <h2 class="section-heading">Real Estate Investment: Building Wealth and Securing Your Future</h2>
+            <p>
+                Real estate investing can be a powerful tool for building wealth and securing your financial future. Whether you are a seasoned investor looking to expand your portfolio or a beginner eager to dip your toes into the world of real estate, we have the expertise and resources to guide you on your investment journey.
+            </p>
 
-        </div>
-
-         <section>
-    <div class="translucent-box">
-        <!-- 3 Bedrooms, 2 Baths Info -->
-        <div class="bedroom-info">
-            <p>3 BEDROOMS 2 BATHS<br>FROM $1,089,300</p>
-        </div>
-
-        <!-- Description Text -->
-        <div class="description-text">
-            <p>Atlas Hills will be a new, vibrant California neighborhood experience that offers a unique combination of urban amenities, stunning natural beauty, and suburban charm. Atlas Hills seeks to be the perfect place to call home! Homeowners will enjoy a variety of nearby shopping, dining, and entertainment options, as well as access to premier schools, parks, and recreational opportunities.</p>
-            <p>Each home will be equipped with the latest in smart home technology, from automated energy-efficient systems to voice-activated appliances. Homeowners can enjoy the convenience of controlling heating and cooling systems, adjusting lighting levels, and even unlocking doors with their smartphones. At Atlas Hills, California living has never been so easy and accessible.</p>
-            <p>At Atlas Hills, homeowners can find the perfect balance of convenience, affordability, and comfort. With its variety of housing options, commitment to sustainability and community, Atlas Hills is an ideal place for you to call home!</p>
-        </div>
-<div class="centered-content">
-    <div class="white-text" style="text-align: center;">
-
-        <p style="color: red; font-weight: bold; font-size: larger;">
-            <strong>IMPORTANT:</strong>
-        </p>
-
-        <p>
-            <a href="assets/disclosure1.pdf"><strong>Preliminary Offering Circular</strong></a><br>
-            <a href="assets/finaloffering.pdf"><strong>Final Offering</strong></a><br>
-            <a href="assets/atlas deadline.pdf"><strong>Atlas Hills Phase I March 31, 2024 Deadline</strong></a><br>
-            
-        </p>
-<p>
-    <a href="assets/atlasconference.mp3" target="_blank"><strong>Play Atlas Q&A 12/28/23</strong></a>
-    <br>
-    <audio controls>
-        <source src="assets/atlasconference.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-</p>
-    </div>
-</div>
-
-
-    </div>
-</section>
-
-    </div>
-</section>
-
-
-        
-        
-        
-       
-        
-        
-    
-    
-
-
-
-
-
-    
-<form id="contactForm" action="https://script.google.com/macros/s/AKfycbz4Aq4dHm1if6OVvbzqFl8ZAMGMreKrdsjMOcjvd_Ejy7GYHdIi7t71Copa-tjf-5tDTw/exec" method="POST">
-    <center>
-        <h2 class="contact">Register your interest today. Act Now!! </h2>
-      
-    </center>
-    <div class="form-group">
-        <input type="text" name="first_name" placeholder="First Name" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <input type="text" name="last_name" placeholder="Last Name" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <input type="email" name="email" placeholder="E-mail" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <input type="tel" name="phone" placeholder="Phone" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <input type="text" name="address" placeholder="Address" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <input type="text" name="city" placeholder="City" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <input type="text" name="state" placeholder="State" class="center-input" required>
-    </div>
-    <div class="form-group">
-        <input type="text" name="zip_code" placeholder="Zip Code" class="center-input" required>
-    </div>
-    <div class="form-group">
-    <textarea name="message" placeholder="Why is Atlas Hills for you?" class="full-width" required></textarea>
-</div>
-
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Submit" class="full-width">
-    </div>
-</form>
-
-
-
-<footer>
-    <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
-</footer>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    // JavaScript for fetching and populating the feed items
-    const feedContainer = document.querySelector('.rss-feed-container');
-
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
-        .then(response => response.json())
-        .then(data => {
-            const feedItems = data.items;
-
-            const feedContent = feedItems.map(item => `
-                <div class="feed-item">
-                    <img src="${item.thumbnail}" alt="Thumbnail">
-                    <div class="feed-item-content">
-                        <h3>${item.title}</h3>
-                        <a href="${item.link}" target="_blank">Read more</a>
-                    </div>
+            <!-- Add images here as placeholders -->
+            <div class="section-content">
+                <div class="investment-image">
+                    <img src="assets/Invest.jpg" alt="Placeholder Image">
                 </div>
-            `).join('');
+                
+                <div class="investment-text">
+                    <h3>Why Invest in Real Estate?</h3>
+                    <ul>
+                        <li>Potential for Appreciation: Real estate properties have historically shown steady appreciation in value over time. By carefully selecting properties in high-growth areas and holding onto them for the long term, investors can build substantial equity and wealth.</li>
+                        <li>Passive Income Generation: Rental properties provide a consistent source of passive income. The rental income from tenants can help cover mortgage payments, property maintenance, and even generate positive cash flow.</li>
+                        <li>Diversification: Real estate investing allows you to diversify your investment portfolio beyond traditional stocks and bonds. Adding real estate to your portfolio can reduce overall risk and provide stability during market fluctuations.</li>
+                        <li>Tax Advantages: Real estate investors can take advantage of various tax benefits, including deductions for mortgage interest, property taxes, depreciation, and more. These tax incentives can significantly reduce your tax liability.</li>
+                        <li>Hedge Against Inflation: Real estate is considered an inflation hedge, as property values and rental income tend to rise with inflation. As the cost of living increases, your real estate investments retain their value and purchasing power.</li>
+                    </ul>
+                </div>
+            </div>
 
-            feedContainer.innerHTML = feedContent;
+            <div class="section-content">
+                <div class="investment-text">
+                    <h3>Types of Real Estate Investments:</h3>
+                    <p>There are several ways to invest in real estate, each with its own set of advantages and considerations. Here are some common types of real estate investments:</p>
+                    <ul>
+                        <li>Residential Properties: Residential real estate includes single-family homes, condominiums, townhouses, and multi-unit properties. Residential properties are popular among investors seeking stable rental income and potential for long-term appreciation.</li>
+                        <li>Commercial Properties: Commercial real estate includes office buildings, retail spaces, industrial warehouses, and more. Commercial properties offer higher rental yields but may require longer lease terms and higher initial investments.</li>
+                        <li>Real Estate Investment Trusts (REITs): REITs are companies that own, operate, or finance income-generating real estate. Investing in REITs allows you to own a share of real estate properties without the hassle of property management.</li>
+                        <li>Fix-and-Flip Properties: This strategy involves purchasing distressed properties, renovating them, and selling them for a profit. It requires a keen eye for property value and an understanding of the local real estate market.</li>
+                        <li>Real Estate Crowdfunding: Crowdfunding platforms allow multiple investors to pool their resources and invest in large-scale real estate projects. It offers a more accessible entry point for individual investors.</li>
+                    </ul>
+                </div>
+                <div class="investment-image">
+                    <img src="assets/Invest2.jpg" alt="Placeholder Image">
+                </div>
+            </div>
 
-            const scrollContainer = document.querySelector('.rss-feed-container');
-            const scrollLeftButton = document.querySelector('.scroll-left');
-            const scrollRightButton = document.querySelector('.scroll-right');
+            <div class="section-content">
+                <div class="investment-image">
+                    <img src="assets/Invest3.jpg" alt="Placeholder Image">
+                </div>
+                <div class="investment-text">
+                    <h3>Our Approach to Real Estate Investment:</h3>
+                    <p>At Atlas, we take a personalized approach to real estate investment. Our team of experienced investment specialists works closely with you to understand your financial goals, risk tolerance, and investment preferences. We provide comprehensive market analyses and insights, helping you identify promising investment opportunities with favorable potential returns.</p>
+                    <p>Whether you are interested in rental properties for passive income or seeking to diversify your portfolio with commercial real estate, we tailor investment strategies that align with your objectives. Our commitment to transparency, due diligence, and customer satisfaction sets us apart as your trusted partner in real estate investment.</p>
+                </div>
+            </div>
 
-            const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
-            const feedItemMargin = 20;
+            <div class="section-content">
+                <div class="investment-text">
+                    <h3>Take the Next Step:</h3>
+                    <p>Ready to embark on your real estate investment journey? Contact us today to schedule a consultation with one of our investment advisors. Let us help you make informed investment decisions and build a robust and prosperous real estate portfolio. Whether you are a seasoned investor or just getting started, we are here to guide you toward a brighter financial future through real estate investing.</p>
+                </div>
+                <div class="investment-image">
+                    <img src="assets/up.jpg" alt="Placeholder Image">
+                </div>
+            </div>
+        </div>
+    </section>
 
-            scrollLeftButton.addEventListener('click', () => {
-                scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
-            });
+    <form action="https://script.google.com/macros/s/AKfycbw5JTHAeLHL1dY-xrfPJRIvAHNKT5ioc3NmiGZKue_TBLco9t8sDfnouZeox6ClYXYw8Q/exec" method="post">
+        <center>
+            <h2 class="contact">Contact Us</h2>
+        </center>
+        <div class="form-group">
+            <input type="text" name="name" placeholder="Name" class="center-input">
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Email" class="center-input">
+        </div>
+        <div class="form-group">
+            <textarea name="message" placeholder="Message" class="full-width"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="full-width">
+        </div>
+    </form>
 
-            scrollRightButton.addEventListener('click', () => {
-                scrollContainer.scrollBy({ left: feedItemWidth + feedItemMargin, behavior: 'smooth' });
-            });
-        })
-        .catch(error => console.error(error));
 
-    // Handle the form submission
-    document.getElementById('contactForm').addEventListener('submit', function (event) {
-        event.preventDefault();
 
-        fetch(this.action, {
-            method: 'POST',
-            body: new FormData(this),
-        })
-        .then(response => {
-            if (response.ok) {
-                showPopupMessage('Thank you for your interest, Atlas will keep you updated');
-                document.getElementById('contactForm').reset();
-            } else {
-                showPopupMessage('Error occurred. Please try again.');
-            }
-        })
-        .catch(error => {
-            showPopupMessage('Network error. Please try again later.');
-        });
-    });
-
-    // Function to show the pop-up message
-    function showPopupMessage(message) {
-        const popup = document.createElement('div');
-        popup.innerHTML = '<p>' + message + '</p>';
-        popup.className = 'popup-message';
-        document.body.appendChild(popup);
-
-        setTimeout(() => {
-            document.body.removeChild(popup);
-        }, 5000);
-    }
-});
-GmailApp.sendEmail('homes@atlasrei.co', 'New Interest in Atlas Hills', emailBody);
-v
-</script>
+    <footer>
+        <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
+    </footer>
 </body>
+
 </html>
