@@ -1,61 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
-    <link rel="icon" href="assets/logo150.png" type="image/png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Atlas - Real Estate">
-    <meta property="og:description" content="Welcome to Atlas Real Estate, your trusted partner for all your real estate needs. We offer residential, commercial, solar, and investment services. Contact us for expert advice.">
-    <meta property="og:image" content="https://www.atlasrei.co/assets/logo150.png"> 
-    <meta property="og:url" content="https://www.atlasrei.co"> 
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/logo150.png" type="image/png">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
 
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Atlas Real Estate">
+<meta property="og:description" content="Discover premium properties with Atlas Real Estate."> <!-- I added a basic description. You might want to customize it. -->
+<meta property="og:image" content="https://img.youtube.com/vi/JDNfDJ5oNxs/hqdefault.jpg">
+<meta property="og:url" content="https://www.atlasrei.co/homes">
 
-       <title>Atlas - Real Estate</title>
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atlas Real Estate">
+<meta name="twitter:description" content="Discover premium properties with Atlas Real Estate.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/JDNfDJ5oNxs/hqdefault.jpg">
 
     <style>
-        .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-}
+        /* Add custom CSS for the residential section */
+      
 
-.modal-content {
-    background-color: #126094; /* Changed from #fefefe to #126094 for blue background */
-    color: #ffffff;  /* Added this for white text */
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    display: flex;  /* Added this for centering */
-    flex-direction: column;  /* Added this to stack content vertically */
-    align-items: center;  /* Center items horizontally */
-    text-align: center;  /* Center text and other inline elements */
+    .centered-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative; /* Ensure content stays centered within the max width */
+            z-index: 1; /* Set a higher z-index to ensure content appears above the background image */
+            text-align: center; /* Center all text */
+    }
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-/* Ensure iframe takes up the maximum width while maintaining its aspect ratio */
-.modal-content iframe {
-    max-width: 100%;
-    height: auto;
-}
-/* Styles for the video container to maintain the iframe's aspect ratio */
-.video-container {
+      .video-placeholder {
     position: relative;
-    width: 100%;
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    margin-bottom: 15px;
+    height: 0;
 }
 
-.video-container iframe {
+.video-placeholder iframe, .video-placeholder video {
     position: absolute;
     top: 0;
     left: 0;
@@ -63,17 +51,138 @@
     height: 100%;
 }
 
-/* Ensure "Learn More" link doesn't change color after being clicked */
-.modal-content a:visited {
-    color: #ffffff; /* Same color as the original link */
+        .bedroom-info {
+    margin-top: 0;
+}
+
+        section {
+    margin: 0;
+    padding: 0;
+}
+
+.translucent-box {
+    margin-top: 0;  /* Remove any top margin */
+}
+ .popup-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #333;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            font-weight: bold;
+            z-index: 9999;
+        }
+
+        .centered-content p {
+            padding-bottom:30px;
+        }
+        .section-heading {
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
+        }
+
+html, body {
+    background-image: url("assets/mountains.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional, this will keep the background fixed even when scrolling */
+}
+
+        .video-placeholder video {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%; /* Make the video responsive */
+            height: auto; /* Maintain aspect ratio */
+}
+ .reserve-button {
+            margin-top: 20px; /* Adjust as needed */
+}
+
+.reserve-link {
+            display: inline-block;
+            font-size: 24px; /* Adjust as needed */
+            padding: 10px 20px; /* Adjust as needed */
+            border: 2px solid #333;
+            text-decoration: none;
+            color: #fff; /* Text color is white */
+            background-color: #333; /* Background color is black */
+            position: relative;
+            transition: background-color 0.3s;
+}
+
+.reserve-link:hover {
+            background-color: #555; /* Darken the background on hover*/
+}
+
+       .bedroom-info p {
+            font-size: 30px; /* Adjust as needed */
+            color: #fff; /* Text color is white */
+}
+.description-text {
+ color: #fff;
+    font-size: 23px;
+    
+}
+
+        .translucent-box {
+    background-color: rgba(0, 0, 0, 0.5); /* This is a black color with 50% transparency */
+    padding: 15px; /* Add some padding around the content for better aesthetics */
+}
+.bedroom-info {
+    margin-top: 0; /* Remove the top margin */
+}
+
+        .white-text, .white-text p, .white-text a, .white-text strong {
+    color: #fff !important;
+}
+
+       #contactForm input, 
+#contactForm textarea {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+#contactForm input:focus, 
+#contactForm textarea:focus {
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+        @media only screen and (max-width: 600px) {
+    h2, .section-heading {
+        font-size: 24px;
+    }
+    .bedroom-info p, .description-text {
+        font-size: 18px;
+    }
+    .white-text p {
+        font-size: 16px;
+    }
+@media only screen and (max-width: 600px) {
+    .popup-message {
+        width: 90%;
+        font-size: 14px;
+    }
 }
 
 
+</style>
+        
 
-    </style>
+    <title>Atlas - Real Estate Investment Company</title>
 </head>
+
 <body>
 
+      <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -84,154 +193,204 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+    </script>
+    <div class="container">
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html"> <!-- Replace "index.html" with the URL of your homepage -->
+                    <img src="assets/logo150.png" alt="Atlas Logo">
+                </a>
+            </div>
+            <h2>Every Dream Begins With Real Estate&trade;</h2>
+        </div>
+    </header>
+</div>
+        <!--<section class="intro">
+            <img src="assets/background.webp" alt="Particles">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </section>-->
 
-document.addEventListener('DOMContentLoaded', () => {
-    // ... [Your previous JavaScript code]
+        <section class="services">
+            <h2 class="services-heading">Our Real Estate Services</h2>
+            <div class="service-items-container">
+                <div class="service-item">
+                    <a href="residential.html">
+                        <img src="assets/residential.jpg" alt="Residential">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="commercial.html">
+                        <img src="assets/commercialserv.jpg" alt="Commercial">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="solar.html">
+                        <img src="assets/solar.jpg" alt="Solar">
+                    </a>
+                </div>
+                <div class="service-item">
+                    <a href="investment.html">
+                        <img src="assets/investment.jpg" alt="Investment">
+                    </a>
+                </div>
+                <div class="service-item">
+                <a href="about.html">
+                    <img src="assets/about.jpg" alt="about us">
+                </a>
+            </div>
+            </div>
+        </section>
 
-    // Display the modal
-    var modal = document.getElementById('promoModal');
-    modal.style.display = 'block';
+   
+            
+        </div>
+    </section>
 
+    <section>
+    <div class="centered-content">
     
+        <div class="video-placeholder">
+           <iframe width="1100" height="618.75" src="https://www.youtube.com/embed/YzKhhcUIg_g" frameborder="0" allowfullscreen></iframe>
 
-    // Close the modal if anywhere outside of the modal is clicked
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-});
-
-    
-</script>
-
-
-<header>
-    <div class="header-content">
-        <div class="logo">
-            <img src="assets/logo150.png" alt="Atlas Logo">
         </div>
-        <h2>Every Dream Begins With Real Estate&trade;</h2>
+
+         <section>
+    <div class="translucent-box">
+        <!-- 3 Bedrooms, 2 Baths Info -->
+        <div class="bedroom-info">
+            <p>3 BEDROOMS 2 BATHS<br>FROM $1,089,300</p>
+        </div>
+
+        <!-- Description Text -->
+        <div class="description-text">
+            <p>Atlas Hills will be a new, vibrant California neighborhood experience that offers a unique combination of urban amenities, stunning natural beauty, and suburban charm. Atlas Hills seeks to be the perfect place to call home! Homeowners will enjoy a variety of nearby shopping, dining, and entertainment options, as well as access to premier schools, parks, and recreational opportunities.</p>
+            <p>Each home will be equipped with the latest in smart home technology, from automated energy-efficient systems to voice-activated appliances. Homeowners can enjoy the convenience of controlling heating and cooling systems, adjusting lighting levels, and even unlocking doors with their smartphones. At Atlas Hills, California living has never been so easy and accessible.</p>
+            <p>At Atlas Hills, homeowners can find the perfect balance of convenience, affordability, and comfort. With its variety of housing options, commitment to sustainability and community, Atlas Hills is an ideal place for you to call home!</p>
+        </div>
+<div class="centered-content">
+    <div class="white-text" style="text-align: center;">
+
+        <p style="color: red; font-weight: bold; font-size: larger;">
+            <strong>IMPORTANT:</strong>
+        </p>
+
+        <p>
+            <a href="assets/disclosure1.pdf"><strong>1.Preliminary Offering Circular</strong></a><br>
+            <a href="assets/finaloffering.pdf"><strong>2.Final Offering</strong></a><br>
+            <a href="assets/atlas deadline.pdf"><strong>3.Amended Atlas Hills Phase I March 31, 2024 Deadline</strong></a><br>
+            <a href="assets/april1_atlashills.pdf"><strong>4.Atlas Hills April Update</strong></a><br>
+            
+        </p>
+<p>
+    <a href="assets/atlasconference.mp3" target="_blank"><strong>Play Atlas Q&A 12/28/23</strong></a>
+    <br>
+    <audio controls>
+        <source src="assets/atlasconference.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</p>
     </div>
-</header>
+</div>
 
-<!--<section class="intro">
-    <img src="assets/background.webp" alt="Particles">
-    <div class="search-bar">
-        <input type="text" placeholder="Search">
-        <button>Search</button>
-    </div>
-</section>-->
 
-<section class="services">
-    <h2 class="services-heading">Our Real Estate Services</h2>
-    <div class="service-items-container">
-        <div class="service-item">
-            <a href="residential.html">
-                <img src="assets/residential.jpg" alt="Residential">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="commercial.html">
-                <img src="assets/commercialserv.jpg" alt="Commercial">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="solar.html">
-                <img src="assets/solar.jpg" alt="Solar">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="investment.html">
-                <img src="assets/investment.jpg" alt="Investment">
-            </a>
-        </div>
-        <div class="service-item">
-            <a href="about.html">
-                <img src="assets/about.jpg" alt="about us">
-            </a>
-        </div>
     </div>
 </section>
 
-<section class="rss-feed">
-    <h2 class="rss-feed-heading">Industry News</h2>
-    <div class="rss-feed-container">
-        <!-- The RSS feed content will be injected here -->
     </div>
-    <!-- Arrow buttons for horizontal scrolling -->
-    <div class="scroll-arrow scroll-left">&#8249;</div>
-    <div class="scroll-arrow scroll-right">&#8250;</div>
 </section>
 
-<form id="contactForm" action="https://script.google.com/macros/s/AKfycbzZYbAYOUz1vOMhNJNyTXQ2BAHAqdnMgJZeMQBFMcnJkg9aWQXLH3iVXbDkAIQfXwomaQ/exec" method="POST">
+
+        
+        
+        
+       
+        
+        
+    
+    
+
+
+
+
+
+    
+<form id="contactForm" action="https://script.google.com/macros/s/AKfycbz4Aq4dHm1if6OVvbzqFl8ZAMGMreKrdsjMOcjvd_Ejy7GYHdIi7t71Copa-tjf-5tDTw/exec" method="POST">
     <center>
-        <h2 class="contact">Contact Us</h2>
+        <h2 class="contact">Register your interest today. Act Now!! </h2>
+      
     </center>
     <div class="form-group">
-        <input type="text" name="name" placeholder="Name" class="center-input" required>
+        <input type="text" name="first_name" placeholder="First Name" class="center-input" required>
     </div>
     <div class="form-group">
-        <input type="email" name="email" placeholder="Email" class="center-input" required>
+        <input type="text" name="last_name" placeholder="Last Name" class="center-input" required>
     </div>
     <div class="form-group">
-        <textarea name="message" placeholder="What is your real estate dream?™" class="full-width" required></textarea>
+        <input type="email" name="email" placeholder="E-mail" class="center-input" required>
+    </div>
+    <div class="form-group">
+        <input type="tel" name="phone" placeholder="Phone" class="center-input" required>
+    </div>
+    <div class="form-group">
+        <input type="text" name="address" placeholder="Address" class="center-input" required>
+    </div>
+    <div class="form-group">
+        <input type="text" name="city" placeholder="City" class="center-input" required>
+    </div>
+    <div class="form-group">
+        <input type="text" name="state" placeholder="State" class="center-input" required>
+    </div>
+    <div class="form-group">
+        <input type="text" name="zip_code" placeholder="Zip Code" class="center-input" required>
+    </div>
+    <div class="form-group">
+    <textarea name="message" placeholder="Why is Atlas Hills for you?" class="full-width" required></textarea>
+</div>
+
     </div>
     <div class="form-group">
         <input type="submit" value="Submit" class="full-width">
     </div>
 </form>
 
+
+
 <footer>
     <p>DISCLAIMER: This message and any attachments or linked files are confidential and intended only for the named recipient. Any unauthorized disclosure, distribution, copying, or use of this information is strictly prohibited and could violate applicable laws, including the Electronic Communications Privacy Act. If you are not the intended recipient, please notify the sender immediately and delete the original message. This message originates from the offices of Atlas, Inc. and/or its subsidiaries.</p>
 </footer>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap">
-</head>
-<body>
 
-    <!-- Your HTML content -->
-
-   <script>
-     document.addEventListener('DOMContentLoaded', () => {
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
     // JavaScript for fetching and populating the feed items
     const feedContainer = document.querySelector('.rss-feed-container');
 
-    fetch('https://www.worldpropertyjournal.com/feed.xml')
-        .then(response => response.text())
-        .then(xmlData => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
-            const entries = xmlDoc.querySelectorAll('entry');
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.forbes.com%2Freal-estate%2Ffeed%2F')
+        .then(response => response.json())
+        .then(data => {
+            const feedItems = data.items;
 
-            // Generate HTML for each feed item
-            const feedContent = Array.from(entries).map(entry => {
-                const title = entry.querySelector('title').textContent;
-                const link = entry.querySelector('link[rel="alternate"]').getAttribute('href');
-                const summary = entry.querySelector('summary').textContent;
-
-                return `
-                    <div class="feed-item">
-                        <h3>${title}</h3>
-                        <p>${summary}</p>
-                        <a href="${link}" target="_blank">Read more</a>
+            const feedContent = feedItems.map(item => `
+                <div class="feed-item">
+                    <img src="${item.thumbnail}" alt="Thumbnail">
+                    <div class="feed-item-content">
+                        <h3>${item.title}</h3>
+                        <a href="${item.link}" target="_blank">Read more</a>
                     </div>
-                `;
-            }).join('');
+                </div>
+            `).join('');
 
-            // Inject the feed content into the HTML
             feedContainer.innerHTML = feedContent;
 
-            // JavaScript for horizontal scrolling with arrow buttons
             const scrollContainer = document.querySelector('.rss-feed-container');
             const scrollLeftButton = document.querySelector('.scroll-left');
             const scrollRightButton = document.querySelector('.scroll-right');
 
             const feedItemWidth = scrollContainer.querySelector('.feed-item').offsetWidth;
-            const feedItemMargin = 20; // Adjust this value according to your CSS margin
+            const feedItemMargin = 20;
 
             scrollLeftButton.addEventListener('click', () => {
                 scrollContainer.scrollBy({ left: -(feedItemWidth + feedItemMargin), behavior: 'smooth' });
@@ -242,69 +401,42 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         })
         .catch(error => console.error(error));
-});
 
-       // Add an event listener to the form submission
-document.getElementById('contactForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    // Handle the form submission
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-    // Perform the form submission using JavaScript Fetch API or XMLHttpRequest
-    fetch(this.action, {
-        method: 'POST',
-        body: new FormData(this),
-    })
-    .then(function (response) {
-        if (response.ok) {
-            // Show the pop-up message for successful submission
-            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-            document.getElementById('contactForm').reset(); // Reset the form after successful submission
-
-            // Clear individual form fields
-            document.querySelector('[name="name"]').value = '';
-            document.querySelector('[name="email"]').value = '';
-            document.querySelector('[name="message"]').value = '';
-        } else {
-            // Show the pop-up message for submission error
-            showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-             document.getElementById('contactForm').reset();
-        }
-    })
-    .catch(function (error) {
-        // Handle network or fetch API errors
-        showPopupMessage('Thank you for your inquiry, one of our agents will get back to you as soon as possible.');
-         document.getElementById('contactForm').reset();
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+        })
+        .then(response => {
+            if (response.ok) {
+                showPopupMessage('Thank you for your interest, Atlas will keep you updated');
+                document.getElementById('contactForm').reset();
+            } else {
+                showPopupMessage('Error occurred. Please try again.');
+            }
+        })
+        .catch(error => {
+            showPopupMessage('Network error. Please try again later.');
+        });
     });
+
+    // Function to show the pop-up message
+    function showPopupMessage(message) {
+        const popup = document.createElement('div');
+        popup.innerHTML = '<p>' + message + '</p>';
+        popup.className = 'popup-message';
+        document.body.appendChild(popup);
+
+        setTimeout(() => {
+            document.body.removeChild(popup);
+        }, 5000);
+    }
 });
-
-
-        // Function to show the pop-up message
-        function showPopupMessage(message) {
-            var popup = document.createElement('div');
-            popup.innerHTML = '<p>' + message + '</p>';
-            popup.className = 'popup-message'; // Add the CSS class for styling
-            document.body.appendChild(popup);
-
-            // Automatically remove the popup after a few seconds
-            setTimeout(function () {
-                document.body.removeChild(popup);
-            }, 5000); // 5000 milliseconds = 5 seconds (you can adjust the time if needed)
-        }
-    });
+GmailApp.sendEmail('homes@atlasrei.co', 'New Interest in Atlas Hills', emailBody);
+v
 </script>
-</body>
-</html>
-
-
-    <div class="modal" id="promoModal">
-    <div class="modal-content">
-       
-       <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/YzKhhcUIg_g" frameborder="0" allowfullscreen></iframe>
-</div>
-
-        <p><strong>Express your interest in living at Atlas Hills, a future California neighborhood with 3 bedroom 2 bathroom single family homes starting at $1,089,300.</strong> <br><a href="https://www.atlasrei.co/homes" target="_blank" style="color: white;">Learn More</a></p>
-
-    </div>
-</div>
 </body>
 </html>
